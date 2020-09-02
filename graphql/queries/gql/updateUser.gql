@@ -1,0 +1,44 @@
+mutation updateUser(
+  $id: ID!
+  $email: String
+  $prefix: String
+  $firstName: String
+  $lastName: String
+  $tel: String
+  $lineID: String
+  $facebook: String
+  $parents: String
+  $addr: String
+  $professor_Expert: String
+  $professor_Education: String
+  $professor_Research: String
+) {
+  updateUser(
+    input: {
+      where: { id: $id }
+      data: {
+        email: $email
+        prefix: $prefix
+        firstName: $firstName
+        lastName: $lastName
+
+        # for professor
+        professor_Expert: $professor_Expert
+        professor_Education: $professor_Education
+        professor_Research: $professor_Research
+        
+        # address all
+        tel: $tel
+        lineID: $lineID
+        facebook: $facebook
+        parents: $parents
+        addr: $addr
+      }
+    }
+  ) {
+    user {
+      id
+      username
+    }
+  }
+}

@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="d4eee709-952b-4f8d-bfaf-34cd40e08453" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EditorConfigPreviewManager">
+    <editorConfig file="$PROJECT_DIR$/.editorconfig" previewFile="$PROJECT_DIR$/pages/auth/login.vue" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1gdGBqQ9Q41LUy1cuodOBrktq6T" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="editorconfig.notification" value="utf-4" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
+    <property name="vuejs.nuxt.types-notification-shown" value="true" />
+  </component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d4eee709-952b-4f8d-bfaf-34cd40e08453" name="Default Changelist" comment="" />
+      <created>1598436922254</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598436922254</updated>
+      <workItem from="1598436923347" duration="7731000" />
+      <workItem from="1598597880465" duration="10317000" />
+      <workItem from="1598863232776" duration="8000" />
+      <workItem from="1599034518705" duration="92000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="183" y="122" width="1073" height="702" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598437318589">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="183" y="122" width="1073" height="702" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.877@0.23.1440.877" timestamp="1598437318589" />
+    <state width="1419" height="162" key="GridCell.Tab.0.bottom" timestamp="1599034580671">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1419" height="162" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1599034580671" />
+    <state width="1419" height="162" key="GridCell.Tab.0.center" timestamp="1599034580670">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1419" height="162" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1599034580670" />
+    <state width="1419" height="162" key="GridCell.Tab.0.left" timestamp="1599034580669">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1419" height="162" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1599034580669" />
+    <state width="1419" height="162" key="GridCell.Tab.0.right" timestamp="1599034580670">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1419" height="162" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1599034580670" />
+    <state width="1417" height="285" key="GridCell.Tab.1.bottom" timestamp="1598597854868">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1417" height="285" key="GridCell.Tab.1.bottom/0.23.1440.877@0.23.1440.877" timestamp="1598597854868" />
+    <state width="1417" height="285" key="GridCell.Tab.1.center" timestamp="1598597854867">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1417" height="285" key="GridCell.Tab.1.center/0.23.1440.877@0.23.1440.877" timestamp="1598597854867" />
+    <state width="1417" height="285" key="GridCell.Tab.1.left" timestamp="1598597854866">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1417" height="285" key="GridCell.Tab.1.left/0.23.1440.877@0.23.1440.877" timestamp="1598597854866" />
+    <state width="1417" height="285" key="GridCell.Tab.1.right" timestamp="1598597854867">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1417" height="285" key="GridCell.Tab.1.right/0.23.1440.877@0.23.1440.877" timestamp="1598597854867" />
+    <state width="1417" height="285" key="GridCell.Tab.2.bottom" timestamp="1598597854869">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1417" height="285" key="GridCell.Tab.2.bottom/0.23.1440.877@0.23.1440.877" timestamp="1598597854869" />
+    <state width="1417" height="285" key="GridCell.Tab.2.center" timestamp="1598597854868">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1417" height="285" key="GridCell.Tab.2.center/0.23.1440.877@0.23.1440.877" timestamp="1598597854868" />
+    <state width="1417" height="285" key="GridCell.Tab.2.left" timestamp="1598597854868">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1417" height="285" key="GridCell.Tab.2.left/0.23.1440.877@0.23.1440.877" timestamp="1598597854868" />
+    <state width="1417" height="285" key="GridCell.Tab.2.right" timestamp="1598597854868">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1417" height="285" key="GridCell.Tab.2.right/0.23.1440.877@0.23.1440.877" timestamp="1598597854868" />
+    <state width="1417" height="285" key="GridCell.Tab.3.bottom" timestamp="1598597854870">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1417" height="285" key="GridCell.Tab.3.bottom/0.23.1440.877@0.23.1440.877" timestamp="1598597854870" />
+    <state width="1417" height="285" key="GridCell.Tab.3.center" timestamp="1598597854870">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1417" height="285" key="GridCell.Tab.3.center/0.23.1440.877@0.23.1440.877" timestamp="1598597854870" />
+    <state width="1417" height="285" key="GridCell.Tab.3.left" timestamp="1598597854869">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1417" height="285" key="GridCell.Tab.3.left/0.23.1440.877@0.23.1440.877" timestamp="1598597854869" />
+    <state width="1417" height="285" key="GridCell.Tab.3.right" timestamp="1598597854870">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1417" height="285" key="GridCell.Tab.3.right/0.23.1440.877@0.23.1440.877" timestamp="1598597854870" />
+    <state x="220" y="100" key="SettingsEditor" timestamp="1598457224830">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="220" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1598457224830" />
+    <state x="417" y="206" width="606" height="510" key="find.popup" timestamp="1598454125326">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="417" y="206" width="606" height="510" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1598454125326" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/components/navigations/AppHeader.vue</url>
+          <line>289</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
