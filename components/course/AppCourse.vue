@@ -9,18 +9,12 @@
                 หลักสูตร
               </h1>
             </v-card-title>
-            <h5 class="text-center font-weight-bold black--text">
+            <h5 class="text-center font-weight-bold black--text pb-5">
               สาขาวิชาคอมพิวเตอร์ศึกษา มหาวิทยาลัยราชภัฎบ้านสมเด็จเจ้าพระยา
             </h5>
           </v-parallax>
-          <!--          <v-card-title class="text-center justify-center py-6">-->
-          <!--            <h1 class="font-weight-bold display-1">หลักสูตร</h1>-->
-          <!--          </v-card-title>-->
-          <!--          <h5 class="text-center">-->
-          <!--            สาขาวิชาคอมพิวเตอร์ศึกษา มหาวิทยาลัยราชภัฎบ้านสมเด็จเจ้าพระยา-->
-          <!--          </h5>-->
           <br />
-          <v-divider />
+          <!--          <v-divider />-->
           <v-container>
             <v-layout align-center justify-center wrap>
               <v-flex xs12 md5>

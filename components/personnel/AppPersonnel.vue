@@ -73,7 +73,6 @@
             >
               <template v-slot:default="props">
                 <!-- custom -->
-
                 <v-row>
                   <v-col
                     v-for="item in props.items"
@@ -85,70 +84,38 @@
                     sm="6"
                   >
                     <v-hover v-slot:default="{ hover }">
-                      <!--                      <v-card-->
-                      <!--                        class="mx-auto"-->
-                      <!--                        max-width="344"-->
-                      <!--                        :elevation="hover ? 12 : 2"-->
-                      <!--                      >-->
-                      <!--                        <nuxt-link-->
-                      <!--                          :to="{-->
-                      <!--                            name: 'personnel-id',-->
-                      <!--                            params: { id: item.id },-->
-                      <!--                          }"-->
-                      <!--                          tag="a"-->
-                      <!--                        >-->
-                      <!--                          <v-img-->
-                      <!--                            class="white&#45;&#45;text align-end"-->
-                      <!--                            height="200px"-->
-                      <!--                            contain-->
-                      <!--                            :src="-->
-                      <!--                              item.imageUrl ? item.imageUrl.url : defaultImage-->
-                      <!--                            "-->
-                      <!--                          >-->
-                      <!--                            <v-card-title-->
-                      <!--                              class="font-italic body-2 deep-purple lighten-1"-->
-                      <!--                            >-->
-                      <!--                              {{ item ? item.nameTH : '' }}-->
-                      <!--                            </v-card-title>-->
-                      <!--                          </v-img>-->
+                      <v-card
+                        :to="{
+                          name: 'personnel-id',
+                          params: { id: item.id },
+                        }"
+                        class="mx-auto custom-card-image"
+                        width="200"
+                        :elevation="hover ? 12 : 2"
+                      >
+                        <div class="text-center pt-12">
+                          <v-avatar size="100px">
+                            <v-img
+                              alt="advisor images"
+                              contain
+                              height="100"
+                              :src="
+                                item.imageUrl ? item.imageUrl.url : defaultImage
+                              "
+                            />
+                          </v-avatar>
 
-                      <!--                          <v-card-subtitle class="pb-0"-->
-                      <!--                            >Number 10</v-card-subtitle-->
-                      <!--                          >-->
-                      <!--                        </nuxt-link>-->
+                          <h5 class="mt-12">
+                            <strong>
+                              {{ item.nameTH }}
+                            </strong>
+                          </h5>
 
-                      <!--                        &lt;!&ndash;                        <v-list-item>&ndash;&gt;-->
-                      <!--                        &lt;!&ndash;                          <v-list-item-content>&ndash;&gt;-->
-                      <!--                        &lt;!&ndash;                            <p>ภาษาอังกฤษ (ชื่อเต็ม) :</p>&ndash;&gt;-->
-                      <!--                        &lt;!&ndash;                            <v-card-text>{{ item.nameEN }}</v-card-text>&ndash;&gt;-->
-
-                      <!--                        &lt;!&ndash;                            <p>ตำแหน่ง :</p>&ndash;&gt;-->
-                      <!--                        &lt;!&ndash;                            <v-card-text>{{ item.position }}</v-card-text>&ndash;&gt;-->
-                      <!--                        &lt;!&ndash;                          </v-list-item-content>&ndash;&gt;-->
-                      <!--                        &lt;!&ndash;                        </v-list-item>&ndash;&gt;-->
-
-                      <!--                        &lt;!&ndash;                        <nuxt-link&ndash;&gt;-->
-                      <!--                        &lt;!&ndash;                          :to="{&ndash;&gt;-->
-                      <!--                        &lt;!&ndash;                            name: 'personnel-id',&ndash;&gt;-->
-                      <!--                        &lt;!&ndash;                            params: { id: item.id },&ndash;&gt;-->
-                      <!--                        &lt;!&ndash;                          }"&ndash;&gt;-->
-                      <!--                        &lt;!&ndash;                          tag="a"&ndash;&gt;-->
-                      <!--                        &lt;!&ndash;                        >&ndash;&gt;-->
-                      <!--                        &lt;!&ndash;                          <v-btn text color="orange"&ndash;&gt;-->
-                      <!--                        &lt;!&ndash;                            >ข้อมูลเพิ่มเติม&ndash;&gt;-->
-                      <!--                        &lt;!&ndash;                            <v-icon right small&ndash;&gt;-->
-                      <!--                        &lt;!&ndash;                              >fas fa-angle-double-right</v-icon&ndash;&gt;-->
-                      <!--                        &lt;!&ndash;                            ></v-btn&ndash;&gt;-->
-                      <!--                        &lt;!&ndash;                          >&ndash;&gt;-->
-                      <!--                        &lt;!&ndash;                        </nuxt-link>&ndash;&gt;-->
-                      <!--                      </v-card>-->
-                      <v-card :elevation="hover ? 12 : 2">
-                        <v-avatar>
-                          <v-img
-                            src="https://cdn.vuetifyjs.com/images/john.jpg"
-                            alt="John"
-                          /> </v-avatar
-                      ></v-card>
+                          <h6 class="mt-2 mb-4 pb-10">
+                            ตำแหน่ง : {{ item.position }}
+                          </h6>
+                        </div>
+                      </v-card>
                     </v-hover>
                   </v-col>
                 </v-row>
@@ -209,3 +176,9 @@ export default {
   inject: ['theme'],
 }
 </script>
+
+<style scoped>
+.custom-card-image {
+  background-color: ghostwhite;
+}
+</style>

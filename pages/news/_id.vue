@@ -14,9 +14,9 @@
     />
 
     <v-container class="mx-auto">
-      <v-card class="mx-auto" max-width="800px">
+      <v-card class="mx-auto" width="800px">
         <v-img
-          height="500px"
+          height="400px"
           contain
           :src="post.imageUrl ? post.imageUrl.url : defaultImage"
           :lazy-src="lazyImage"
