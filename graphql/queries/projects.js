@@ -21,30 +21,30 @@ export const QUERY_ALL_PROJECTS = gql`
   }
 `
 
-// get all porject
+// get all project
 export const QUERY_ALL_PROJECTS_CONFIRM = gql`
   query PROJECTS($where: JSON) {
     projects(where: $where) {
       id
       title
       status
-      pro_ad
-      confirm
-      finalDate
-      finalTime
-      user {
-        id
-        username
-        prefix
-        firstName
-        lastName
-        imageUrl {
-          id
-          url
-        }
-      }
-      createdAt
-      updatedAt
+      #      pro_ad
+      #      confirm
+      #      finalDate
+      #      finalTime
+      #      user {
+      #        id
+      #        username
+      #        prefix
+      #        firstName
+      #        lastName
+      #        imageUrl {
+      #          id
+      #          url
+      #        }
+      #      }
+      #      createdAt
+      #      updatedAt
     }
   }
 `
@@ -58,7 +58,7 @@ export const QUERY_SINGLE_PROJECT = gql`
       detail
       pro_ad
       status
-      confirm
+      #      confirm
       finalDate
       finalTime
       user {

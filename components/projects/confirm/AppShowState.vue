@@ -3,7 +3,8 @@
     <v-card flat class="mx-auto">
       <v-responsive>
         <v-card-title>
-          <v-icon left>fas fa-tasks</v-icon>ระบบจัดการบัณฑิตนิพนธ์
+          <v-icon left>fas fa-tasks</v-icon>
+          ระบบจัดการบัณฑิตนิพนธ์
         </v-card-title>
         <v-divider></v-divider>
 
@@ -32,9 +33,13 @@
                             ถ้าหากอาจารย์ยังไม่ตอบรับ
                           </p>
                           <div class="my-2">
-                            <v-btn color="warning" dark @click="cancelForm()"
-                              >ยกเลิก</v-btn
+                            <v-btn
+                              color="warning"
+                              dark
+                              @click="cancelFormRequestFromStudent()"
                             >
+                              ยกเลิก
+                            </v-btn>
                           </div>
                         </v-col>
                       </v-col>
@@ -166,8 +171,8 @@
                                       >
                                         ดาวน์โหลดเอกสารบทที่ 1
                                         <v-icon right
-                                          >fas fa-cloud-download-alt</v-icon
-                                        >
+                                          >fas fa-cloud-download-alt
+                                        </v-icon>
                                       </v-btn>
                                       <v-btn
                                         v-else
@@ -178,8 +183,8 @@
                                       >
                                         ดาวน์โหลดเอกสารบทที่ 1
                                         <v-icon right
-                                          >fas fa-cloud-download-alt</v-icon
-                                        >
+                                          >fas fa-cloud-download-alt
+                                        </v-icon>
                                       </v-btn>
                                     </v-col>
 
@@ -194,8 +199,8 @@
                                       >
                                         ดาวน์โหลดเอกสารตัวเต็ม .PDF
                                         <v-icon right
-                                          >fas fa-cloud-download-alt</v-icon
-                                        >
+                                          >fas fa-cloud-download-alt
+                                        </v-icon>
                                       </v-btn>
 
                                       <v-btn
@@ -207,8 +212,8 @@
                                       >
                                         ดาวน์โหลดเอกสารตัวเต็ม .PDF
                                         <v-icon right
-                                          >fas fa-cloud-download-alt</v-icon
-                                        >
+                                          >fas fa-cloud-download-alt
+                                        </v-icon>
                                       </v-btn>
                                     </v-col>
                                   </v-row>
@@ -394,8 +399,8 @@
                                                     color="blue darken-1"
                                                     text
                                                     @click="dialog = false"
-                                                    >Close</v-btn
-                                                  >
+                                                    >Close
+                                                  </v-btn>
                                                   <v-btn
                                                     color="blue darken-1"
                                                     text
@@ -405,8 +410,8 @@
                                                         item.detail
                                                       )
                                                     "
-                                                    >Save</v-btn
-                                                  >
+                                                    >Save
+                                                  </v-btn>
                                                 </v-card-actions>
                                               </v-card>
                                             </v-dialog>
@@ -450,8 +455,8 @@
                                         color="blue"
                                         text
                                         @click="snackbar = false"
-                                        >Close</v-btn
-                                      >
+                                        >Close
+                                      </v-btn>
                                     </v-snackbar>
                                   </v-col>
                                 </v-row>
@@ -462,7 +467,8 @@
                               <v-spacer></v-spacer>
 
                               <v-btn color="black" dark @click="addComment">
-                                <v-icon left dark>fas fa-comment</v-icon>Comment
+                                <v-icon left dark>fas fa-comment</v-icon>
+                                Comment
                               </v-btn>
                             </v-card-actions>
 
@@ -488,8 +494,9 @@
                             color="blue darken-1"
                           >
                             <v-avatar left>
-                              <v-icon>fas fa-user-circle</v-icon> </v-avatar
-                            >ยังไม่โหวต
+                              <v-icon>fas fa-user-circle</v-icon>
+                            </v-avatar>
+                            ยังไม่โหวต
                           </v-chip>
                         </div>
 
@@ -504,7 +511,8 @@
                           align="start"
                         >
                           <v-chip color="primary" large draggable>
-                            <v-icon left>fas fa-poll</v-icon>รอผลสอบ
+                            <v-icon left>fas fa-poll</v-icon>
+                            รอผลสอบ
                           </v-chip>
                         </v-row>
 
@@ -517,18 +525,15 @@
                             text-color="white"
                           >
                             <v-avatar left>
-                              <v-icon>far fa-check-circle</v-icon> </v-avatar
-                            >ผ่านการสอบ
+                              <v-icon>far fa-check-circle</v-icon>
+                            </v-avatar>
+                            ผ่านการสอบ
                           </v-chip>
 
                           <v-chip v-else color="orange" large draggable>
-                            <v-icon left>far fa-calendar-alt</v-icon
-                            >รอขึ้นสอบตามวันเวลาที่กำหนด
+                            <v-icon left>far fa-calendar-alt</v-icon>
+                            รอขึ้นสอบตามวันเวลาที่กำหนด
                           </v-chip>
-
-                          <!-- <v-chip large draggable >
-                            <v-icon left>far fa-calendar-alt</v-icon>รอผลการสอบ
-                          </v-chip>-->
                         </v-row>
 
                         <v-row v-if="projectData.status === 'SUCCESS'">
@@ -599,8 +604,8 @@
                                   color="success"
                                   @click="onSubmitFile"
                                 >
-                                  <v-icon left>fas fa-file-word</v-icon
-                                  >อัปโหลดไฟล์ / อัปเดตไฟล์
+                                  <v-icon left>fas fa-file-word</v-icon>
+                                  อัปโหลดไฟล์ / อัปเดตไฟล์
                                 </v-btn>
 
                                 <v-btn
@@ -610,15 +615,15 @@
                                   @click="clearState"
                                 >
                                   <v-icon v-if="isEditing"
-                                    >far fa-window-close</v-icon
-                                  >
+                                    >far fa-window-close
+                                  </v-icon>
                                   <v-icon v-else>fas fa-file-pdf</v-icon>
                                 </v-btn>
                               </div>
                             </v-form>
                             <v-snackbar v-model="hasSaved" :timeout="timeout"
-                              >อัปเดตไฟล์สำเร็จ</v-snackbar
-                            >
+                              >อัปเดตไฟล์สำเร็จ
+                            </v-snackbar>
                           </v-col>
                         </v-row>
 
@@ -652,7 +657,7 @@ export default {
     snackbar: false,
     timeout: 1500,
     scores: {},
-    project: {},
+    project: [],
     commentData: {
       detail: '',
     },
@@ -711,7 +716,7 @@ export default {
   },
 
   mounted() {
-    this.findProAd()
+    // this.findProAd()
   },
 
   methods: {
@@ -740,7 +745,6 @@ export default {
         console.log(error)
       }
     },
-
     async editComment(id, detail) {
       try {
         if (!detail) {
@@ -768,7 +772,6 @@ export default {
         console.log(error)
       }
     },
-
     delComment(id) {
       this.$Swal
         .fire({
@@ -799,14 +802,12 @@ export default {
           }
         })
     },
-
     clearState() {
       this.isEditing = !this.isEditing
       if (this.file) {
         this.file = []
       }
     },
-
     bytesToSize(bytes) {
       const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB']
       if (bytes === 0) return 'n/a'
@@ -814,7 +815,6 @@ export default {
       if (i === 0) return bytes + ' ' + sizes[i]
       return (bytes / Math.pow(1024, i)).toFixed(1) + ' ' + sizes[i]
     },
-
     onSubmitFile() {
       try {
         if (this.project.fileFull) {
@@ -871,18 +871,14 @@ export default {
         console.log(error)
       }
     },
-
     findProAd() {
-      try {
+      if (this.projectData) {
         this.$axios.$get('/users/' + this.projectData.pro_ad).then((result) => {
           this.pro_adUser = result
         })
-      } catch (error) {
-        console.log(error)
       }
     },
-
-    cancelForm() {
+    cancelFormRequestFromStudent() {
       Swal.fire({
         title: 'คุณต้องการยกเลิกคำขอหรือไม่?',
         text: 'คุณสามารถส่งฟอร์มได้อีกครั้ง ในภายหลัง!',
@@ -893,13 +889,10 @@ export default {
         confirmButtonText: 'Yes !',
       }).then((result) => {
         if (result.value) {
+          // before delete image
           if (this.projectData.fileUrl) {
             this.$axios
-              .$delete('/upload/files/' + this.projectData.fileUrl.id, {
-                headers: {
-                  Authorization: 'Bearer ' + this.$apolloHelpers.getToken(),
-                },
-              })
+              .$delete('/upload/files/' + this.projectData.fileUrl.id)
               .then((response) => {
                 console.log('file delete now: ', response.id)
               })
@@ -908,18 +901,11 @@ export default {
               })
           }
 
+          // after delete project form
           this.$axios
-            .$delete('/projects/' + this.projectData.id, {
-              headers: {
-                Authorization: 'Bearer ' + this.$apolloHelpers.getToken(),
-              },
-            })
+            .$delete('/projects/' + this.projectData.id)
             .then(async (response) => {
-              await this.$Swal.fire(
-                'Success!',
-                'ยกเลิกการส่งเรียบร้อย',
-                'success'
-              )
+              await Swal.fire('Success!', 'ยกเลิกการส่งเรียบร้อย', 'success')
               this.$router.go('.')
             })
             .catch((error) => {
@@ -931,7 +917,6 @@ export default {
   },
 
   apollo: {
-    // for comments project
     project: {
       query: QUERY_SINGLE_PROJECT_FOR_COMMENTS,
       prefetch: true,

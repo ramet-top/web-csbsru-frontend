@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="d4eee709-952b-4f8d-bfaf-34cd40e08453" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/components/projects/AppDateTimeConfirmProject.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/course/AppCourse.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/course/AppCourse.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/personnel/AppPersonnel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/personnel/AppPersonnel.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/news/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/news/_id.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/personnel/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/personnel/_id.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/store/advisors/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/advisors/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/form/AppSentReqProject.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/form/AppSentReqProject.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/projects/AppDetailWithAuthor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/projects/AppProjectDetailOfUsers.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/projects/confirm/AppShowState.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/projects/confirm/AppShowState.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/projects/managesProfessor/AppConfirmFinal.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/projects/managesProfessor/AppConfirmFinal.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql/queries/projects.js" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/queries/projects.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/auth/project/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/auth/project/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/auth/project/professor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/auth/project/professor.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/project/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/project/_id.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +43,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1gdGBqQ9Q41LUy1cuodOBrktq6T" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -71,34 +94,60 @@
       <workItem from="1598863232776" duration="8000" />
       <workItem from="1599034518705" duration="3336000" />
       <workItem from="1599546908407" duration="309000" />
-      <workItem from="1599547273968" duration="8954000" />
+      <workItem from="1599547273968" duration="26965000" />
+      <workItem from="1600231717954" duration="335000" />
+      <workItem from="1600240724017" duration="53000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="576" y="352" key="#ESLint" timestamp="1600222987370">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="576" y="352" key="#ESLint/0.23.1440.877@0.23.1440.877" timestamp="1600222987370" />
     <state x="183" y="122" width="1073" height="702" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598437318589">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="183" y="122" width="1073" height="702" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.877@0.23.1440.877" timestamp="1598437318589" />
-    <state width="1419" height="162" key="GridCell.Tab.0.bottom" timestamp="1599036011292">
+    <state x="458" y="215" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600057840205">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1419" height="162" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1599036011292" />
-    <state width="1419" height="162" key="GridCell.Tab.0.center" timestamp="1599036011291">
+    <state x="458" y="215" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.877@0.23.1440.877" timestamp="1600057840205" />
+    <state x="0" y="23" key="FileDocumentManager.FileCacheConflict" timestamp="1600057818342">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1419" height="162" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1599036011291" />
-    <state width="1419" height="162" key="GridCell.Tab.0.left" timestamp="1599036011291">
+    <state x="0" y="23" key="FileDocumentManager.FileCacheConflict/0.23.1440.877@0.23.1440.877" timestamp="1600057818342" />
+    <state width="1419" height="162" key="GridCell.Tab.0.bottom" timestamp="1600139369866">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1419" height="162" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1599036011291" />
-    <state width="1419" height="162" key="GridCell.Tab.0.right" timestamp="1599036011292">
+    <state width="1419" height="162" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1600139369866" />
+    <state width="1419" height="162" key="GridCell.Tab.0.center" timestamp="1600139369864">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1419" height="162" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1599036011292" />
+    <state width="1419" height="162" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1600139369864" />
+    <state width="1419" height="162" key="GridCell.Tab.0.left" timestamp="1600139369863">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1419" height="162" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1600139369863" />
+    <state width="1419" height="162" key="GridCell.Tab.0.right" timestamp="1600139369865">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1419" height="162" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1600139369865" />
     <state width="1417" height="285" key="GridCell.Tab.1.bottom" timestamp="1598597854868">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -163,6 +212,16 @@
           <url>file://$PROJECT_DIR$/components/navigations/AppHeader.vue</url>
           <line>289</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/components/projects/confirm/AppShowState.vue</url>
+          <line>814</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/components/projects/confirm/AppShowState.vue</url>
+          <line>799</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

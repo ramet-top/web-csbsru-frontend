@@ -251,7 +251,7 @@ export default {
               'You clicked the button!',
               'success'
             )
-            this.$router.go('.')
+            await this.$router.go()
             // this.$auth.fetchUser()
           })
           .catch((error) => {

@@ -6,8 +6,8 @@
         <v-responsive>
           <template v-if="isPermission">
             <div v-if="projectData">
+              <!-- <h2>showState</h2> -->
               <AppShowState :project-data="projectData" />
-              <!-- <h2>showstate</h2> -->
             </div>
             <div v-else>
               <!-- AppSentReqProject -->
@@ -19,7 +19,8 @@
             <v-card flat class="mx-auto">
               <v-responsive>
                 <v-card-title>
-                  <v-icon left>fas fa-tasks</v-icon>ระบบจัดการบัณฑิตนิพนธ์
+                  <v-icon left>fas fa-tasks</v-icon>
+                  ระบบจัดการบัณฑิตนิพนธ์
                 </v-card-title>
                 <v-divider></v-divider>
                 <v-card-text class="red--text">
@@ -55,7 +56,7 @@ export default {
   data() {
     return {
       yearNow: parseInt(this.$moment().format('Y')),
-      yearCalulat: null,
+      yearCal: null,
       projectData: null,
       projectUser: [],
     }
@@ -84,7 +85,7 @@ export default {
     userPermissionSentForm() {
       // eslint-disable-next-line no-prototype-builtins
       if (this.user.hasOwnProperty('yearIn')) {
-        this.yearCalulat = parseInt(this.user.yearIn.substr(0, 4)) + 3
+        this.yearCal = parseInt(this.user.yearIn.substr(0, 4)) + 3
 
         if (this.projectUser) {
           this.projectData = this.projectUser[0]
@@ -92,7 +93,7 @@ export default {
           this.projectData = []
         }
 
-        if (this.yearNow >= this.yearCalulat) {
+        if (this.yearNow >= this.yearCal) {
           this.isPermission = true
         }
       }

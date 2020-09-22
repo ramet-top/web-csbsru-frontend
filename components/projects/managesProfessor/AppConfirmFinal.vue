@@ -25,7 +25,7 @@
                 :items="projects"
                 :search="search"
               >
-                <div v-if="loading" class="text-center mb-5 conatiner">
+                <div v-if="loading" class="text-center mb-5 container">
                   <v-progress-circular
                     :size="50"
                     color="primary"
@@ -152,7 +152,7 @@ export default {
 
   computed: {
     user() {
-      return this.$store.getters['auth/user']
+      return this.$store.getters.loggedInUser
     },
   },
 
@@ -172,16 +172,17 @@ export default {
       variables() {
         return {
           where: {
-            confirm: true,
+            // confirm: true,
             status: 'OPERATION',
           },
         }
       },
       result({ data, loading, networkStatus }) {
         this.loading = loading
+        // console.log(data)
       },
-      error(data) {
-        this.error = data
+      error(e) {
+        console.log(e)
       },
     },
   },

@@ -1,7 +1,7 @@
 <template>
   <div>
-    <Logo />
-    <v-toolbar dark>
+    <!--    <Logo />-->
+    <v-toolbar>
       <v-icon left>fas fa-tasks</v-icon>ระบบจัดการบัณฑิตนิพนธ์(สำหรับอาจารย์)
     </v-toolbar>
     <v-divider></v-divider>
@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import Logo from '~/components/AppLogoCsbsru'
+// import Logo from '~/components/AppLogoCsbsru'
 import AppConfirmProfes from '~/components/projects/managesProfessor/AppConfirmProfes'
 import AppConfirmFinal from '~/components/projects/managesProfessor/AppConfirmFinal'
 
@@ -40,7 +40,7 @@ export default {
   components: {
     AppConfirmProfes,
     AppConfirmFinal,
-    Logo,
+    // Logo,
   },
   head() {
     return {

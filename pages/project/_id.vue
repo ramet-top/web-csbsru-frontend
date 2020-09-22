@@ -10,183 +10,25 @@
 
       <v-card v-else class="mx-auto">
         <v-flex>
-          <template>
-            <AppProjectTitleDetail :project-data="projectData" />
-          </template>
+          <AppProjectTitleDetail :project-data="projectData" />
 
           <template>
             <v-card-text>
-              <span class="text--primary">
-                <strong>รายละเอียด</strong>
-              </span>
-              <br />
-              <v-container>
-                <v-row>
-                  <v-col col="12" md="4" align="center" justify="center">
-                    <v-avatar size="150">
-                      <img
-                        :src="
-                          showUserDetail.imageUrl
-                            ? showUserDetail.imageUrl.url
-                            : defaultImage
-                        "
-                      />
-                    </v-avatar>
-                  </v-col>
-
-                  <v-col col="12" md="8">
-                    <v-row no-gutters>
-                      <v-col col="12" md="3">
-                        <strong>ชื่อเจ้าของหัวข้อ :</strong>
-                      </v-col>
-                      <v-col col="12" md="6">
-                        <p>
-                          {{ showUserDetail.prefix }}
-                          {{ showUserDetail.firstName }}
-                          {{ showUserDetail.lastName }}
-                        </p>
-                      </v-col>
-                    </v-row>
-
-                    <v-row no-gutters>
-                      <v-col col="12" md="3">
-                        <strong>ที่ปรึกษาโครงงาน :</strong>
-                      </v-col>
-                      <v-col col="12" md="6">
-                        <p>
-                          {{ pro_adUser.prefix }}{{ pro_adUser.firstName }}
-                          {{ pro_adUser.lastName }}
-                        </p>
-                      </v-col>
-                    </v-row>
-
-                    <v-row no-gutters>
-                      <v-col col="12" md="3">
-                        <strong>วันที่(อัปเดตล่าสุด) :</strong>
-                      </v-col>
-                      <v-col col="12" md="6">
-                        <p>
-                          {{ $moment(project.updatedAt).format('llll') }} น.
-                        </p>
-                      </v-col>
-                    </v-row>
-
-                    <v-row no-gutters>
-                      <v-col col="12" md="3">
-                        <strong>วันที่(สร้าง) :</strong>
-                      </v-col>
-                      <v-col col="12" md="6"
-                        >{{
-                          $moment(project.updatedAt).format('llll')
-                        }}
-                        น.</v-col
-                      >
-                    </v-row>
-
-                    <v-card-actions>
-                      <v-row>
-                        <v-col col="12" md="6">
-                          <v-btn
-                            v-if="project.fileUrl"
-                            rounded
-                            block
-                            color="green"
-                            target="blank"
-                            :href="project.fileUrl.url"
-                          >
-                            ดาวน์โหลดเอกสารบทที่ 1
-                            <v-icon right>fas fa-cloud-download-alt</v-icon>
-                          </v-btn>
-                          <v-btn v-else rounded block color="green" disabled>
-                            ดาวน์โหลดเอกสารบทที่ 1
-                            <v-icon right>fas fa-cloud-download-alt</v-icon>
-                          </v-btn>
-                        </v-col>
-
-                        <v-col col="12" md="6">
-                          <v-btn
-                            v-if="project.fileFull"
-                            rounded
-                            block
-                            color="green"
-                            target="blank"
-                            :href="project.fileFull.url"
-                          >
-                            ดาวน์โหลดเอกสารตัวเต็ม .PDF
-                            <v-icon right>fas fa-cloud-download-alt</v-icon>
-                          </v-btn>
-
-                          <v-btn v-else rounded block color="green" disabled>
-                            ดาวน์โหลดเอกสารตัวเต็ม .PDF
-                            <v-icon right>fas fa-cloud-download-alt</v-icon>
-                          </v-btn>
-                        </v-col>
-                      </v-row>
-                    </v-card-actions>
-                  </v-col>
-                </v-row>
-              </v-container>
+              <div class="container">
+                <AppProjectDetailOfUsers :project="project" />
+              </div>
               <v-divider></v-divider>
 
+              <!--  init project after-->
               <template v-if="project.status === 'DEFAULT'">
-                <span class="text--primary">
-                  <strong>คำขอขึ้นสอบหัวข้อ :</strong>
-                </span>
+                <!--<h6>status DEFAULT</h6>-->
                 <v-container>
+                  <AppDateTimeConfirmProject
+                    :title="`คำขอขึ้นสอบหัวข้อ`"
+                    :project="project"
+                  />
+
                   <v-row>
-                    <v-date-picker
-                      v-model="project.finalDate"
-                      full-width
-                      :landscape="$vuetify.breakpoint.smAndUp"
-                      class="mt-4"
-                      type="date"
-                      locale="th"
-                    ></v-date-picker>
-                  </v-row>
-                  <v-row>
-                    <v-col cols="12" sm="6">
-                      <p>
-                        <strong>วันที่ปัจจุบัน :</strong>
-                        {{ $moment(dateNow).format('dddd LL') }}
-                      </p>
-                      <p>
-                        <strong>วันที่ ที่เลือกขึ้นสอบหัวข้อ :</strong>
-                        {{ $moment(project.finalDate).format('dddd LL') }}
-                      </p>
-                    </v-col>
-                    <v-col cols="12" sm="6">
-                      <v-radio-group v-model="project.finalTime">
-                        <template v-slot:label>
-                          <div>
-                            <strong
-                              >กรุณาเลือกเวลาสอบหัวข้อโครงงาน CSBSRU
-                              Project.</strong
-                            >
-                          </div>
-                        </template>
-                        <v-radio value="MORNING">
-                          <template v-slot:label>
-                            <div>
-                              <strong class="dark--text"
-                                >ช่วงเช้า 10.00 น</strong
-                              >
-                            </div>
-                          </template>
-                        </v-radio>
-                        <v-radio value="AFTERNOON">
-                          <template v-slot:label>
-                            <div>
-                              <strong class="dark--text"
-                                >ช่วงบ่าย 13.30 น</strong
-                              >
-                            </div>
-                          </template>
-                        </v-radio>
-                      </v-radio-group>
-                    </v-col>
-                  </v-row>
-                  <v-row>
-                    <!-- <v-spacer></v-spacer> -->
                     <v-col cols="12" sm="6">
                       <v-btn
                         block
@@ -194,10 +36,10 @@
                         rounded
                         outlined
                         color="red"
-                        @click="onUpdateNotConfirmProject"
+                        @click="onUpdateNotConfirmProject()"
                       >
-                        <v-icon left>fas fa-times</v-icon
-                        >ไม่อนุมัติการเป็นที่ปรึกษาโครงงานนนี้
+                        <v-icon left>fas fa-times</v-icon>
+                        ไม่อนุมัติการเป็นที่ปรึกษาโครงงานนนี้
                       </v-btn>
                     </v-col>
 
@@ -209,15 +51,14 @@
                       >
                         <template v-slot:activator="{ on }">
                           <v-btn rounded block color="primary" dark v-on="on">
-                            <v-icon left>fas fa-calendar-check</v-icon>แก้ไข /
-                            อนุมัติการเป็นที่ปรึกษาโครงงานนี้
+                            <v-icon left>fas fa-calendar-check</v-icon>
+                            แก้ไข / อนุมัติการเป็นที่ปรึกษาโครงงานนี้
                           </v-btn>
                         </template>
                         <v-card>
                           <v-card-title>
                             <span class="headline">
-                              แก้ไขข้อมูลโครงงาน :
-                              {{ project.user.prefix }}
+                              แก้ไขข้อมูลโครงงาน : }
                               {{ project.user.firstName }}
                               {{ project.user.lastName }} (รหัส นศ.
                               {{ project.user.username }})
@@ -282,7 +123,9 @@
                                         <p>
                                           <strong>วันที่ปัจจุบัน :</strong>
                                           {{
-                                            $moment(dateNow).format('dddd LL')
+                                            $moment(new Date()).format(
+                                              'dddd LL'
+                                            )
                                           }}
                                         </p>
                                         <p>
@@ -340,88 +183,42 @@
                               text
                               @click="dialogProfessorUpdate = false"
                             >
-                              <v-icon left>fas fa-times</v-icon>ปิด
+                              <v-icon left>fas fa-times</v-icon>
+                              ปิด
                             </v-btn>
                             <v-btn
                               color="blue darken-1"
                               text
                               @click="onUpdateAndConfirmData"
                             >
-                              <v-icon left>far fa-save</v-icon
-                              >บันทึกข้อมูลและอนุมัติ
+                              <v-icon left>far fa-save</v-icon>
+                              บันทึกข้อมูลและอนุมัติ
                             </v-btn>
                           </v-card-actions>
                         </v-card>
                       </v-dialog>
                     </v-col>
                   </v-row>
-                  <!--  -->
                 </v-container>
               </template>
 
               <template v-else-if="project.status === 'OPERATION'">
-                <span class="text--primary">กำหนดวันขึ้นสอบหัวข้อ :</span>
                 <v-container>
-                  <v-row>
-                    <v-date-picker
-                      v-model="project.finalDate"
-                      full-width
-                      :landscape="$vuetify.breakpoint.smAndUp"
-                      class="mt-4"
-                      type="date"
-                      locale="th"
-                      disabled
-                    ></v-date-picker>
-                  </v-row>
-
-                  <v-row>
-                    <v-col cols="12" sm="6">
-                      <h3>
-                        {{ $moment(project.finalDate).format('dddd LL') }}
-                      </h3>
-                    </v-col>
-
-                    <v-col cols="12" sm="6">
-                      <v-radio-group v-model="project.finalTime" disabled>
-                        <template v-slot:label>
-                          <div>
-                            <strong
-                              >เวลาสอบหัวข้อโครงงาน CSBSRU Project.</strong
-                            >
-                          </div>
-                        </template>
-                        <v-radio value="MORNING">
-                          <template v-slot:label>
-                            <div>
-                              <strong class="dark--text"
-                                >ช่วงเช้า 10.00 น</strong
-                              >
-                            </div>
-                          </template>
-                        </v-radio>
-                        <v-radio value="AFTERNOON">
-                          <template v-slot:label>
-                            <div>
-                              <strong class="dark--text"
-                                >ช่วงบ่าย 13.30 น</strong
-                              >
-                            </div>
-                          </template>
-                        </v-radio>
-                      </v-radio-group>
-                    </v-col>
-                  </v-row>
+                  <AppDateTimeConfirmProject
+                    title="`กำหนดวันขึ้นสอบหัวข้อ`"
+                    :project="project"
+                  />
                   <v-divider></v-divider>
 
                   <!-- for comment permission -->
                   <!-- {{ user.id === project.pro_ad }} -->
-                  <div v-if="user.id == project.pro_ad" class="red--text">
+                  <div v-if="user.id === project.pro_ad" class="red--text">
                     *อาจารย์ที่ปรึกษาโปรเจคไม่สามารถ comment หรือ
                     อนุมัติการสอบของ นศ.ได้
                   </div>
 
                   <div v-else>
-                    <h3>Latast Comments</h3>
+                    <h3>Latest Comments</h3>
                     <v-row>
                       <v-responsive class="overflow-y-auto" max-height="400">
                         <v-responsive height="200vh" class="pa-2">
@@ -450,7 +247,7 @@
                                     {{ item.user.lastName }}
                                   </v-list-item-title>
                                   <v-list-item-subtitle>
-                                    {{ $moment(item.updaedAt).format('LLL') }}
+                                    {{ $moment(item.updatedAt).format('LLL') }}
                                     น.
                                   </v-list-item-subtitle>
                                   <v-list-item-subtitle>
@@ -460,7 +257,7 @@
                                 </v-list-item-content>
 
                                 <v-list-item-action
-                                  v-if="item.user.id == user.id"
+                                  v-if="item.user.id === user.id"
                                 >
                                   <!-- {{item.user.id == user.id}} -->
                                   <v-row>
@@ -507,16 +304,16 @@
                                             color="blue darken-1"
                                             text
                                             @click="dialog = false"
-                                            >Close</v-btn
-                                          >
+                                            >Close
+                                          </v-btn>
                                           <v-btn
                                             color="blue darken-1"
                                             text
                                             @click="
                                               editComment(item.id, item.detail)
                                             "
-                                            >Save</v-btn
-                                          >
+                                            >Save
+                                          </v-btn>
                                         </v-card-actions>
                                       </v-card>
                                     </v-dialog>
@@ -553,10 +350,10 @@
                           </v-col>
                           <v-col>
                             <v-snackbar v-model="snackbar" :timeout="timeout">
-                              add compleate
+                              add complete
                               <v-btn color="blue" text @click="snackbar = false"
-                                >Close</v-btn
-                              >
+                                >Close
+                              </v-btn>
                             </v-snackbar>
                           </v-col>
                         </v-row>
@@ -566,8 +363,9 @@
                     <v-card-actions>
                       <v-spacer></v-spacer>
 
-                      <v-btn color="black" dark @click="addComment">
-                        <v-icon left dark>fas fa-comment</v-icon>Comment
+                      <v-btn color="black" dark @click="addComment()">
+                        <v-icon left dark>fas fa-comment</v-icon>
+                        Comment
                       </v-btn>
                     </v-card-actions>
 
@@ -596,8 +394,9 @@
                           color="blue darken-1"
                         >
                           <v-avatar left>
-                            <v-icon>fas fa-user-circle</v-icon> </v-avatar
-                          >ยังไม่โหวต
+                            <v-icon>fas fa-user-circle</v-icon>
+                          </v-avatar>
+                          ยังไม่โหวต
                         </v-chip>
                       </v-card-actions>
                     </clientOnly>
@@ -626,8 +425,8 @@
                                   block
                                   @click="ConfirmBeforSuccess"
                                 >
-                                  <v-icon left>fas fa-check</v-icon
-                                  >ผ่านการสอบหัวข้อ
+                                  <v-icon left>fas fa-check</v-icon>
+                                  ผ่านการสอบหัวข้อ
                                 </v-btn>
                               </v-col>
                             </v-row>
@@ -645,8 +444,8 @@
                                   block
                                   @click="ConfirmBeforNotSuccess"
                                 >
-                                  <v-icon left>fas fa-times</v-icon
-                                  >ไม่ผ่านการสอบหัวข้อ
+                                  <v-icon left>fas fa-times</v-icon>
+                                  ไม่ผ่านการสอบหัวข้อ
                                   <!-- {{ scoreState.noPass }} -->
                                 </v-btn>
                               </v-col>
@@ -656,7 +455,7 @@
                       </v-row>
 
                       <v-row v-else>
-                        <v-col v-if="scores[0].status == false">
+                        <v-col v-if="scores[0].status === false">
                           <div class="text-center">
                             <v-row>
                               <v-col col="12">
@@ -667,8 +466,8 @@
                                   block
                                   @click="ConfirmBeforSuccess"
                                 >
-                                  <v-icon left>fas fa-check</v-icon
-                                  >ผ่านการสอบหัวข้อ(กรณี นศ.แก้ไขถูกต้องแล้ว)
+                                  <v-icon left>fas fa-check</v-icon>
+                                  ผ่านการสอบหัวข้อ(กรณี นศ.แก้ไขถูกต้องแล้ว)
                                 </v-btn>
                               </v-col>
                             </v-row>
@@ -699,7 +498,7 @@
                     <v-col cols="12" sm="6">
                       <p>
                         <strong>วันที่ปัจจุบัน :</strong>
-                        {{ $moment(dateNow).format('dddd LL') }}
+                        {{ $moment(new Date()).format('dddd LL') }}
                       </p>
                       <p>
                         <strong>วันที่ ที่เลือกขึ้นสอบหัวข้อ :</strong>
@@ -832,16 +631,16 @@
                                           color="blue darken-1"
                                           text
                                           @click="dialog = false"
-                                          >Close</v-btn
-                                        >
+                                          >Close
+                                        </v-btn>
                                         <v-btn
                                           color="blue darken-1"
                                           text
                                           @click="
                                             editComment(item.id, item.detail)
                                           "
-                                          >Save</v-btn
-                                        >
+                                          >Save
+                                        </v-btn>
                                       </v-card-actions>
                                     </v-card>
                                   </v-dialog>
@@ -880,8 +679,8 @@
                           <v-snackbar v-model="snackbar" :timeout="timeout">
                             add compleate
                             <v-btn color="blue" text @click="snackbar = false"
-                              >Close</v-btn
-                            >
+                              >Close
+                            </v-btn>
                           </v-snackbar>
                         </v-col>
                       </v-row>
@@ -892,7 +691,8 @@
                     <v-spacer></v-spacer>
 
                     <v-btn color="black" dark @click="addComment">
-                      <v-icon left dark>fas fa-comment</v-icon>Comment
+                      <v-icon left dark>fas fa-comment</v-icon>
+                      Comment
                     </v-btn>
                   </v-card-actions>
 
@@ -921,8 +721,9 @@
                         color="blue darken-1"
                       >
                         <v-avatar left>
-                          <v-icon>fas fa-user-circle</v-icon> </v-avatar
-                        >ยังไม่โหวต
+                          <v-icon>fas fa-user-circle</v-icon>
+                        </v-avatar>
+                        ยังไม่โหวต
                       </v-chip>
                     </v-card-actions>
                   </clientOnly>
@@ -949,8 +750,8 @@
                                 block
                                 @click="ConfirmBeforSuccess"
                               >
-                                <v-icon left>fas fa-check</v-icon
-                                >ผ่านการสอบหัวข้อ
+                                <v-icon left>fas fa-check</v-icon>
+                                ผ่านการสอบหัวข้อ
                               </v-btn>
                             </v-col>
                           </v-row>
@@ -968,8 +769,8 @@
                                 block
                                 @click="ConfirmBeforNotSuccess"
                               >
-                                <v-icon left>fas fa-times</v-icon
-                                >ไม่ผ่านการสอบหัวข้อ
+                                <v-icon left>fas fa-times</v-icon>
+                                ไม่ผ่านการสอบหัวข้อ
                                 <!-- {{ scoreState.noPass }} -->
                               </v-btn>
                             </v-col>
@@ -990,8 +791,8 @@
                                 block
                                 @click="ConfirmBeforSuccess"
                               >
-                                <v-icon left>fas fa-check</v-icon
-                                >ผ่านการสอบหัวข้อ
+                                <v-icon left>fas fa-check</v-icon>
+                                ผ่านการสอบหัวข้อ
                               </v-btn>
                             </v-col>
                           </v-row>
@@ -1010,13 +811,13 @@
                     align="start"
                   >
                     <v-chip large draggable color="green">
-                      <v-icon left>fas fa-check-circle</v-icon>สอบหัวข้อผ่านแล้ว
+                      <v-icon left>fas fa-check-circle</v-icon>
+                      สอบหัวข้อผ่านแล้ว
                     </v-chip>
                   </v-row>
                 </div>
               </template>
 
-              <template v-else>status None (not work)</template>
               <br />
               <v-divider></v-divider>
             </v-card-text>
@@ -1024,8 +825,9 @@
 
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="green darken-1" text @click="goback">
-              <v-icon left dark>fas fa-arrow-left</v-icon>Back
+            <v-btn color="green darken-1" text @click="goback()">
+              <v-icon left dark>fas fa-arrow-left</v-icon>
+              Back
             </v-btn>
           </v-card-actions>
         </v-flex>
@@ -1043,6 +845,8 @@ import Logo from '~/components/AppLogoCsbsru'
 import AppTitleParallax from '~/components/parallax/AppTitleParallax'
 import AppProjectTitleDetail from '~/components/projects/AppProjectTitleDetail'
 import AppLoadingProgressCircular from '~/components/loading/AppLoadingProgressCircular'
+import AppProjectDetailOfUsers from '~/components/projects/AppProjectDetailOfUsers'
+import AppDateTimeConfirmProject from '~/components/projects/AppDateTimeConfirmProject'
 
 export default {
   middleware: ['isNotAuth'],
@@ -1052,6 +856,8 @@ export default {
     AppTitleParallax,
     AppProjectTitleDetail,
     AppLoadingProgressCircular,
+    AppProjectDetailOfUsers,
+    AppDateTimeConfirmProject,
   },
 
   data() {
@@ -1106,9 +912,10 @@ export default {
         this.loading = loading
         this.projectData = data.project
         this.showUserDetail = data.project.user
+        // this.findProAd()
       },
-      error(data) {
-        this.error = data
+      error(e) {
+        console.log(e)
       },
     },
 
@@ -1182,13 +989,10 @@ export default {
         this.$store.dispatch('projects/setSnackbar', val)
       },
     },
-    dateNow() {
-      return new Date()
-    },
   },
 
   updated() {
-    this.findProAd()
+    // this.findProAd()
   },
 
   mounted() {
@@ -1499,7 +1303,7 @@ export default {
                 },
               }).then((result) => {
                 if (result.dismiss === Swal.DismissReason.timer) {
-                      console.log('I was closed by the timer') // eslint-disable-line
+                  console.log('I was closed by the timer') // eslint-disable-line
                 }
               })
             })
@@ -1525,9 +1329,9 @@ export default {
         this.$refs.form.validate()
 
         const choosDate = this.$moment(this.projectData.finalDate).format('L')
-        const dateNow = this.$moment(this.dateNow).format('L')
+        const newDateNow = this.$moment(new Date()).format('L')
 
-        if (choosDate <= dateNow) {
+        if (choosDate <= newDateNow) {
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
