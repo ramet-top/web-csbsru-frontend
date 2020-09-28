@@ -154,7 +154,6 @@ export default {
         return {
           where: {
             pro_ad: this.user.id,
-            confirm: true,
             status: 'SUCCESS',
           },
         }

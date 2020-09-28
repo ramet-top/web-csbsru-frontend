@@ -10,22 +10,32 @@
 
       <v-card v-else class="mx-auto">
         <v-flex>
-          <AppProjectTitleDetail :project-data="projectData" />
+          <!--          ข้อมูลหัวข้อ และรายละเอียดโครงงาน-->
+          <AppProjectTitleDetail
+            :project-data="projectData"
+            :typeof-disabled="typeofDisabled"
+          />
 
           <template>
             <v-card-text>
+              <!--              แสดงข้อมูลของเจ้าของหัวข้อโครงงาน-->
               <div class="container">
-                <AppProjectDetailOfUsers :project="project" />
+                <AppProjectDetailOfUsers
+                  :project="project"
+                  :professor-of-user="pro_adUser"
+                />
               </div>
               <v-divider></v-divider>
 
-              <!--  init project after-->
+              <!--Step 1  init project after => professor confirm/cancel-->
+              <!--      Status DEFAULT-->
               <template v-if="project.status === 'DEFAULT'">
-                <!--<h6>status DEFAULT</h6>-->
+                <!--      แสดงข้อมูลวันที่ที่ขอขึ้นสอบ-->
                 <v-container>
                   <AppDateTimeConfirmProject
-                    :title="`คำขอขึ้นสอบหัวข้อ`"
+                    :title="`วันที่ส่งคำขอขึ้นสอบหัวข้อ`"
                     :project="project"
+                    :type="dateTimeConfirmShowOnly"
                   />
 
                   <v-row>
@@ -47,7 +57,7 @@
                       <v-dialog
                         v-model="dialogProfessorUpdate"
                         persistent
-                        max-width="80%"
+                        max-width="1024px"
                       >
                         <template v-slot:activator="{ on }">
                           <v-btn rounded block color="primary" dark v-on="on">
@@ -58,7 +68,7 @@
                         <v-card>
                           <v-card-title>
                             <span class="headline">
-                              แก้ไขข้อมูลโครงงาน : }
+                              แก้ไขข้อมูลโครงงาน :
                               {{ project.user.firstName }}
                               {{ project.user.lastName }} (รหัส นศ.
                               {{ project.user.username }})
@@ -189,7 +199,7 @@
                             <v-btn
                               color="blue darken-1"
                               text
-                              @click="onUpdateAndConfirmData"
+                              @click="onUpdateAndConfirmProject()"
                             >
                               <v-icon left>far fa-save</v-icon>
                               บันทึกข้อมูลและอนุมัติ
@@ -202,6 +212,8 @@
                 </v-container>
               </template>
 
+              <!--Step 2  => professor confirm/cancel-->
+              <!--      Status OPERATION-->
               <template v-else-if="project.status === 'OPERATION'">
                 <v-container>
                   <AppDateTimeConfirmProject
@@ -423,7 +435,7 @@
                                   color="green"
                                   dark
                                   block
-                                  @click="ConfirmBeforSuccess"
+                                  @click="ConfirmBeforeSuccess"
                                 >
                                   <v-icon left>fas fa-check</v-icon>
                                   ผ่านการสอบหัวข้อ
@@ -442,7 +454,7 @@
                                   color="red darken-2"
                                   dark
                                   block
-                                  @click="ConfirmBeforNotSuccess"
+                                  @click="ConfirmBeforeNotSuccess()"
                                 >
                                   <v-icon left>fas fa-times</v-icon>
                                   ไม่ผ่านการสอบหัวข้อ
@@ -464,7 +476,7 @@
                                   color="green"
                                   dark
                                   block
-                                  @click="ConfirmBeforSuccess"
+                                  @click="ConfirmBeforeSuccess"
                                 >
                                   <v-icon left>fas fa-check</v-icon>
                                   ผ่านการสอบหัวข้อ(กรณี นศ.แก้ไขถูกต้องแล้ว)
@@ -479,6 +491,8 @@
                 </v-container>
               </template>
 
+              <!--Step 3 after => professor confirm-->
+              <!--      Status SUCCESS-->
               <template v-else-if="project.status === 'SUCCESS'">
                 <span class="text--primary">กำหนดวันขึ้นสอบหัวข้อ :</span>
                 <v-container>
@@ -748,7 +762,7 @@
                                 color="green"
                                 dark
                                 block
-                                @click="ConfirmBeforSuccess"
+                                @click="ConfirmBeforeSuccess"
                               >
                                 <v-icon left>fas fa-check</v-icon>
                                 ผ่านการสอบหัวข้อ
@@ -767,7 +781,7 @@
                                 color="red darken-2"
                                 dark
                                 block
-                                @click="ConfirmBeforNotSuccess"
+                                @click="ConfirmBeforeNotSuccess"
                               >
                                 <v-icon left>fas fa-times</v-icon>
                                 ไม่ผ่านการสอบหัวข้อ
@@ -789,7 +803,7 @@
                                 color="green"
                                 dark
                                 block
-                                @click="ConfirmBeforSuccess"
+                                @click="ConfirmBeforeSuccess"
                               >
                                 <v-icon left>fas fa-check</v-icon>
                                 ผ่านการสอบหัวข้อ
@@ -825,13 +839,49 @@
 
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="green darken-1" text @click="goback()">
+            <v-btn color="green darken-1" text @click="goBack()">
               <v-icon left dark>fas fa-arrow-left</v-icon>
               Back
             </v-btn>
           </v-card-actions>
         </v-flex>
       </v-card>
+    </v-container>
+
+    <v-container>
+      <!--   dialogConfirmProject-->
+      <v-row justify="center">
+        <v-dialog v-model="dialogConfirmProject" persistent max-width="290">
+          <v-card>
+            <v-card-title class="headline">
+              Use Google's location service?
+            </v-card-title>
+            <v-card-text
+              >Let Google help apps determine location. This means sending
+              anonymous location data to Google, even when no apps are running.
+            </v-card-text>
+            <v-card-actions>
+              <v-spacer></v-spacer>
+              <v-btn
+                color="green darken-1"
+                text
+                @click="dialogConfirmProject = false"
+              >
+                Disagree
+              </v-btn>
+              <v-btn
+                color="green darken-1"
+                text
+                @click="dialogConfirmProject = false"
+              >
+                Agree
+              </v-btn>
+            </v-card-actions>
+          </v-card>
+        </v-dialog>
+      </v-row>
+
+      <!--      -->
     </v-container>
   </section>
 </template>
@@ -877,7 +927,8 @@ export default {
       },
       valid: false,
       dialogProfessorUpdate: false,
-      // for update Porject
+
+      // for update Project
       projectData: {
         id: '',
         title: '',
@@ -895,7 +946,15 @@ export default {
         },
       },
       timeout: 1500,
-      pro_adUser: '',
+      pro_adUser: {},
+
+      typeofDisabled: {
+        btnTitleDisabled: true,
+        textArea: true,
+      },
+
+      dialogConfirmProject: false,
+      dateTimeConfirmShowOnly: true,
     }
   },
 
@@ -912,7 +971,7 @@ export default {
         this.loading = loading
         this.projectData = data.project
         this.showUserDetail = data.project.user
-        // this.findProAd()
+        this.findProAd()
       },
       error(e) {
         console.log(e)
@@ -991,45 +1050,8 @@ export default {
     },
   },
 
-  updated() {
-    // this.findProAd()
-  },
-
-  mounted() {
-    // this.requestSinggleProject()
-  },
-
   methods: {
-    // async requestSinggleProject() {
-    //   try {
-    //     const id = this.$route.params.id
-    //     this.loading = true
-    //     this.project = await this.$store.dispatch(
-    //       'projects/requestSinggleProject',
-    //       id
-    //     )
-    //     if (this.project) {
-    //       this.projectData = this.project
-    //       this.showUserDetail = this.project.user
-    //     }
-    //     this.loading = false
-    //   } catch (error) {
-    //     this.error = error
-    //   }
-    // },
-
-    // async requestScoresWithAuthor() {
-    //   // const query = `?users=${this.user.id}`
-    //   this.loading = true
-    //   const res = await this.$store.dispatch('projects/requestScoresWithAuthor')
-    //   // console.log(query)
-    //   console.log(res)
-    //   if (res) {
-    //   }
-    //   this.loading = false
-    // },
-
-    goback() {
+    goBack() {
       this.$router.go(-1)
     },
 
@@ -1049,13 +1071,14 @@ export default {
       try {
         this.$axios.$get('/users/' + this.projectData.pro_ad).then((result) => {
           this.pro_adUser = result
+          // console.log('pro_adUser', this.pro_adUser)
         })
       } catch (error) {
         console.log(error)
       }
     },
 
-    ConfirmBeforNotSuccess() {
+    ConfirmBeforeNotSuccess() {
       Swal.fire({
         title: 'แน่ใจหรือไม่ที่จะยืนยืนข้อมูล?',
         text: "You won't be able to revert this!",
@@ -1094,7 +1117,7 @@ export default {
       })
     },
 
-    ConfirmBeforSuccess() {
+    ConfirmBeforeSuccess() {
       Swal.fire({
         title: 'แน่ใจหรือไม่ที่จะยืนยืนข้อมูล?',
         text: "You won't be able to revert this!",
@@ -1312,71 +1335,73 @@ export default {
       })
     },
 
-    onUpdateAndConfirmData() {
-      try {
-        this.loading = true
-        if (!this.projectData.finalDate) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'กรุณาเลือกวันที่และช่วงเวลา!',
-            footer: '<a href>Why do I have this issue?</a>',
-          })
-          return (this.loading = false)
-        }
+    onUpdateAndConfirmProject() {
+      // try {
+      //   this.loading = true
+      //   if (!this.projectData.finalDate) {
+      //     Swal.fire({
+      //       icon: 'error',
+      //       title: 'Oops...',
+      //       text: 'กรุณาเลือกวันที่และช่วงเวลา!',
+      //       footer: '<a href>Why do I have this issue?</a>',
+      //     })
+      //     return (this.loading = false)
+      //   }
+      //
+      //   // validate form
+      //   this.$refs.form.validate()
+      //
+      //   const choosDate = this.$moment(this.projectData.finalDate).format('L')
+      //   const newDateNow = this.$moment(new Date()).format('L')
+      //
+      //   if (choosDate <= newDateNow) {
+      //     Swal.fire({
+      //       icon: 'error',
+      //       title: 'Oops...',
+      //       text:
+      //         'กรุณาเลือกวันที่และช่วงเวลา ที่ต้องการขึ้นสอบหัวข้อ ให้มากกว่าวันที่ปัจจุบัน!',
+      //       footer: '<a href>Why do I have this issue?</a>',
+      //     })
+      //   } else {
+      //     Swal.fire({
+      //       title: 'แน่ใจหรือไม่ที่จะยืนยืนข้อมูล?',
+      //       text: "You won't be able to revert this!",
+      //       icon: 'warning',
+      //       showCancelButton: true,
+      //       confirmButtonColor: '#3085d6',
+      //       cancelButtonColor: '#d33',
+      //       confirmButtonText: 'Yes, ฉันแน่ใจ!',
+      //     }).then((result) => {
+      //       this.$axios.$put(
+      //         '/projects/' + this.projectData.id,
+      //         {
+      //           title: this.projectData.title,
+      //           detail: this.projectData.detail,
+      //           finalDate: this.projectData.finalDate,
+      //           finalTime: this.radios,
+      //
+      //           status: 'OPERATION',
+      //         },
+      //         {
+      //           headers: {
+      //             Authorization: 'Bearer ' + this.$apolloHelpers.getToken(),
+      //           },
+      //         }
+      //       )
+      //
+      //       if (result.value) {
+      //         this.dialogProfessorUpdate = false
+      //         Swal.fire('Success!', 'ยืนยันข้อมูลสำเร็จ.', 'success')
+      //         this.$router.replace('/secureUser/projectManage/manage-professor')
+      //       }
+      //     })
+      //   }
+      //   this.loading = false
+      // } catch (error) {
+      //   console.log(error)
+      // }
 
-        // validate form
-        this.$refs.form.validate()
-
-        const choosDate = this.$moment(this.projectData.finalDate).format('L')
-        const newDateNow = this.$moment(new Date()).format('L')
-
-        if (choosDate <= newDateNow) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text:
-              'กรุณาเลือกวันที่และช่วงเวลา ที่ต้องการขึ้นสอบหัวข้อ ให้มากกว่าวันที่ปัจจุบัน!',
-            footer: '<a href>Why do I have this issue?</a>',
-          })
-        } else {
-          Swal.fire({
-            title: 'แน่ใจหรือไม่ที่จะยืนยืนข้อมูล?',
-            text: "You won't be able to revert this!",
-            icon: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, ฉันแน่ใจ!',
-          }).then((result) => {
-            this.$axios.$put(
-              '/projects/' + this.projectData.id,
-              {
-                title: this.projectData.title,
-                detail: this.projectData.detail,
-                finalDate: this.projectData.finalDate,
-                finalTime: this.radios,
-
-                status: 'OPERATION',
-              },
-              {
-                headers: {
-                  Authorization: 'Bearer ' + this.$apolloHelpers.getToken(),
-                },
-              }
-            )
-
-            if (result.value) {
-              this.dialogProfessorUpdate = false
-              Swal.fire('Success!', 'ยืนยันข้อมูลสำเร็จ.', 'success')
-              this.$router.replace('/secureUser/projectManage/manage-professor')
-            }
-          })
-        }
-        this.loading = false
-      } catch (error) {
-        console.log(error)
-      }
+      this.dialogConfirmProject = true
     },
   },
 

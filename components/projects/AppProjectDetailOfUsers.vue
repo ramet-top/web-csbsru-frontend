@@ -32,10 +32,10 @@
             <v-col col="12" md="3">
               <strong>ที่ปรึกษาโครงงาน :</strong>
             </v-col>
-            <v-col v-if="project.user" col="12" md="6">
+            <v-col v-if="professorOfUser" col="12" md="6">
               <p>
-                {{ pro_adUser.prefix }}{{ pro_adUser.firstName }}
-                {{ pro_adUser.lastName }}
+                {{ professorOfUser.prefix }}{{ professorOfUser.firstName }}
+                {{ professorOfUser.lastName }}
               </p>
             </v-col>
           </v-row>
@@ -61,8 +61,9 @@
           <v-card-actions>
             <v-row>
               <v-col col="12" md="6">
+                <!--                {{ !!project.fileUrl.url }}-->
                 <v-btn
-                  v-if="project.fileUrl"
+                  v-if="!!project.fileUrl.url"
                   rounded
                   block
                   color="green"
@@ -80,7 +81,7 @@
 
               <v-col col="12" md="6">
                 <v-btn
-                  v-if="project.fileFull"
+                  v-if="project.fileFull.length > 0"
                   rounded
                   block
                   color="green"
@@ -111,12 +112,14 @@ export default {
       type: Object,
       default: null,
     },
+    professorOfUser: {
+      type: Object,
+      default: null,
+    },
   },
 
   data() {
-    return {
-      pro_adUser: {},
-    }
+    return {}
   },
 
   computed: {
@@ -125,20 +128,7 @@ export default {
     },
   },
 
-  created() {
-    this.findProAd()
-  },
-
-  methods: {
-    findProAd() {
-      return this.$axios
-        .$get('/users/' + this.project.pro_ad)
-        .then((result) => {
-          this.pro_adUser = result || null
-          console.log('is work!')
-        })
-    },
-  },
+  methods: {},
 }
 </script>
 

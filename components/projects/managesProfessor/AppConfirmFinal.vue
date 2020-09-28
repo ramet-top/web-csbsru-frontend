@@ -1,8 +1,14 @@
 <template>
   <clientOnly>
     <v-tabs centered>
-      <v-tab> <v-icon left>fas fa-code-branch</v-icon>กำลังดำเนินการ </v-tab>
-      <v-tab> <v-icon left>far fa-check-square</v-icon>สำเร็จ </v-tab>
+      <v-tab>
+        <v-icon left>fas fa-code-branch</v-icon>
+        กำลังดำเนินการ
+      </v-tab>
+      <v-tab>
+        <v-icon left>far fa-check-square</v-icon>
+        สำเร็จ
+      </v-tab>
 
       <!-- ตรวจสอบรายชื่อหัวข้อ(โครงงาน) -->
       <v-tab-item>
@@ -60,8 +66,8 @@
                 <!-- firstName and lastName show -->
                 <template v-slot:item.fullName="{ item }"
                   >{{ item.user.prefix }}{{ item.user.firstName }}
-                  {{ item.user.lastName }}</template
-                >
+                  {{ item.user.lastName }}
+                </template>
 
                 <!-- status opt -->
                 <template v-slot:item.status="{ item }">
@@ -94,7 +100,8 @@
                       tag="a"
                     >
                       <v-btn text color="gray">
-                        <v-icon small class="mr-2">fas fa-eye</v-icon>เพิ่มเติม
+                        <v-icon small class="mr-2">fas fa-eye</v-icon>
+                        เพิ่มเติม
                       </v-btn>
                     </nuxt-link>
                   </v-card-actions>
@@ -156,12 +163,32 @@ export default {
     },
   },
 
+  mounted() {
+    // this.requestProjectUser()
+  },
+
   methods: {
     getColor(col) {
       if (col === 'DEFAULT') return 'blue'
       else if (col === 'OPERATION') return 'orange'
       else return 'green'
     },
+    // async requestProjectUser() {
+    //   try {
+    //     this.loading = true
+    //     const query = `?pro_ad_eq=${this.user.id}&status_eq=DEFAULT`
+    //     const res = await this.$store.dispatch(
+    //       'projects/professors/requestProjectUser',
+    //       query
+    //     )
+    //     if (res) {
+    //       this.projects = res
+    //     }
+    //     this.loading = false
+    //   } catch (error) {
+    //     console.log(error)
+    //   }
+    // },
   },
 
   apollo: {

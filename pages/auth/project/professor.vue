@@ -2,7 +2,8 @@
   <div>
     <!--    <Logo />-->
     <v-toolbar>
-      <v-icon left>fas fa-tasks</v-icon>ระบบจัดการบัณฑิตนิพนธ์(สำหรับอาจารย์)
+      <v-icon left>fas fa-tasks</v-icon>
+      ระบบจัดการบัณฑิตนิพนธ์(สำหรับอาจารย์)
     </v-toolbar>
     <v-divider></v-divider>
 
@@ -17,15 +18,17 @@
           <v-icon>far fa-check-circle</v-icon>
         </v-tab>
 
+        <!--  before confirm with professor-->
         <v-tab-item>
           <AppConfirmProfes />
-          <!-- AppConfirmProfes -->
         </v-tab-item>
 
+        <!--  After confirm professor-->
         <v-tab-item>
           <AppConfirmFinal />
-        </v-tab-item> </v-tabs
-    ></clientOnly>
+        </v-tab-item>
+      </v-tabs>
+    </clientOnly>
   </div>
 </template>
 
