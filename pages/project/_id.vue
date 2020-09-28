@@ -60,132 +60,150 @@
                         max-width="1024px"
                       >
                         <template v-slot:activator="{ on }">
-                          <v-btn rounded block color="primary" dark v-on="on">
+                          <v-btn
+                            rounded
+                            block
+                            color="primary"
+                            outlined
+                            dark
+                            v-on="on"
+                          >
                             <v-icon left>fas fa-calendar-check</v-icon>
                             แก้ไข / อนุมัติการเป็นที่ปรึกษาโครงงานนี้
                           </v-btn>
                         </template>
                         <v-card>
-                          <v-card-title>
-                            <span class="headline">
-                              แก้ไขข้อมูลโครงงาน :
-                              {{ project.user.firstName }}
-                              {{ project.user.lastName }} (รหัส นศ.
-                              {{ project.user.username }})
-                            </span>
-                          </v-card-title>
+                          <!--                          <v-card-title>-->
+                          <!--                            <span class="headline">-->
+                          <!--                              แก้ไขข้อมูลโครงงาน :-->
+                          <!--                              {{ project.user.firstName }}-->
+                          <!--                              {{ project.user.lastName }} (รหัส นศ.-->
+                          <!--                              {{ project.user.username }})-->
+                          <!--                            </span>-->
+                          <!--                          </v-card-title>-->
+                          <!--                          <v-card-text>-->
+                          <!--                            <v-container>-->
+                          <!--                              <v-form-->
+                          <!--                                ref="form"-->
+                          <!--                                v-model="valid"-->
+                          <!--                                lazy-validation-->
+                          <!--                              >-->
+                          <!--                                <v-text-field-->
+                          <!--                                  v-model="projectData.title"-->
+                          <!--                                  outlined-->
+                          <!--                                  required-->
+                          <!--                                  :rules="rules"-->
+                          <!--                                  counter="150"-->
+                          <!--                                  hint="แก้ไขหัวข้อใหม่"-->
+                          <!--                                  label="* หัวข้อ : "-->
+                          <!--                                ></v-text-field>-->
+
+                          <!--                                <v-textarea-->
+                          <!--                                  v-model="projectData.detail"-->
+                          <!--                                  required-->
+                          <!--                                  label="* รายละเอียด"-->
+                          <!--                                  rows="6"-->
+                          <!--                                  row-height="40"-->
+                          <!--                                  outlined-->
+                          <!--                                  auto-grow-->
+                          <!--                                  :rules="rules"-->
+                          <!--                                  counter="250"-->
+                          <!--                                  hint="แก้ไขรายละเอียดใหม่"-->
+                          <!--                                ></v-textarea>-->
+
+                          <!--                                <v-divider></v-divider>-->
+
+                          <!--                                &lt;!&ndash; create date &ndash;&gt;-->
+                          <!--                                <div>-->
+                          <!--                                  <span class="text&#45;&#45;primary">-->
+                          <!--                                    <strong>กำหนดวันขึ้นสอบหัวข้อ :</strong>-->
+                          <!--                                  </span>-->
+                          <!--                                  <ul>-->
+                          <!--                                    <li class="red&#45;&#45;text">-->
+                          <!--                                      ***สามารถขึ้นสอบได้ทุกๆวันพฤหัสบดี-->
+                          <!--                                      ถ้าเลือกวันที่ผิดระบบจะเลื่อนไปเป็นวันพฤหัสบดีถัดไป-->
+                          <!--                                    </li>-->
+                          <!--                                  </ul>-->
+                          <!--                                  <v-container>-->
+                          <!--                                    <v-row>-->
+                          <!--                                      <v-date-picker-->
+                          <!--                                        v-model="projectData.finalDate"-->
+                          <!--                                        full-width-->
+                          <!--                                        :landscape="$vuetify.breakpoint.smAndUp"-->
+                          <!--                                        class="mt-4"-->
+                          <!--                                        type="date"-->
+                          <!--                                        locale="th"-->
+                          <!--                                      ></v-date-picker>-->
+                          <!--                                    </v-row>-->
+                          <!--                                    <v-row>-->
+                          <!--                                      <v-col cols="12" sm="6">-->
+                          <!--                                        <p>-->
+                          <!--                                          <strong>วันที่ปัจจุบัน :</strong>-->
+                          <!--                                          {{-->
+                          <!--                                            $moment(new Date()).format(-->
+                          <!--                                              'dddd LL'-->
+                          <!--                                            )-->
+                          <!--                                          }}-->
+                          <!--                                        </p>-->
+                          <!--                                        <p>-->
+                          <!--                                          <strong-->
+                          <!--                                            >วันที่ ที่เลือกขึ้นสอบหัวข้อ-->
+                          <!--                                            :</strong-->
+                          <!--                                          >-->
+                          <!--                                          {{-->
+                          <!--                                            $moment(-->
+                          <!--                                              projectData.finalDate-->
+                          <!--                                            ).format('dddd LL')-->
+                          <!--                                          }}-->
+                          <!--                                        </p>-->
+                          <!--                                      </v-col>-->
+                          <!--                                      <v-col cols="12" sm="6">-->
+                          <!--                                        <v-radio-group v-model="radios">-->
+                          <!--                                          <template v-slot:label>-->
+                          <!--                                            <div>-->
+                          <!--                                              <strong>-->
+                          <!--                                                กรุณาเลือกเวลาสอบหัวข้อโครงงาน-->
+                          <!--                                                CSBSRU Project.-->
+                          <!--                                              </strong>-->
+                          <!--                                            </div>-->
+                          <!--                                          </template>-->
+                          <!--                                          <v-radio value="MORNING">-->
+                          <!--                                            <template v-slot:label>-->
+                          <!--                                              <div>-->
+                          <!--                                                <strong class="dark&#45;&#45;text"-->
+                          <!--                                                  >ช่วงเช้า 10.00 น</strong-->
+                          <!--                                                >-->
+                          <!--                                              </div>-->
+                          <!--                                            </template>-->
+                          <!--                                          </v-radio>-->
+                          <!--                                          <v-radio value="AFTERNOON">-->
+                          <!--                                            <template v-slot:label>-->
+                          <!--                                              <div>-->
+                          <!--                                                <strong class="dark&#45;&#45;text"-->
+                          <!--                                                  >ช่วงบ่าย 13.30 น</strong-->
+                          <!--                                                >-->
+                          <!--                                              </div>-->
+                          <!--                                            </template>-->
+                          <!--                                          </v-radio>-->
+                          <!--                                        </v-radio-group>-->
+                          <!--                                      </v-col>-->
+                          <!--                                    </v-row>-->
+                          <!--                                  </v-container>-->
+                          <!--                                </div>-->
+                          <!--                              </v-form>-->
+                          <!--                            </v-container>-->
+                          <!--                          </v-card-text>-->
                           <v-card-text>
-                            <v-container>
-                              <v-form
-                                ref="form"
-                                v-model="valid"
-                                lazy-validation
-                              >
-                                <v-text-field
-                                  v-model="projectData.title"
-                                  outlined
-                                  required
-                                  :rules="rules"
-                                  counter="150"
-                                  hint="แก้ไขหัวข้อใหม่"
-                                  label="* หัวข้อ : "
-                                ></v-text-field>
+                            <AppProjectTitleDetail
+                              :project-data="projectData"
+                            />
 
-                                <v-textarea
-                                  v-model="projectData.detail"
-                                  required
-                                  label="* รายละเอียด"
-                                  rows="6"
-                                  row-height="40"
-                                  outlined
-                                  auto-grow
-                                  :rules="rules"
-                                  counter="250"
-                                  hint="แก้ไขรายละเอียดใหม่"
-                                ></v-textarea>
-
-                                <v-divider></v-divider>
-
-                                <!-- create date -->
-                                <div>
-                                  <span class="text--primary">
-                                    <strong>กำหนดวันขึ้นสอบหัวข้อ :</strong>
-                                  </span>
-                                  <ul>
-                                    <li class="red--text">
-                                      ***สามารถขึ้นสอบได้ทุกๆวันพฤหัสบดี
-                                      ถ้าเลือกวันที่ผิดระบบจะเลื่อนไปเป็นวันพฤหัสบดีถัดไป
-                                    </li>
-                                  </ul>
-                                  <v-container>
-                                    <v-row>
-                                      <v-date-picker
-                                        v-model="projectData.finalDate"
-                                        full-width
-                                        :landscape="$vuetify.breakpoint.smAndUp"
-                                        class="mt-4"
-                                        type="date"
-                                        locale="th"
-                                      ></v-date-picker>
-                                    </v-row>
-                                    <v-row>
-                                      <v-col cols="12" sm="6">
-                                        <p>
-                                          <strong>วันที่ปัจจุบัน :</strong>
-                                          {{
-                                            $moment(new Date()).format(
-                                              'dddd LL'
-                                            )
-                                          }}
-                                        </p>
-                                        <p>
-                                          <strong
-                                            >วันที่ ที่เลือกขึ้นสอบหัวข้อ
-                                            :</strong
-                                          >
-                                          {{
-                                            $moment(
-                                              projectData.finalDate
-                                            ).format('dddd LL')
-                                          }}
-                                        </p>
-                                      </v-col>
-                                      <v-col cols="12" sm="6">
-                                        <v-radio-group v-model="radios">
-                                          <template v-slot:label>
-                                            <div>
-                                              <strong>
-                                                กรุณาเลือกเวลาสอบหัวข้อโครงงาน
-                                                CSBSRU Project.
-                                              </strong>
-                                            </div>
-                                          </template>
-                                          <v-radio value="MORNING">
-                                            <template v-slot:label>
-                                              <div>
-                                                <strong class="dark--text"
-                                                  >ช่วงเช้า 10.00 น</strong
-                                                >
-                                              </div>
-                                            </template>
-                                          </v-radio>
-                                          <v-radio value="AFTERNOON">
-                                            <template v-slot:label>
-                                              <div>
-                                                <strong class="dark--text"
-                                                  >ช่วงบ่าย 13.30 น</strong
-                                                >
-                                              </div>
-                                            </template>
-                                          </v-radio>
-                                        </v-radio-group>
-                                      </v-col>
-                                    </v-row>
-                                  </v-container>
-                                </div>
-                              </v-form>
-                            </v-container>
+                            <AppDateTimeConfirmProject
+                              :title="`วันที่ส่งคำขอขึ้นสอบหัวข้อ`"
+                              :project="project"
+                            />
                           </v-card-text>
+
                           <v-card-actions>
                             <v-spacer></v-spacer>
                             <v-btn
@@ -851,30 +869,29 @@
     <v-container>
       <!--   dialogConfirmProject-->
       <v-row justify="center">
-        <v-dialog v-model="dialogConfirmProject" persistent max-width="290">
+        <v-dialog v-model="dialogConfirmProject" persistent max-width="350">
           <v-card>
             <v-card-title class="headline">
-              Use Google's location service?
+              คุณแน่ใจหรือไม่?
             </v-card-title>
             <v-card-text
               >Let Google help apps determine location. This means sending
-              anonymous location data to Google, even when no apps are running.
             </v-card-text>
             <v-card-actions>
               <v-spacer></v-spacer>
               <v-btn
-                color="green darken-1"
+                color="red darken-1"
                 text
                 @click="dialogConfirmProject = false"
               >
-                Disagree
+                Cancel
               </v-btn>
               <v-btn
-                color="green darken-1"
+                color="blue darken-1"
                 text
                 @click="dialogConfirmProject = false"
               >
-                Agree
+                Yes
               </v-btn>
             </v-card-actions>
           </v-card>

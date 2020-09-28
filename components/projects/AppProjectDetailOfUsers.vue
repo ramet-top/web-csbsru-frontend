@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="!!project">
     <clientOnly>
       <span class="text--primary">
         <strong>รายละเอียด</strong>
@@ -58,12 +58,12 @@
             </v-col>
           </v-row>
 
-          <v-card-actions>
+          <v-card-actions v-if="project">
             <v-row>
               <v-col col="12" md="6">
-                <!--                {{ !!project.fileUrl.url }}-->
+                <!--                {{ project.fileUrl.url }}-->
                 <v-btn
-                  v-if="!!project.fileUrl.url"
+                  v-if="project.fileUrl ? project.fileUrl.url : false"
                   rounded
                   block
                   color="green"
@@ -81,7 +81,7 @@
 
               <v-col col="12" md="6">
                 <v-btn
-                  v-if="project.fileFull.length > 0"
+                  v-if="project.fileFull ? project.fileFull.url : false"
                   rounded
                   block
                   color="green"
