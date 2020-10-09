@@ -255,7 +255,7 @@
                 <v-divider></v-divider>
                 <div
                   v-if="project.pro_ad === user.id"
-                  class="red--text custom-text-comment-professor"
+                  class="red--text my-5 text-center"
                 >
                   *อาจารย์ที่ปรึกษาโปรเจคไม่สามารถ comment หรือ อนุมัติการสอบของ
                   นศ.ได้
@@ -371,25 +371,44 @@
                     </v-row>
                   </clientOnly>
                 </div>
-
-                <strong>สถานะ::</strong>
-
-                <div>
-                  <v-row
-                    v-if="project.status === 'SUCCESS'"
-                    justify="center"
-                    align="start"
-                  >
-                    <v-chip large draggable color="green">
-                      <v-icon left>fas fa-check-circle</v-icon>
-                      สอบหัวข้อผ่านแล้ว
-                    </v-chip>
-                  </v-row>
-                </div>
               </template>
 
               <br />
               <v-divider></v-divider>
+              <strong>สถานะ::</strong>
+
+              <div>
+                <v-row
+                  v-if="project.status === 'DEFAULT'"
+                  justify="center"
+                  align="start"
+                >
+                  <v-chip large draggable color="blue">
+                    <v-icon left>fas fa-check-circle</v-icon>
+                    กำลังรอการอนุมัติ
+                  </v-chip>
+                </v-row>
+                <v-row
+                  v-if="project.status === 'OPERATION'"
+                  justify="center"
+                  align="start"
+                >
+                  <v-chip large draggable color="yellow">
+                    <v-icon left>fas fa-check-circle</v-icon>
+                    กำลังดำเนินการ
+                  </v-chip>
+                </v-row>
+                <v-row
+                  v-if="project.status === 'SUCCESS'"
+                  justify="center"
+                  align="start"
+                >
+                  <v-chip large draggable color="green">
+                    <v-icon left>fas fa-check-circle</v-icon>
+                    สอบหัวข้อผ่านแล้ว
+                  </v-chip>
+                </v-row>
+              </div>
             </v-card-text>
           </template>
 
