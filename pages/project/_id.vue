@@ -73,126 +73,6 @@
                           </v-btn>
                         </template>
                         <v-card>
-                          <!--                          <v-card-title>-->
-                          <!--                            <span class="headline">-->
-                          <!--                              แก้ไขข้อมูลโครงงาน :-->
-                          <!--                              {{ project.user.firstName }}-->
-                          <!--                              {{ project.user.lastName }} (รหัส นศ.-->
-                          <!--                              {{ project.user.username }})-->
-                          <!--                            </span>-->
-                          <!--                          </v-card-title>-->
-                          <!--                          <v-card-text>-->
-                          <!--                            <v-container>-->
-                          <!--                              <v-form-->
-                          <!--                                ref="form"-->
-                          <!--                                v-model="valid"-->
-                          <!--                                lazy-validation-->
-                          <!--                              >-->
-                          <!--                                <v-text-field-->
-                          <!--                                  v-model="projectData.title"-->
-                          <!--                                  outlined-->
-                          <!--                                  required-->
-                          <!--                                  :rules="rules"-->
-                          <!--                                  counter="150"-->
-                          <!--                                  hint="แก้ไขหัวข้อใหม่"-->
-                          <!--                                  label="* หัวข้อ : "-->
-                          <!--                                ></v-text-field>-->
-
-                          <!--                                <v-textarea-->
-                          <!--                                  v-model="projectData.detail"-->
-                          <!--                                  required-->
-                          <!--                                  label="* รายละเอียด"-->
-                          <!--                                  rows="6"-->
-                          <!--                                  row-height="40"-->
-                          <!--                                  outlined-->
-                          <!--                                  auto-grow-->
-                          <!--                                  :rules="rules"-->
-                          <!--                                  counter="250"-->
-                          <!--                                  hint="แก้ไขรายละเอียดใหม่"-->
-                          <!--                                ></v-textarea>-->
-
-                          <!--                                <v-divider></v-divider>-->
-
-                          <!--                                &lt;!&ndash; create date &ndash;&gt;-->
-                          <!--                                <div>-->
-                          <!--                                  <span class="text&#45;&#45;primary">-->
-                          <!--                                    <strong>กำหนดวันขึ้นสอบหัวข้อ :</strong>-->
-                          <!--                                  </span>-->
-                          <!--                                  <ul>-->
-                          <!--                                    <li class="red&#45;&#45;text">-->
-                          <!--                                      ***สามารถขึ้นสอบได้ทุกๆวันพฤหัสบดี-->
-                          <!--                                      ถ้าเลือกวันที่ผิดระบบจะเลื่อนไปเป็นวันพฤหัสบดีถัดไป-->
-                          <!--                                    </li>-->
-                          <!--                                  </ul>-->
-                          <!--                                  <v-container>-->
-                          <!--                                    <v-row>-->
-                          <!--                                      <v-date-picker-->
-                          <!--                                        v-model="projectData.finalDate"-->
-                          <!--                                        full-width-->
-                          <!--                                        :landscape="$vuetify.breakpoint.smAndUp"-->
-                          <!--                                        class="mt-4"-->
-                          <!--                                        type="date"-->
-                          <!--                                        locale="th"-->
-                          <!--                                      ></v-date-picker>-->
-                          <!--                                    </v-row>-->
-                          <!--                                    <v-row>-->
-                          <!--                                      <v-col cols="12" sm="6">-->
-                          <!--                                        <p>-->
-                          <!--                                          <strong>วันที่ปัจจุบัน :</strong>-->
-                          <!--                                          {{-->
-                          <!--                                            $moment(new Date()).format(-->
-                          <!--                                              'dddd LL'-->
-                          <!--                                            )-->
-                          <!--                                          }}-->
-                          <!--                                        </p>-->
-                          <!--                                        <p>-->
-                          <!--                                          <strong-->
-                          <!--                                            >วันที่ ที่เลือกขึ้นสอบหัวข้อ-->
-                          <!--                                            :</strong-->
-                          <!--                                          >-->
-                          <!--                                          {{-->
-                          <!--                                            $moment(-->
-                          <!--                                              projectData.finalDate-->
-                          <!--                                            ).format('dddd LL')-->
-                          <!--                                          }}-->
-                          <!--                                        </p>-->
-                          <!--                                      </v-col>-->
-                          <!--                                      <v-col cols="12" sm="6">-->
-                          <!--                                        <v-radio-group v-model="radios">-->
-                          <!--                                          <template v-slot:label>-->
-                          <!--                                            <div>-->
-                          <!--                                              <strong>-->
-                          <!--                                                กรุณาเลือกเวลาสอบหัวข้อโครงงาน-->
-                          <!--                                                CSBSRU Project.-->
-                          <!--                                              </strong>-->
-                          <!--                                            </div>-->
-                          <!--                                          </template>-->
-                          <!--                                          <v-radio value="MORNING">-->
-                          <!--                                            <template v-slot:label>-->
-                          <!--                                              <div>-->
-                          <!--                                                <strong class="dark&#45;&#45;text"-->
-                          <!--                                                  >ช่วงเช้า 10.00 น</strong-->
-                          <!--                                                >-->
-                          <!--                                              </div>-->
-                          <!--                                            </template>-->
-                          <!--                                          </v-radio>-->
-                          <!--                                          <v-radio value="AFTERNOON">-->
-                          <!--                                            <template v-slot:label>-->
-                          <!--                                              <div>-->
-                          <!--                                                <strong class="dark&#45;&#45;text"-->
-                          <!--                                                  >ช่วงบ่าย 13.30 น</strong-->
-                          <!--                                                >-->
-                          <!--                                              </div>-->
-                          <!--                                            </template>-->
-                          <!--                                          </v-radio>-->
-                          <!--                                        </v-radio-group>-->
-                          <!--                                      </v-col>-->
-                          <!--                                    </v-row>-->
-                          <!--                                  </v-container>-->
-                          <!--                                </div>-->
-                          <!--                              </v-form>-->
-                          <!--                            </v-container>-->
-                          <!--                          </v-card-text>-->
                           <v-card-text>
                             <AppProjectTitleDetail
                               :project-data="projectData"
@@ -242,7 +122,10 @@
 
                   <!-- for comment permission -->
                   <!-- {{ user.id === project.pro_ad }} -->
-                  <div v-if="user.id === project.pro_ad" class="red--text">
+                  <div
+                    v-if="user.id === project.pro_ad"
+                    class="red--text text-center mt-7"
+                  >
                     *อาจารย์ที่ปรึกษาโปรเจคไม่สามารถ comment หรือ
                     อนุมัติการสอบของ นศ.ได้
                   </div>
@@ -569,15 +452,18 @@
                     </v-col>
                   </v-row>
                 </v-container>
-                <v-divider></v-divider>
+                <v-divider class="mb-10"></v-divider>
 
-                <div v-if="project.pro_ad == user.id" class="red--text">
+                <div
+                  v-if="project.pro_ad === user.id"
+                  class="red--text custom-text-comment-professor"
+                >
                   *อาจารย์ที่ปรึกษาโปรเจคไม่สามารถ comment หรือ อนุมัติการสอบของ
                   นศ.ได้
                 </div>
 
                 <div v-else>
-                  <h3>Latast Comments</h3>
+                  <h3>Latest Comments</h3>
                   <v-row>
                     <v-responsive class="overflow-y-auto" max-height="400">
                       <v-responsive height="200vh" class="pa-2">
@@ -616,7 +502,7 @@
                               </v-list-item-content>
 
                               <v-list-item-action
-                                v-if="item.user.id == user.id"
+                                v-if="item.user.id === user.id"
                               >
                                 <!-- {{item.user.id == user.id}} -->
                                 <v-row>
@@ -838,7 +724,7 @@
 
                 <div>
                   <v-row
-                    v-if="project.status == 'SUCCESS'"
+                    v-if="project.status === 'SUCCESS'"
                     justify="center"
                     align="start"
                   >
@@ -857,7 +743,7 @@
 
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn color="green darken-1" text @click="goBack()">
+            <v-btn color="green darken-1" text @click="$router.go(-1)">
               <v-icon left dark>fas fa-arrow-left</v-icon>
               Back
             </v-btn>
@@ -871,11 +757,11 @@
       <v-row justify="center">
         <v-dialog v-model="dialogConfirmProject" persistent max-width="350">
           <v-card>
-            <v-card-title class="headline">
+            <v-card-title class="headline d-flex justify-center">
               คุณแน่ใจหรือไม่?
             </v-card-title>
-            <v-card-text
-              >Let Google help apps determine location. This means sending
+            <v-card-text>
+              Let Google help apps determine location. This means sending
             </v-card-text>
             <v-card-actions>
               <v-spacer></v-spacer>
@@ -907,7 +793,6 @@
 import Swal from 'sweetalert2'
 import { QUERY_SINGLE_PROJECT } from '@/graphql/queries/projects.js'
 import { QUERY_WHERE_USERID_AND_PROJECTID } from '@/graphql/queries/scores.js'
-
 import Logo from '~/components/AppLogoCsbsru'
 import AppTitleParallax from '~/components/parallax/AppTitleParallax'
 import AppProjectTitleDetail from '~/components/projects/AppProjectTitleDetail'
@@ -1068,10 +953,6 @@ export default {
   },
 
   methods: {
-    goBack() {
-      this.$router.go(-1)
-    },
-
     checkScorePass() {
       const urlPass = `/scores?project=${this.project.id}&status=true`
       const urlNoPass = `/scores?project=${this.project.id}&status=false`
@@ -1146,52 +1027,28 @@ export default {
       }).then(async (result) => {
         if (result.value) {
           try {
-            if (this.scoreState.pass >= 3) {
+            if (this.scoreState.pass >= 0) {
               console.log('state >= 3 => ' + this.scoreState.pass)
-              this.$axios.$put(
-                '/projects/' + this.projectData.id,
-                {
-                  status: 'SUCCESS',
-                },
-                {
-                  headers: {
-                    Authorization: 'Bearer ' + this.$apolloHelpers.getToken(),
-                  },
-                }
-              )
+              this.$axios.$put('/projects/' + this.projectData.id, {
+                status: 'SUCCESS',
+              })
             }
 
             if (this.scores.length) {
               console.log('update ที่มีอยู่แล้ว')
 
-              this.$axios.$put(
-                '/scores/' + this.scores[0].id,
-                {
-                  status: true,
-                },
-                {
-                  headers: {
-                    Authorization: 'Bearer ' + this.$apolloHelpers.getToken(),
-                  },
-                }
-              )
+              this.$axios.$put('/scores/' + this.scores[0].id, {
+                status: true,
+              })
               await this.$apollo.queries.project.refresh()
               await this.$apollo.queries.scores.refresh()
               Swal.fire('Success!', 'ยืนยันข้อมูลสำเร็จ.', 'success')
             } else {
-              this.$axios.$post(
-                '/scores',
-                {
-                  status: true,
-                  project: this.project.id,
-                  user: this.user.id,
-                },
-                {
-                  headers: {
-                    Authorization: 'Bearer ' + this.$apolloHelpers.getToken(),
-                  },
-                }
-              )
+              this.$axios.$post('/scores', {
+                status: true,
+                project: this.project.id,
+                user: this.user.id,
+              })
               await this.$apollo.queries.project.refresh()
               await this.$apollo.queries.scores.refresh()
               Swal.fire('Success!', 'ยืนยันข้อมูลสำเร็จ.', 'success')
@@ -1301,8 +1158,8 @@ export default {
 
     onUpdateNotConfirmProject() {
       return Swal.fire({
-        title: 'คุณแน่ใจหรือไม่ที่จะยืนยันข้อมูล?',
-        text: "You won't be able to revert this!",
+        title: 'คุณแน่ใจหรือไม่ที่จะลบข้อมูลนี้?',
+        text: '',
         icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
@@ -1311,18 +1168,9 @@ export default {
       }).then((result) => {
         if (result.value) {
           this.$axios
-            .$put(
-              '/projects/' + this.projectData.id,
-              {
-                confirm: false,
-                status: 'NONE',
-              },
-              {
-                headers: {
-                  Authorization: 'Bearer ' + this.$apolloHelpers.getToken(),
-                },
-              }
-            )
+            .$put('/projects/' + this.projectData.id, {
+              status: 'NONE',
+            })
             .then((data) => {
               let timerInterval
               Swal.fire({
@@ -1347,81 +1195,80 @@ export default {
                 }
               })
             })
-          this.$router.go(-1)
+          this.$router.push('/auth/project/professor')
         }
       })
     },
 
     onUpdateAndConfirmProject() {
-      // try {
-      //   this.loading = true
-      //   if (!this.projectData.finalDate) {
-      //     Swal.fire({
-      //       icon: 'error',
-      //       title: 'Oops...',
-      //       text: 'กรุณาเลือกวันที่และช่วงเวลา!',
-      //       footer: '<a href>Why do I have this issue?</a>',
-      //     })
-      //     return (this.loading = false)
-      //   }
-      //
-      //   // validate form
-      //   this.$refs.form.validate()
-      //
-      //   const choosDate = this.$moment(this.projectData.finalDate).format('L')
-      //   const newDateNow = this.$moment(new Date()).format('L')
-      //
-      //   if (choosDate <= newDateNow) {
-      //     Swal.fire({
-      //       icon: 'error',
-      //       title: 'Oops...',
-      //       text:
-      //         'กรุณาเลือกวันที่และช่วงเวลา ที่ต้องการขึ้นสอบหัวข้อ ให้มากกว่าวันที่ปัจจุบัน!',
-      //       footer: '<a href>Why do I have this issue?</a>',
-      //     })
-      //   } else {
-      //     Swal.fire({
-      //       title: 'แน่ใจหรือไม่ที่จะยืนยืนข้อมูล?',
-      //       text: "You won't be able to revert this!",
-      //       icon: 'warning',
-      //       showCancelButton: true,
-      //       confirmButtonColor: '#3085d6',
-      //       cancelButtonColor: '#d33',
-      //       confirmButtonText: 'Yes, ฉันแน่ใจ!',
-      //     }).then((result) => {
-      //       this.$axios.$put(
-      //         '/projects/' + this.projectData.id,
-      //         {
-      //           title: this.projectData.title,
-      //           detail: this.projectData.detail,
-      //           finalDate: this.projectData.finalDate,
-      //           finalTime: this.radios,
-      //
-      //           status: 'OPERATION',
-      //         },
-      //         {
-      //           headers: {
-      //             Authorization: 'Bearer ' + this.$apolloHelpers.getToken(),
-      //           },
-      //         }
-      //       )
-      //
-      //       if (result.value) {
-      //         this.dialogProfessorUpdate = false
-      //         Swal.fire('Success!', 'ยืนยันข้อมูลสำเร็จ.', 'success')
-      //         this.$router.replace('/secureUser/projectManage/manage-professor')
-      //       }
-      //     })
-      //   }
-      //   this.loading = false
-      // } catch (error) {
-      //   console.log(error)
-      // }
+      try {
+        this.loading = true
+        if (!this.projectData.finalDate) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'กรุณาเลือกวันที่และช่วงเวลา!',
+            footer: '<a href>Why do I have this issue?</a>',
+          })
+          return (this.loading = false)
+        }
 
-      this.dialogConfirmProject = true
+        // validate form
+        // this.$refs.form.validate()
+
+        const choosDate = this.$moment(this.projectData.finalDate).format('L')
+        const newDateNow = this.$moment(new Date()).format('L')
+
+        if (choosDate <= newDateNow) {
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text:
+              'กรุณาเลือกวันที่และช่วงเวลา ที่ต้องการขึ้นสอบหัวข้อ ให้มากกว่าวันที่ปัจจุบัน!',
+            footer: '<a href>Why do I have this issue?</a>',
+          })
+        } else {
+          Swal.fire({
+            title: 'แน่ใจหรือไม่ที่จะยืนยืนข้อมูล?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, ฉันแน่ใจ!',
+          }).then((result) => {
+            this.$axios.$put('/projects/' + this.projectData.id, {
+              title: this.projectData.title,
+              detail: this.projectData.detail,
+              finalDate: this.projectData.finalDate,
+              finalTime: this.radios,
+
+              status: 'OPERATION',
+            })
+
+            if (result.value) {
+              this.dialogProfessorUpdate = false
+              Swal.fire('Success!', 'ยืนยันข้อมูลสำเร็จ.', 'success')
+              // this.$router.replace('/project/' + this.projectData.id)
+              this.$router.push('/auth/project/professor')
+            }
+          })
+        }
+        this.loading = false
+      } catch (error) {
+        console.log(error)
+      }
+
+      // this.dialogConfirmProject = true
     },
   },
 
   inject: ['theme'],
 }
 </script>
+
+<style scoped>
+.custom-text-comment-professor {
+  margin-top: 20px;
+}
+</style>

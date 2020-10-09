@@ -28,23 +28,23 @@ export const QUERY_ALL_PROJECTS_CONFIRM = gql`
       id
       title
       status
-      #      pro_ad
-      #      confirm
-      #      finalDate
-      #      finalTime
-      #      user {
-      #        id
-      #        username
-      #        prefix
-      #        firstName
-      #        lastName
-      #        imageUrl {
-      #          id
-      #          url
-      #        }
-      #      }
-      #      createdAt
-      #      updatedAt
+      pro_ad
+      #            confirm
+      finalDate
+      finalTime
+      user {
+        id
+        username
+        prefix
+        firstName
+        lastName
+        imageUrl {
+          id
+          url
+        }
+      }
+      createdAt
+      updatedAt
     }
   }
 `

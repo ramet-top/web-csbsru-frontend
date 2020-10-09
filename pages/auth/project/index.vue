@@ -89,6 +89,7 @@ export default {
 
         if (this.projectUser) {
           this.projectData = this.projectUser[0]
+          // console.log('this.projectData', this.projectData)
         } else {
           this.projectData = []
         }

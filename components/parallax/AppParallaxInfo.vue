@@ -24,6 +24,7 @@
           </blockquote>
           <br />
           <v-btn
+            v-if="!user"
             class="px-10 mr-2"
             dark
             large
