@@ -131,156 +131,8 @@
                   </div>
 
                   <div v-else>
-                    <h3>Latest Comments</h3>
-                    <v-row>
-                      <v-responsive class="overflow-y-auto" max-height="400">
-                        <v-responsive height="200vh" class="pa-2">
-                          <div>
-                            <v-list three-line subheader>
-                              <v-subheader inset>ล่าสด</v-subheader>
-
-                              <v-list-item
-                                v-for="item in project.comments"
-                                :key="item.title"
-                              >
-                                <v-list-item-avatar>
-                                  <v-img
-                                    :src="
-                                      item.user.imageUrl
-                                        ? item.user.imageUrl.url
-                                        : defaultImage
-                                    "
-                                  ></v-img>
-                                </v-list-item-avatar>
-
-                                <v-list-item-content>
-                                  <v-list-item-title>
-                                    {{ item.user.prefix }}
-                                    {{ item.user.firstName }}
-                                    {{ item.user.lastName }}
-                                  </v-list-item-title>
-                                  <v-list-item-subtitle>
-                                    {{ $moment(item.updatedAt).format('LLL') }}
-                                    น.
-                                  </v-list-item-subtitle>
-                                  <v-list-item-subtitle>
-                                    comment:
-                                    {{ item.detail }}
-                                  </v-list-item-subtitle>
-                                </v-list-item-content>
-
-                                <v-list-item-action
-                                  v-if="item.user.id === user.id"
-                                >
-                                  <!-- {{item.user.id == user.id}} -->
-                                  <v-row>
-                                    <v-btn text @click="delComment(item.id)">
-                                      <v-icon>fas fa-trash</v-icon>
-                                    </v-btn>
-
-                                    <v-dialog
-                                      v-model="dialog"
-                                      persistent
-                                      max-width="600px"
-                                    >
-                                      <template v-slot:activator="{ on }">
-                                        <v-btn text v-on="on">
-                                          <v-icon>fas fa-edit</v-icon>
-                                        </v-btn>
-                                      </template>
-                                      <v-card>
-                                        <v-card-title>
-                                          <span class="headline"
-                                            >Edit Comment</span
-                                          >
-                                        </v-card-title>
-                                        <v-card-text>
-                                          <v-container>
-                                            <v-row>
-                                              <v-col cols="12">
-                                                <v-textarea
-                                                  v-model="item.detail"
-                                                  name="input-7-1"
-                                                  label="แก้ไข Comment กรรมการสอบหัวข้อ"
-                                                  :rules="rules"
-                                                  hint="Hint text 150 characters"
-                                                  counter
-                                                  outlined
-                                                ></v-textarea>
-                                              </v-col>
-                                            </v-row>
-                                          </v-container>
-                                        </v-card-text>
-                                        <v-card-actions>
-                                          <v-spacer></v-spacer>
-                                          <v-btn
-                                            color="blue darken-1"
-                                            text
-                                            @click="dialog = false"
-                                            >Close
-                                          </v-btn>
-                                          <v-btn
-                                            color="blue darken-1"
-                                            text
-                                            @click="
-                                              editComment(item.id, item.detail)
-                                            "
-                                            >Save
-                                          </v-btn>
-                                        </v-card-actions>
-                                      </v-card>
-                                    </v-dialog>
-                                  </v-row>
-                                </v-list-item-action>
-
-                                <div v-else></div>
-                              </v-list-item>
-
-                              <v-divider inset></v-divider>
-                            </v-list>
-
-                            <p class="subtitle-2 text-center">End.</p>
-                          </div>
-                        </v-responsive>
-                      </v-responsive>
-                    </v-row>
-
-                    <!-- for add comments form -->
-                    <v-divider></v-divider>
-                    <v-row>
-                      <v-container fluid>
-                        <v-row>
-                          <v-col cols="12">
-                            <v-textarea
-                              v-model="commentData.detail"
-                              name="input-7-1"
-                              label="เพิ่ม Comment กรรมการสอบหัวข้อ"
-                              :rules="rulesOptionnal"
-                              hint="Hint text 200 characters"
-                              counter
-                              outlined
-                            ></v-textarea>
-                          </v-col>
-                          <v-col>
-                            <v-snackbar v-model="snackbar" :timeout="timeout">
-                              add complete
-                              <v-btn color="blue" text @click="snackbar = false"
-                                >Close
-                              </v-btn>
-                            </v-snackbar>
-                          </v-col>
-                        </v-row>
-                      </v-container>
-                    </v-row>
-
-                    <v-card-actions>
-                      <v-spacer></v-spacer>
-
-                      <v-btn color="black" dark @click="addComment()">
-                        <v-icon left dark>fas fa-comment</v-icon>
-                        Comment
-                      </v-btn>
-                    </v-card-actions>
+                    <!--                    comments project-->
+                    <AppProjectComments :project="project"></AppProjectComments>
 
                     <v-divider></v-divider>
                     <!-- ofUser: {{this.scoreState.ofUser.length}} -->
@@ -395,65 +247,12 @@
               <!--Step 3 after => professor confirm-->
               <!--      Status SUCCESS-->
               <template v-else-if="project.status === 'SUCCESS'">
-                <span class="text--primary">กำหนดวันขึ้นสอบหัวข้อ :</span>
-                <v-container>
-                  <v-row>
-                    <v-date-picker
-                      v-model="project.finalDate"
-                      full-width
-                      :landscape="$vuetify.breakpoint.smAndUp"
-                      class="mt-4"
-                      type="date"
-                      locale="th"
-                      disabled
-                    ></v-date-picker>
-                  </v-row>
-
-                  <v-row>
-                    <v-col cols="12" sm="6">
-                      <p>
-                        <strong>วันที่ปัจจุบัน :</strong>
-                        {{ $moment(new Date()).format('dddd LL') }}
-                      </p>
-                      <p>
-                        <strong>วันที่ ที่เลือกขึ้นสอบหัวข้อ :</strong>
-                        {{ $moment(project.finalDate).format('dddd LL') }}
-                      </p>
-                    </v-col>
-
-                    <v-col cols="12" sm="6">
-                      <v-radio-group v-model="project.finalTime" disabled>
-                        <template v-slot:label>
-                          <div>
-                            <strong
-                              >เวลาสอบหัวข้อโครงงาน CSBSRU Project.</strong
-                            >
-                          </div>
-                        </template>
-                        <v-radio value="MORNING">
-                          <template v-slot:label>
-                            <div>
-                              <strong class="dark--text"
-                                >ช่วงเช้า 10.00 น</strong
-                              >
-                            </div>
-                          </template>
-                        </v-radio>
-                        <v-radio value="AFTERNOON">
-                          <template v-slot:label>
-                            <div>
-                              <strong class="dark--text"
-                                >ช่วงบ่าย 13.30 น</strong
-                              >
-                            </div>
-                          </template>
-                        </v-radio>
-                      </v-radio-group>
-                    </v-col>
-                  </v-row>
-                </v-container>
-                <v-divider class="mb-10"></v-divider>
-
+                <AppDateTimeConfirmProject
+                  :title="`วันที่ส่งคำขอขึ้นสอบหัวข้อ`"
+                  :project="project"
+                  :type="dateTimeConfirmShowOnly"
+                />
+                <v-divider></v-divider>
                 <div
                   v-if="project.pro_ad === user.id"
                   class="red--text custom-text-comment-professor"
@@ -463,162 +262,15 @@
                 </div>
 
                 <div v-else>
-                  <h3>Latest Comments</h3>
-                  <v-row>
-                    <v-responsive class="overflow-y-auto" max-height="400">
-                      <v-responsive height="200vh" class="pa-2">
-                        <div>
-                          <v-list three-line subheader>
-                            <v-subheader inset>ล่าสด</v-subheader>
-
-                            <v-list-item
-                              v-for="item in project.comments"
-                              :key="item.title"
-                            >
-                              <v-list-item-avatar>
-                                <v-img
-                                  :src="
-                                    item.user.imageUrl
-                                      ? item.user.imageUrl.url
-                                      : defaultImage
-                                  "
-                                ></v-img>
-                              </v-list-item-avatar>
-
-                              <v-list-item-content>
-                                <v-list-item-title>
-                                  {{ item.user.prefix }}
-                                  {{ item.user.firstName }}
-                                  {{ item.user.lastName }}
-                                </v-list-item-title>
-                                <v-list-item-subtitle>
-                                  {{ $moment(item.updaedAt).format('LLL') }}
-                                  น.
-                                </v-list-item-subtitle>
-                                <v-list-item-subtitle>
-                                  comment:
-                                  {{ item.detail }}
-                                </v-list-item-subtitle>
-                              </v-list-item-content>
-
-                              <v-list-item-action
-                                v-if="item.user.id === user.id"
-                              >
-                                <!-- {{item.user.id == user.id}} -->
-                                <v-row>
-                                  <v-btn text @click="delComment(item.id)">
-                                    <v-icon>fas fa-trash</v-icon>
-                                  </v-btn>
-
-                                  <v-dialog
-                                    v-model="dialog"
-                                    persistent
-                                    max-width="600px"
-                                  >
-                                    <template v-slot:activator="{ on }">
-                                      <v-btn text v-on="on">
-                                        <v-icon>fas fa-edit</v-icon>
-                                      </v-btn>
-                                    </template>
-                                    <v-card>
-                                      <v-card-title>
-                                        <span class="headline"
-                                          >Edit Comment</span
-                                        >
-                                      </v-card-title>
-                                      <v-card-text>
-                                        <v-container>
-                                          <v-row>
-                                            <v-col cols="12">
-                                              <v-textarea
-                                                v-model="item.detail"
-                                                name="input-7-1"
-                                                label="แก้ไข Comment กรรมการสอบหัวข้อ"
-                                                :rules="rules"
-                                                hint="Hint text 150 characters"
-                                                counter
-                                                outlined
-                                              ></v-textarea>
-                                            </v-col>
-                                          </v-row>
-                                        </v-container>
-                                      </v-card-text>
-                                      <v-card-actions>
-                                        <v-spacer></v-spacer>
-                                        <v-btn
-                                          color="blue darken-1"
-                                          text
-                                          @click="dialog = false"
-                                          >Close
-                                        </v-btn>
-                                        <v-btn
-                                          color="blue darken-1"
-                                          text
-                                          @click="
-                                            editComment(item.id, item.detail)
-                                          "
-                                          >Save
-                                        </v-btn>
-                                      </v-card-actions>
-                                    </v-card>
-                                  </v-dialog>
-                                </v-row>
-                              </v-list-item-action>
-
-                              <div v-else></div>
-                            </v-list-item>
-
-                            <v-divider inset></v-divider>
-                          </v-list>
-
-                          <p class="subtitle-2 text-center">End.</p>
-                        </div>
-                      </v-responsive>
-                    </v-responsive>
-                  </v-row>
-
-                  <!-- for add comments form -->
-                  <v-divider></v-divider>
-                  <v-row>
-                    <v-container fluid>
-                      <v-row>
-                        <v-col cols="12">
-                          <v-textarea
-                            v-model="commentData.detail"
-                            name="input-7-1"
-                            label="เพิ่ม Comment กรรมการสอบหัวข้อ"
-                            :rules="rulesOptionnal"
-                            hint="Hint text 200 characters"
-                            counter
-                            outlined
-                          ></v-textarea>
-                        </v-col>
-                        <v-col>
-                          <v-snackbar v-model="snackbar" :timeout="timeout">
-                            add compleate
-                            <v-btn color="blue" text @click="snackbar = false"
-                              >Close
-                            </v-btn>
-                          </v-snackbar>
-                        </v-col>
-                      </v-row>
-                    </v-container>
-                  </v-row>
-
-                  <v-card-actions>
-                    <v-spacer></v-spacer>
-
-                    <v-btn color="black" dark @click="addComment">
-                      <v-icon left dark>fas fa-comment</v-icon>
-                      Comment
-                    </v-btn>
-                  </v-card-actions>
+                  <!--                    comments project-->
+                  <AppProjectComments :project="project"></AppProjectComments>
 
                   <v-divider></v-divider>
                   <!-- ofUser: {{this.scoreState.ofUser.length}} -->
                   <clientOnly>
                     <v-card-actions>
-                      เกณท์คะแนนการผ่านสอบ 4 ท่านขึ้นไป :
+                      <h3>เกณท์คะแนนการผ่านสอบ 4 ท่านขึ้นไป :</h3>
+
                       <v-chip
                         v-if="project.scores.length"
                         class="ma-2"
@@ -698,7 +350,7 @@
                     </v-row>
 
                     <v-row v-else>
-                      <v-col v-if="scoreState.ofUser.status == false">
+                      <v-col v-if="!scoreState.ofUser.status">
                         <div class="text-center">
                           <v-row>
                             <v-col col="12">
@@ -783,7 +435,6 @@
           </v-card>
         </v-dialog>
       </v-row>
-
       <!--      -->
     </v-container>
   </section>
@@ -799,6 +450,7 @@ import AppProjectTitleDetail from '~/components/projects/AppProjectTitleDetail'
 import AppLoadingProgressCircular from '~/components/loading/AppLoadingProgressCircular'
 import AppProjectDetailOfUsers from '~/components/projects/AppProjectDetailOfUsers'
 import AppDateTimeConfirmProject from '~/components/projects/AppDateTimeConfirmProject'
+import AppProjectComments from '~/components/projects/AppProjectComments'
 
 export default {
   middleware: ['isNotAuth'],
@@ -810,6 +462,7 @@ export default {
     AppLoadingProgressCircular,
     AppProjectDetailOfUsers,
     AppDateTimeConfirmProject,
+    AppProjectComments,
   },
 
   data() {
@@ -820,16 +473,15 @@ export default {
       date: '',
       radios: 'MORNING',
       fileDow: '',
-      commentData: {
-        detail: '',
-      },
+      dialogConfirmProject: false,
+      dateTimeConfirmShowOnly: true,
+      valid: false,
+      dialogProfessorUpdate: false,
+      pro_adUser: {},
       scoreState: {
         all: '',
         pass: '',
       },
-      valid: false,
-      dialogProfessorUpdate: false,
-
       // for update Project
       projectData: {
         id: '',
@@ -847,16 +499,10 @@ export default {
           url: '',
         },
       },
-      timeout: 1500,
-      pro_adUser: {},
-
       typeofDisabled: {
         btnTitleDisabled: true,
         textArea: true,
       },
-
-      dialogConfirmProject: false,
-      dateTimeConfirmShowOnly: true,
     }
   },
 
@@ -874,6 +520,7 @@ export default {
         this.projectData = data.project
         this.showUserDetail = data.project.user
         this.findProAd()
+        this.checkScorePass()
       },
       error(e) {
         console.log(e)
@@ -906,17 +553,11 @@ export default {
     user() {
       return this.$store.getters.loggedInUser
     },
-    defaultImage() {
-      return this.$store.getters.defaultImage
-    },
     rules() {
       return [
         (v) => !!v || 'Item is required',
         (v) => v.length <= 200 || 'Max 200 characters',
       ]
-    },
-    rulesOptionnal() {
-      return [(v) => v.length <= 200 || 'Max 200 characters']
     },
     dialog: {
       get() {
@@ -942,14 +583,6 @@ export default {
         this.$store.dispatch('projects/setIsActive', val)
       },
     },
-    snackbar: {
-      get() {
-        return this.$store.getters.snackbar
-      },
-      set(val) {
-        this.$store.dispatch('projects/setSnackbar', val)
-      },
-    },
   },
 
   methods: {
@@ -959,12 +592,12 @@ export default {
 
       this.$axios.$get(urlPass).then((response) => {
         this.scoreState.pass = response.length
+        // console.log('pass response::', response)
       })
       this.$axios.$get(urlNoPass).then((response) => {
         this.scoreState.noPass = response.length
       })
     },
-
     findProAd() {
       try {
         this.$axios.$get('/users/' + this.projectData.pro_ad).then((result) => {
@@ -975,7 +608,6 @@ export default {
         console.log(error)
       }
     },
-
     ConfirmBeforeNotSuccess() {
       Swal.fire({
         title: 'แน่ใจหรือไม่ที่จะยืนยืนข้อมูล?',
@@ -1014,7 +646,6 @@ export default {
         }
       })
     },
-
     ConfirmBeforeSuccess() {
       Swal.fire({
         title: 'แน่ใจหรือไม่ที่จะยืนยืนข้อมูล?',
@@ -1059,103 +690,6 @@ export default {
         }
       })
     },
-
-    async addComment() {
-      try {
-        if (!this.commentData.detail) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'กรุณากรอก ข้อความที่ต้องการคอมเมนต์!',
-            footer: '<a href>Why do I have this issue?</a>',
-          })
-        } else {
-          this.$axios
-            .$post(
-              '/comments',
-              {
-                user: this.user.id,
-                project: this.project.id,
-                detail: this.commentData.detail,
-              },
-              {
-                headers: {
-                  Authorization: 'Bearer ' + this.$apolloHelpers.getToken(),
-                },
-              }
-            )
-            .then((r) => (this.snackbar = true))
-
-          await this.$apollo.queries.project.refresh()
-          this.commentData.detail = ''
-        }
-      } catch (error) {
-        console.log(error)
-      }
-    },
-
-    async editComment(id, detail) {
-      try {
-        if (!detail) {
-          Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'กรุณากรอก ข้อความที่ต้องการคอมเมนต์!',
-            footer: '<a href>Why do I have this issue?</a>',
-          })
-        } else {
-          const res = await this.$axios.$put(
-            '/comments/' + id,
-            {
-              detail,
-            },
-            {
-              headers: {
-                Authorization: 'Bearer ' + this.$apolloHelpers.getToken(),
-              },
-            }
-          )
-          if (res) {
-            await this.$apollo.queries.project.refresh()
-            this.dialog = false
-          }
-        }
-      } catch (error) {
-        console.log(error)
-      }
-
-      // console.log(detail);
-    },
-
-    delComment(id) {
-      Swal.fire({
-        title: 'Are you sure?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, delete it!',
-      }).then(async (result) => {
-        if (result.value) {
-          try {
-            const res = await this.$axios.$delete('/comments/' + id, {
-              headers: {
-                Authorization: 'Bearer ' + this.$apolloHelpers.getToken(),
-              },
-            })
-            if (res) {
-              this.$apollo.queries.project.refresh()
-              this.commentData.detail = ''
-            }
-          } catch (error) {
-            console.log(error)
-          }
-          Swal.fire('Deleted!', 'Your file has been deleted.', 'success')
-        }
-      })
-    },
-
     onUpdateNotConfirmProject() {
       return Swal.fire({
         title: 'คุณแน่ใจหรือไม่ที่จะลบข้อมูลนี้?',
@@ -1199,7 +733,6 @@ export default {
         }
       })
     },
-
     onUpdateAndConfirmProject() {
       try {
         this.loading = true
@@ -1267,8 +800,4 @@ export default {
 }
 </script>
 
-<style scoped>
-.custom-text-comment-professor {
-  margin-top: 20px;
-}
-</style>
+<style scoped></style>

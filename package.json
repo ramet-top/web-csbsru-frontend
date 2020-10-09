@@ -24,7 +24,7 @@
         "graphql-tag": "^2.10.3",
         "hchs-vue-charts": "^1.2.8",
         "js-cookie": "^2.2.1",
-        "nuxt": "^2.14.4",
+        "nuxt": "^2.14.6",
         "strapi-sdk-javascript": "^0.3.3",
         "sweetalert2": "^9.17.1"
     },
