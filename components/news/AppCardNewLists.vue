@@ -35,7 +35,7 @@
           </v-list-item>
 
           <v-img
-            :src="item.imageUrl ? item.imageUrl.url : defaultImage"
+            :src="item.imageUrl ? item.imageUrl.url : lazyImage"
             :lazy-src="lazyImage"
             contain
           ></v-img>

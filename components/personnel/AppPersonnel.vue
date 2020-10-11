@@ -3,16 +3,11 @@
     <v-card>
       <v-responsive>
         <div>
-          <br />
-          <v-card-title class="text-center justify-center py-6">
-            <h1 class="font-weight-bold display-1">ข้อมูลอาจารย์และบุคลากร</h1>
-          </v-card-title>
-          <h5 class="text-center">
-            สาขาวิชาคอมพิวเตอร์ศึกษา มหาวิทยาลัยราชภัฎบ้านสมเด็จเจ้าพระยา
-          </h5>
-          <br />
+          <AppTitleParallax
+            :title="titleParallax"
+            :sub-title="subTitleParallax"
+          />
 
-          <v-divider />
           <div v-if="loading" class="text-center container">
             <v-row>
               <v-col cols="12" xl="3" lg="3" md="3" sm="6">
@@ -128,7 +123,13 @@
   </div>
 </template>
 <script>
+import AppTitleParallax from '~/components/parallax/AppTitleParallax'
+
 export default {
+  components: {
+    AppTitleParallax,
+  },
+
   props: {
     itemsPerPage: {
       type: Number,
@@ -146,7 +147,6 @@ export default {
     advisors() {
       return this.$store.getters['advisors/advisors']
     },
-
     loading: {
       get() {
         return this.$store.getters.loading
@@ -155,9 +155,14 @@ export default {
         return this.$store.dispatch('advisors/setLoading', val)
       },
     },
-
     defaultImage() {
       return this.$store.getters.defaultImage
+    },
+    titleParallax() {
+      return 'ข้อมูลอาจารย์และบุคลากร'
+    },
+    subTitleParallax() {
+      return 'สาขาวิชาคอมพิวเตอร์ศึกษา มหาวิทยาลัยราชภัฎบ้านสมเด็จเจ้าพระยา'
     },
   },
 

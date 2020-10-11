@@ -21,7 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d4eee709-952b-4f8d-bfaf-34cd40e08453" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/contact/AppContact.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/contact/AppContact.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/course/AppCourse.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/course/AppCourse.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/download/AppDownloadFile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/download/AppDownloadFile.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/news/AppCardNewLists.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/news/AppCardNewLists.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/parallax/AppTitleParallax.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/parallax/AppTitleParallax.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/personnel/AppPersonnel.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/personnel/AppPersonnel.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/news/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/news/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +98,7 @@
       <workItem from="1600231717954" duration="335000" />
       <workItem from="1600240724017" duration="53000" />
       <workItem from="1600772967266" duration="4001000" />
-      <workItem from="1601009025533" duration="32621000" />
+      <workItem from="1601009025533" duration="34757000" />
     </task>
     <servers />
   </component>
@@ -200,10 +206,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="220" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1598457224830" />
-    <state x="417" y="206" width="606" height="522" key="find.popup" timestamp="1602244849501">
+    <state x="417" y="206" width="606" height="522" key="find.popup" timestamp="1602399824941">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="417" y="206" width="606" height="522" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1602244849501" />
+    <state x="417" y="206" width="606" height="522" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1602399824941" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

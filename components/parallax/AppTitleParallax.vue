@@ -5,12 +5,15 @@
         {{ title }}
       </h1>
     </v-card-title>
+    <h5 v-if="subTitle" class="text-center font-weight-bold black--text pb-5">
+      สาขาวิชาคอมพิวเตอร์ศึกษา มหาวิทยาลัยราชภัฎบ้านสมเด็จเจ้าพระยา
+    </h5>
   </v-parallax>
 </template>
 
 <script>
 export default {
   // eslint-disable-next-line
-  props: ['title'],
+  props: ['title', 'subTitle'],
 }
 </script>
