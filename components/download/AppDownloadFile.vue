@@ -127,7 +127,8 @@
                             v-for="(item, i) in fileItemsSECURE"
                             :key="i"
                           >
-                            <v-icon class="my-2">{{ item.icon }}</v-icon>
+                            <!--                            <v-icon class="my-2">{{ item.icon }}</v-icon>-->
+                            <v-icon class="my-2">fas fa-file-download</v-icon>
                             <v-expansion-panel-header
                               >ไฟล์ {{ item.name }}</v-expansion-panel-header
                             >
