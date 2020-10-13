@@ -20,17 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4eee709-952b-4f8d-bfaf-34cd40e08453" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/test.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/plugins/socket.io.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/store/projects/comments.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/projects/AppProjectComments.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/projects/AppProjectComments.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/blog/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/blog/_id.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/project/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/project/_id.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +100,7 @@
       <workItem from="1600772967266" duration="4001000" />
       <workItem from="1601009025533" duration="72990000" />
       <workItem from="1602561673568" duration="619000" />
-      <workItem from="1602562756495" duration="737000" />
+      <workItem from="1602562756495" duration="12027000" />
     </task>
     <servers />
   </component>
@@ -147,22 +140,22 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="0" y="23" key="FileDocumentManager.FileCacheConflict/0.23.1440.877@0.23.1440.877" timestamp="1600057818342" />
-    <state width="1419" height="219" key="GridCell.Tab.0.bottom" timestamp="1602563215141">
+    <state width="1419" height="219" key="GridCell.Tab.0.bottom" timestamp="1602611738880">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1419" height="219" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1602563215141" />
-    <state width="1419" height="219" key="GridCell.Tab.0.center" timestamp="1602563215140">
+    <state width="1419" height="219" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1602611738880" />
+    <state width="1419" height="219" key="GridCell.Tab.0.center" timestamp="1602611738879">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1419" height="219" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1602563215140" />
-    <state width="1419" height="219" key="GridCell.Tab.0.left" timestamp="1602563215139">
+    <state width="1419" height="219" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1602611738879" />
+    <state width="1419" height="219" key="GridCell.Tab.0.left" timestamp="1602611738878">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1419" height="219" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1602563215139" />
-    <state width="1419" height="219" key="GridCell.Tab.0.right" timestamp="1602563215140">
+    <state width="1419" height="219" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1602611738878" />
+    <state width="1419" height="219" key="GridCell.Tab.0.right" timestamp="1602611738879">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1419" height="219" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1602563215140" />
+    <state width="1419" height="219" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1602611738879" />
     <state width="1419" height="279" key="GridCell.Tab.1.bottom" timestamp="1602561503101">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -235,8 +228,14 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/components/projects/AppProjectComments.vue</url>
-          <line>159</line>
+          <line>158</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/components/projects/AppProjectComments.vue</url>
+          <line>315</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

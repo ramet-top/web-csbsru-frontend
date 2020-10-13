@@ -138,8 +138,7 @@
 </template>
 <script>
 import Swal from 'sweetalert2'
-import io from 'socket.io-client'
-// io.set('origins', 'http://localhost:3001')
+// import io from 'socket.io-client'
 
 export default {
   props: {
@@ -314,23 +313,44 @@ export default {
     },
 
     initSocket() {
-      this.socket = io('http://localhost:1338/', {
-        path: '/',
-        transports: ['polling'],
+      // this.socket = io('http://localhost:1338/', {
+      //   path: '/',
+      //   transports: ['polling'],
+      //   reconnection: false,
+      //   // reconnectionDelayMax: 5000,
+      //   transportOptions: {
+      //     polling: {
+      //       extraHeaders: {
+      //         Authorization: `Bearer ${this.$apolloHelpers.getToken()}`,
+      //       },
+      //     },
+      //   },
+      //   // headers: {
+      //   //   origin: '*:*',
+      //   // },
+      //   query: {
+      //     room: 'professor1',
+      //   },
+      // })
+
+      this.socket = this.$nuxtSocket({
+        // options
+        name: 'main',
         reconnection: false,
-        // reconnectionDelayMax: 5000,
         transportOptions: {
           polling: {
             extraHeaders: {
-              Authorization: `Bearer ${this.$apolloHelpers.getToken()}`,
+              Authorization: this.$apolloHelpers.getToken(),
             },
-            origin: '*:*',
-            // credentials: 'include',
           },
         },
         query: {
           room: 'professor1',
         },
+      })
+
+      this.socket.emit('message', {
+        detail: 'abc123',
       })
     },
   },
