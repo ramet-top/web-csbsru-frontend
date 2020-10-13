@@ -1,5 +1,6 @@
 <template>
   <div>
+    <v-btn @click="initSocket">TEST INIT SOCKET</v-btn>
     <h3>{{ title }}</h3>
     <v-row>
       <v-responsive class="overflow-y-auto" max-height="400">
@@ -8,7 +9,7 @@
             <v-list three-line subheader>
               <v-subheader inset>{{ subTitle }}</v-subheader>
 
-              <v-list-item v-for="item in project.comments" :key="item.title">
+              <v-list-item v-for="item in comments" :key="item.title">
                 <v-list-item-avatar>
                   <v-img
                     :src="
@@ -128,7 +129,7 @@
     <v-card-actions>
       <v-spacer></v-spacer>
 
-      <v-btn color="black" dark @click="addComment">
+      <v-btn color="black" dark @click="onSendComment">
         <v-icon left dark>fas fa-comment</v-icon>
         Comment
       </v-btn>
@@ -137,6 +138,8 @@
 </template>
 <script>
 import Swal from 'sweetalert2'
+import io from 'socket.io-client'
+// io.set('origins', 'http://localhost:3001')
 
 export default {
   props: {
@@ -164,6 +167,10 @@ export default {
         detail: '',
       },
       timeout: 1500,
+      comments: [],
+      socket: null,
+      message: 'test msg',
+      messageRxd: '',
     }
   },
 
@@ -177,6 +184,20 @@ export default {
     rulesOption() {
       return [(v) => v.length <= 200 || 'Max 200 characters']
     },
+    rules() {
+      return [
+        (v) => !!v || 'Item is required',
+        (v) => v.length <= 200 || 'Max 200 characters',
+      ]
+    },
+    dialog: {
+      get() {
+        return this.$store.getters.dialog
+      },
+      set(val) {
+        return this.$store.dispatch('projects/setDialog', val)
+      },
+    },
     snackbar: {
       get() {
         return this.$store.getters.snackbar
@@ -185,6 +206,14 @@ export default {
         this.$store.dispatch('projects/setSnackbar', val)
       },
     },
+  },
+
+  mounted() {
+    // await this.fetchHistoryMsg()
+    // console.log(
+    //   'this.$apolloHelpers.getToken::',
+    //   this.$apolloHelpers.getToken()
+    // )
   },
 
   methods: {
@@ -198,22 +227,24 @@ export default {
             footer: '<a href>Why do I have this issue?</a>',
           })
         } else {
-          this.$axios
-            .$post('/comments', {
-              user: this.user.id,
-              project: this.project.id,
-              detail: this.commentData.detail,
-            })
-            .then((r) => (this.snackbar = true))
+          // this.$axios
+          //   .$post('/comments', {
+          //     user: this.user.id,
+          //     project: this.project.id,
+          //     detail: this.commentData.detail,
+          //   })
+          //   .then((r) => (this.snackbar = true))
+          //
+          // await this.$apollo.queries.project.refresh()
+          // await this.$store.dispatch('/projects/')
 
-          await this.$apollo.queries.project.refresh()
+          await this.onSendComment()
           this.commentData.detail = ''
         }
       } catch (error) {
         console.log(error)
       }
     },
-
     async editComment(id, detail) {
       try {
         if (!detail) {
@@ -224,17 +255,9 @@ export default {
             footer: '<a href>Why do I have this issue?</a>',
           })
         } else {
-          const res = await this.$axios.$put(
-            '/comments/' + id,
-            {
-              detail,
-            },
-            {
-              headers: {
-                Authorization: 'Bearer ' + this.$apolloHelpers.getToken(),
-              },
-            }
-          )
+          const res = await this.$axios.$put('/comments/' + id, {
+            detail,
+          })
           if (res) {
             await this.$apollo.queries.project.refresh()
             this.dialog = false
@@ -246,7 +269,6 @@ export default {
 
       // console.log(detail);
     },
-
     delComment(id) {
       Swal.fire({
         title: 'Are you sure?',
@@ -273,6 +295,42 @@ export default {
           }
           Swal.fire('Deleted!', 'Your file has been deleted.', 'success')
         }
+      })
+    },
+    fetchHistoryMsg() {
+      this.$axios
+        .$get(`/comments/?room=${this.user.username}`)
+        .then((result) => {
+          this.comments = result
+          // console.log('fetchHistoryMsg result::', result)
+        })
+        .catch((error) => {
+          console.log(error)
+        })
+    },
+    onSendComment() {
+      console.log('onSendComment')
+      this.socket.emit('message', { detail: 'test comment' })
+    },
+
+    initSocket() {
+      this.socket = io('http://localhost:1338/', {
+        path: '/',
+        transports: ['polling'],
+        reconnection: false,
+        // reconnectionDelayMax: 5000,
+        transportOptions: {
+          polling: {
+            extraHeaders: {
+              Authorization: `Bearer ${this.$apolloHelpers.getToken()}`,
+            },
+            origin: '*:*',
+            // credentials: 'include',
+          },
+        },
+        query: {
+          room: 'professor1',
+        },
       })
     },
   },

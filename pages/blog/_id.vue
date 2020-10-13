@@ -10,15 +10,20 @@
 
     <v-card>
       <v-toolbar dark>
-        <v-toolbar-title
-          >ระบบข่าวประกาศ :
-          <v-btn @click="goBack"
-            ><v-icon left>fas fa-arrow-left</v-icon> ก่อนหน้า</v-btn
-          ></v-toolbar-title
-        ><br />
+        <v-toolbar-title>
+          ระบบข่าวประกาศ :
+          <v-btn @click="$router.push('/blog')">
+            <v-icon left>fas fa-arrow-left</v-icon>
+            ก่อนหน้า
+          </v-btn>
+        </v-toolbar-title>
+        <br />
       </v-toolbar>
       <v-tabs centered icons-and-text>
-        <v-tab>แก้ไข<v-icon>far fa-edit</v-icon></v-tab>
+        <v-tab>
+          แก้ไข
+          <v-icon>far fa-edit</v-icon>
+        </v-tab>
 
         <v-tab-item>
           <v-container>
@@ -110,7 +115,7 @@
                     clear-icon
                     prepend-icon="fas fa-camera"
                     :rules="rulesFile"
-                    @change="showImageBeforUpload"
+                    @change="showImageBeforeUpload()"
                   ></v-file-input>
                   <input v-show="true" type="submit" value="Submit" />
                 </form>
@@ -141,8 +146,8 @@
                     @click="onDeleteData"
                   >
                     <v-icon left>fas fa-trash-alt</v-icon>
-                    Delete</v-btn
-                  >
+                    Delete
+                  </v-btn>
                 </v-col>
                 <v-col>
                   <v-btn
@@ -153,8 +158,8 @@
                     @click="onSubmitData"
                   >
                     <v-icon left>fas fa-edit</v-icon>
-                    Update</v-btn
-                  >
+                    Update
+                  </v-btn>
                 </v-col>
               </v-row>
             </div>
@@ -173,6 +178,7 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2'
 import Logo from '~/components/AppLogoCsbsru'
 
 export default {
@@ -184,6 +190,17 @@ export default {
   data: () => ({
     overlay: false,
     loading: false,
+    uploadPercentage: 0,
+    url: null,
+    file: [],
+    image: '',
+    fileUploadId: '',
+    imageDeleteId: '',
+    result: '',
+    items: [
+      { state: 'POST', text: 'โพส' },
+      { state: 'WORK', text: 'ประกาศสมัครงาน' },
+    ],
     postData: {
       id: '',
       title: '',
@@ -194,36 +211,26 @@ export default {
       },
       category: 'POST',
     },
-
-    file: [],
-    image: '',
-    fileUploadId: '',
-    imageDeleteId: '',
-
-    rules: [(v) => v.length <= 2000 || 'Max 2000 characters'],
-    result: '',
-    rulesFile: [
-      (value) =>
-        !value ||
-        value.size < 200000000 ||
-        'File size should be less than 200 MB!',
-    ],
-
-    items: [
-      { state: 'POST', text: 'โพส' },
-      { state: 'WORK', text: 'ประกาศสมัครงาน' },
-    ],
-    uploadPercentage: 0,
-    url: null,
   }),
 
   computed: {
     user() {
       return this.$store.getters.loggedInUser
     },
+    rules() {
+      return [(v) => v.length <= 2000 || 'Max 2000 characters']
+    },
+    rulesFile() {
+      return [
+        (value) =>
+          !value ||
+          value.size < 200000000 ||
+          'File size should be less than 200 MB!',
+      ]
+    },
   },
 
-  created() {
+  mounted() {
     this.fetchPost()
   },
 
@@ -235,11 +242,9 @@ export default {
         this.loading = false
       })
     },
-
-    showImageBeforUpload() {
+    showImageBeforeUpload() {
       this.url = URL.createObjectURL(this.file)
     },
-
     async onSubmitFile() {
       try {
         if (this.postData.imageUrl) {
@@ -274,7 +279,6 @@ export default {
         console.log(error)
       }
     },
-
     linkImageUploadToUser() {
       this.$axios
         .$put(`/posts/${this.postData.id}`, {
@@ -287,7 +291,6 @@ export default {
           this.$auth.fetchUser()
         })
     },
-
     async onSubmitData() {
       this.overlay = true
       try {
@@ -308,84 +311,69 @@ export default {
           })
           .then((data) => {
             let timerInterval
-            this.$Swal
-              .fire({
-                title: 'Update Success',
-                html: 'I will close in <b></b> milliseconds.',
-                timer: 2000,
-                timerProgressBar: true,
-                onBeforeOpen: () => {
-                  this.$Swal.showLoading()
-                  timerInterval = setInterval(() => {
-                    this.$Swal
-                      .getContent()
-                      .querySelector(
-                        'b'
-                      ).textContent = this.$Swal.getTimerLeft()
-                  }, 100)
-                },
-                onClose: () => {
-                  clearInterval(timerInterval)
-                },
-              })
-              .then((result) => {
-                if (result.dismiss === this.$Swal.DismissReason.timer) {
-                console.log('I was closed by the timer') // eslint-disable-line
-                }
-              })
+            Swal.fire({
+              title: 'Update Success',
+              html: 'I will close in <b></b> milliseconds.',
+              timer: 2000,
+              timerProgressBar: true,
+              onBeforeOpen: () => {
+                Swal.showLoading()
+                timerInterval = setInterval(() => {
+                  Swal.getContent().querySelector(
+                    'b'
+                  ).textContent = Swal.getTimerLeft()
+                }, 100)
+              },
+              onClose: () => {
+                clearInterval(timerInterval)
+              },
+            }).then((result) => {
+              if (result.dismiss === Swal.DismissReason.timer) {
+                // console.log('I was closed by the timer') // eslint-disable-line
+                this.$router.push('/blog')
+              }
+            })
           })
 
         this.overlay = false
-        this.$router.go('.')
       } catch (error) {
         console.log(error)
       }
     },
-
     onDeleteData() {
-      return this.$Swal
-        .fire({
-          title: 'คุณแน่ใจหรือไม่ที่จะลบโพส?',
-          text: "You won't be able to revert this!",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes, delete it!',
-        })
-        .then(async (result) => {
-          if (result.value) {
-            this.overlay = true
-            const delPhoto = await this.$axios.$delete(
-              `/upload/files/${this.postData.imageUrl.id}`
-            )
+      return Swal.fire({
+        title: 'คุณแน่ใจหรือไม่ที่จะลบโพส?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!',
+      }).then(async (result) => {
+        if (result.value) {
+          this.overlay = true
+          const delPhoto = await this.$axios.$delete(
+            `/upload/files/${this.postData.imageUrl.id}`
+          )
 
-            if (delPhoto) {
-              await this.$axios.$delete(`/posts/${this.postData.id}`)
+          if (delPhoto) {
+            await this.$axios.$delete(`/posts/${this.postData.id}`)
 
-              this.overlay = false
-              this.$Swal.fire(
-                'Deleted!',
-                'Your file has been deleted.',
-                'success'
-              )
-              this.goBack()
-            } else {
-              this.$Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'ไม่สามารถลบข้อมูลได้ ',
-                footer: 'กรุณาลองใหม่ภายหลัง!',
-              })
-            }
+            this.overlay = false
+            Swal.fire('Deleted!', 'Your file has been deleted.', 'success')
+            // this.goBack()
+            this.$router.go('/blog')
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'ไม่สามารถลบข้อมูลได้ ',
+              footer: 'กรุณาลองใหม่ภายหลัง!',
+            })
           }
-        })
+        }
+      })
     },
-
-    goBack() {
-      return this.$router.go(-1)
-    },
-
     btnRemoveImage() {
       this.url = null
       this.file = []

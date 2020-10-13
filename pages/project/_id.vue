@@ -572,20 +572,7 @@ export default {
     user() {
       return this.$store.getters.loggedInUser
     },
-    rules() {
-      return [
-        (v) => !!v || 'Item is required',
-        (v) => v.length <= 200 || 'Max 200 characters',
-      ]
-    },
-    dialog: {
-      get() {
-        return this.$store.getters.dialog
-      },
-      set(val) {
-        return this.$store.dispatch('projects/setDialog', val)
-      },
-    },
+
     loading: {
       get() {
         return this.$store.getters.loading
