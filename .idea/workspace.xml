@@ -16,14 +16,25 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:dev" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4eee709-952b-4f8d-bfaf-34cd40e08453" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/navigations/AppHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/navigations/AppHeader.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/projects/AppProjectComments.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/projects/AppProjectComments.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/projects/confirm/AppShowState.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/projects/confirm/AppShowState.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/auth/project/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/auth/project/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/project/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/project/_id.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +46,16 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="2" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/ramet-top/web-csbsru-frontend" />
+      </set>
+    </option>
   </component>
   <component name="ProjectId" id="1gdGBqQ9Q41LUy1cuodOBrktq6T" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -64,9 +85,11 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="prettier.import.notification.dismissed" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
     <property name="vuejs.nuxt.types-notification-shown" value="true" />
   </component>
   <component name="RunManager">
@@ -100,7 +123,10 @@
       <workItem from="1600772967266" duration="4001000" />
       <workItem from="1601009025533" duration="72990000" />
       <workItem from="1602561673568" duration="619000" />
-      <workItem from="1602562756495" duration="12027000" />
+      <workItem from="1602562756495" duration="18888000" />
+      <workItem from="1602663869189" duration="598000" />
+      <workItem from="1602664757748" duration="472000" />
+      <workItem from="1602665289735" duration="15129000" />
     </task>
     <servers />
   </component>
@@ -112,7 +138,34 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="dev" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
@@ -120,14 +173,18 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="576" y="352" key="#ESLint" timestamp="1600914067882">
+    <state x="576" y="350" key="#ESLint" timestamp="1602691881093">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="576" y="352" key="#ESLint/0.23.1440.877@0.23.1440.877" timestamp="1600914067882" />
-    <state x="183" y="122" width="1073" height="702" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598437318589">
+    <state x="576" y="350" key="#ESLint/0.23.1440.877@0.23.1440.877" timestamp="1602691881093" />
+    <state x="439" y="323" key="#Prettier" timestamp="1602672599215">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="183" y="122" width="1073" height="702" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.877@0.23.1440.877" timestamp="1598437318589" />
+    <state x="439" y="323" key="#Prettier/0.23.1440.877@0.23.1440.877" timestamp="1602672599215" />
+    <state x="183" y="122" width="1073" height="726" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1602672533061">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="183" y="122" width="1073" height="726" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.877@0.23.1440.877" timestamp="1602672533061" />
     <state x="458" y="215" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600057840205">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -140,22 +197,22 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="0" y="23" key="FileDocumentManager.FileCacheConflict/0.23.1440.877@0.23.1440.877" timestamp="1600057818342" />
-    <state width="1419" height="219" key="GridCell.Tab.0.bottom" timestamp="1602611738880">
+    <state width="1398" height="212" key="GridCell.Tab.0.bottom" timestamp="1602695009039">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1419" height="219" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1602611738880" />
-    <state width="1419" height="219" key="GridCell.Tab.0.center" timestamp="1602611738879">
+    <state width="1398" height="212" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1602695009039" />
+    <state width="1398" height="212" key="GridCell.Tab.0.center" timestamp="1602695009038">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1419" height="219" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1602611738879" />
-    <state width="1419" height="219" key="GridCell.Tab.0.left" timestamp="1602611738878">
+    <state width="1398" height="212" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1602695009038" />
+    <state width="1398" height="212" key="GridCell.Tab.0.left" timestamp="1602695009037">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1419" height="219" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1602611738878" />
-    <state width="1419" height="219" key="GridCell.Tab.0.right" timestamp="1602611738879">
+    <state width="1398" height="212" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1602695009037" />
+    <state width="1398" height="212" key="GridCell.Tab.0.right" timestamp="1602695009039">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1419" height="219" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1602611738879" />
+    <state width="1398" height="212" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1602695009039" />
     <state width="1419" height="279" key="GridCell.Tab.1.bottom" timestamp="1602561503101">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -204,10 +261,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1419" height="279" key="GridCell.Tab.3.right/0.23.1440.877@0.23.1440.877" timestamp="1602561503103" />
-    <state x="220" y="100" key="SettingsEditor" timestamp="1598457224830">
+    <state x="220" y="100" key="SettingsEditor" timestamp="1602692535614">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="220" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1598457224830" />
+    <state x="220" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1602692535614" />
     <state x="417" y="206" width="606" height="522" key="find.popup" timestamp="1602435568660">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -228,12 +285,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/components/projects/AppProjectComments.vue</url>
-          <line>158</line>
+          <line>103</line>
+          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/components/projects/AppProjectComments.vue</url>
-          <line>315</line>
+          <line>155</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="8" />
         </line-breakpoint>

@@ -96,181 +96,11 @@
                     </div>
 
                     <div>
-                      <div v-if="true">
-                        <!--                        <div>-->
-                        <!--                          <h3>Latest Comments</h3>-->
-                        <!--                          <v-row>-->
-                        <!--                            <v-responsive-->
-                        <!--                              class="overflow-y-auto"-->
-                        <!--                              max-height="400"-->
-                        <!--                            >-->
-                        <!--                              <v-responsive height="200vh" class="pa-2">-->
-                        <!--                                <div>-->
-                        <!--                                  <v-list three-line subheader>-->
-                        <!--                                    <v-subheader inset>ล่าสุด</v-subheader>-->
-
-                        <!--                                    <v-list-item-->
-                        <!--                                      v-for="item in project.comments"-->
-                        <!--                                      :key="item.title"-->
-                        <!--                                    >-->
-                        <!--                                      <v-list-item-avatar-->
-                        <!--                                        v-if="item.user.imageUrl"-->
-                        <!--                                      >-->
-                        <!--                                        <v-img-->
-                        <!--                                          :src="item.user.imageUrl.url"-->
-                        <!--                                        ></v-img>-->
-                        <!--                                      </v-list-item-avatar>-->
-                        <!--                                      <v-list-item-avatar v-else>-->
-                        <!--                                        <v-img-->
-                        <!--                                          :src="defaultImage"-->
-                        <!--                                          alt="defaultImage"-->
-                        <!--                                        ></v-img>-->
-                        <!--                                      </v-list-item-avatar>-->
-
-                        <!--                                      <v-list-item-content>-->
-                        <!--                                        <v-list-item-title>-->
-                        <!--                                          {{ item.user.prefix }}-->
-                        <!--                                          {{ item.user.firstName }}-->
-                        <!--                                          {{ item.user.lastName }}-->
-                        <!--                                        </v-list-item-title>-->
-                        <!--                                        <v-list-item-subtitle>-->
-                        <!--                                          {{-->
-                        <!--                                            $moment(item.updaedAt).format('LLL')-->
-                        <!--                                          }}-->
-                        <!--                                          น.-->
-                        <!--                                        </v-list-item-subtitle>-->
-                        <!--                                        <v-list-item-subtitle>-->
-                        <!--                                          comment:-->
-                        <!--                                          {{ item.detail }}-->
-                        <!--                                        </v-list-item-subtitle>-->
-                        <!--                                      </v-list-item-content>-->
-
-                        <!--                                      <v-list-item-action-->
-                        <!--                                        v-if="item.user.id == user.id"-->
-                        <!--                                      >-->
-                        <!--                                        <v-row>-->
-                        <!--                                          <v-btn-->
-                        <!--                                            text-->
-                        <!--                                            @click="delComment(item.id)"-->
-                        <!--                                          >-->
-                        <!--                                            <v-icon>fas fa-trash</v-icon>-->
-                        <!--                                          </v-btn>-->
-
-                        <!--                                          <v-dialog-->
-                        <!--                                            v-model="dialog"-->
-                        <!--                                            persistent-->
-                        <!--                                            max-width="600px"-->
-                        <!--                                          >-->
-                        <!--                                            <template v-slot:activator="{ on }">-->
-                        <!--                                              <v-btn text v-on="on">-->
-                        <!--                                                <v-icon>fas fa-edit</v-icon>-->
-                        <!--                                              </v-btn>-->
-                        <!--                                            </template>-->
-                        <!--                                            <v-card>-->
-                        <!--                                              <v-card-title>-->
-                        <!--                                                <span class="headline"-->
-                        <!--                                                  >Edit Comment</span-->
-                        <!--                                                >-->
-                        <!--                                              </v-card-title>-->
-                        <!--                                              <v-card-text>-->
-                        <!--                                                <v-container>-->
-                        <!--                                                  <v-row>-->
-                        <!--                                                    <v-col cols="12">-->
-                        <!--                                                      <v-textarea-->
-                        <!--                                                        v-model="item.detail"-->
-                        <!--                                                        name="input-7-1"-->
-                        <!--                                                        label="แก้ไข Comment"-->
-                        <!--                                                        :rules="rules"-->
-                        <!--                                                        hint="Hint text 200 characters"-->
-                        <!--                                                        counter-->
-                        <!--                                                        outlined-->
-                        <!--                                                      ></v-textarea>-->
-                        <!--                                                    </v-col>-->
-                        <!--                                                  </v-row>-->
-                        <!--                                                </v-container>-->
-                        <!--                                              </v-card-text>-->
-                        <!--                                              <v-card-actions>-->
-                        <!--                                                <v-spacer></v-spacer>-->
-                        <!--                                                <v-btn-->
-                        <!--                                                  color="blue darken-1"-->
-                        <!--                                                  text-->
-                        <!--                                                  @click="dialog = false"-->
-                        <!--                                                  >Close-->
-                        <!--                                                </v-btn>-->
-                        <!--                                                <v-btn-->
-                        <!--                                                  color="blue darken-1"-->
-                        <!--                                                  text-->
-                        <!--                                                  @click="-->
-                        <!--                                                    editComment(-->
-                        <!--                                                      item.id,-->
-                        <!--                                                      item.detail-->
-                        <!--                                                    )-->
-                        <!--                                                  "-->
-                        <!--                                                  >Save-->
-                        <!--                                                </v-btn>-->
-                        <!--                                              </v-card-actions>-->
-                        <!--                                            </v-card>-->
-                        <!--                                          </v-dialog>-->
-                        <!--                                        </v-row>-->
-                        <!--                                      </v-list-item-action>-->
-
-                        <!--                                      <div v-else></div>-->
-                        <!--                                    </v-list-item>-->
-
-                        <!--                                    <v-divider inset></v-divider>-->
-                        <!--                                  </v-list>-->
-
-                        <!--                                  <p class="subtitle-2 text-center">End.</p>-->
-                        <!--                                </div>-->
-                        <!--                              </v-responsive>-->
-                        <!--                            </v-responsive>-->
-                        <!--                          </v-row>-->
-
-                        <!--                          <v-divider></v-divider>-->
-                        <!--                          <v-row>-->
-                        <!--                            <v-container fluid>-->
-                        <!--                              <v-row>-->
-                        <!--                                <v-col cols="12">-->
-                        <!--                                  <v-textarea-->
-                        <!--                                    v-model="commentData.detail"-->
-                        <!--                                    name="input-7-1"-->
-                        <!--                                    label="เพิ่ม Comment"-->
-                        <!--                                    :rules="rulesOptionnal"-->
-                        <!--                                    hint="Hint text 200 characters"-->
-                        <!--                                    counter-->
-                        <!--                                    outlined-->
-                        <!--                                  ></v-textarea>-->
-                        <!--                                </v-col>-->
-                        <!--                                <v-col>-->
-                        <!--                                  <v-snackbar-->
-                        <!--                                    v-model="snackbar"-->
-                        <!--                                    :timeout="timeout"-->
-                        <!--                                  >-->
-                        <!--                                    add complete-->
-                        <!--                                    <v-btn-->
-                        <!--                                      color="blue"-->
-                        <!--                                      text-->
-                        <!--                                      @click="snackbar = false"-->
-                        <!--                                      >Close-->
-                        <!--                                    </v-btn>-->
-                        <!--                                  </v-snackbar>-->
-                        <!--                                </v-col>-->
-                        <!--                              </v-row>-->
-                        <!--                            </v-container>-->
-                        <!--                          </v-row>-->
-
-                        <!--                          <v-card-actions>-->
-                        <!--                            <v-spacer></v-spacer>-->
-
-                        <!--                            <v-btn color="black" dark @click="addComment">-->
-                        <!--                              <v-icon left dark>fas fa-comment</v-icon>-->
-                        <!--                              Comment-->
-                        <!--                            </v-btn>-->
-                        <!--                          </v-card-actions>-->
-
-                        <!--                          <v-divider></v-divider>-->
-                        <!--                        </div>-->
-                      </div>
+                      <!--                        for process comment-->
+                      <AppProjectComments
+                        v-if="true"
+                        :project="projectData"
+                      ></AppProjectComments>
 
                       <div>
                         เกณท์คะแนนการผ่านสอบ 4 ท่านขึ้นไป :
@@ -454,6 +284,7 @@ import { QUERY_WHERE_USERID_AND_PROJECTID } from '@/graphql/queries/scores.js'
 import AppProjectTitleDetail from '~/components/projects/AppProjectTitleDetail'
 import AppProjectDetailOfUsers from '~/components/projects/AppProjectDetailOfUsers'
 import AppDateTimeConfirmProject from '~/components/projects/AppDateTimeConfirmProject'
+import AppProjectComments from '~/components/projects/AppProjectComments'
 
 export default {
   middleware: ['isNotAuth'],
@@ -462,6 +293,7 @@ export default {
     AppProjectTitleDetail,
     AppProjectDetailOfUsers,
     AppDateTimeConfirmProject,
+    AppProjectComments,
   },
 
   // eslint-disable-next-line

@@ -393,13 +393,10 @@ export default {
     },
 
     async logout() {
-      try {
-        await this.$auth.logout()
-        await this.$apolloHelpers.onLogout()
-        this.drawer = false
-      } catch (e) {
-        console.log(e)
-      }
+      await this.$apolloHelpers.onLogout()
+      await this.$auth.logout()
+
+      this.drawer = false
     },
 
     toHome() {

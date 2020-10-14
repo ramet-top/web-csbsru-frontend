@@ -6,7 +6,7 @@
         <v-responsive>
           <template v-if="isPermission">
             <div v-if="projectData">
-              <!-- <h2>showState</h2> -->
+              <!--              <h2>showState</h2>-->
               <AppShowState :project-data="projectData" />
             </div>
             <div v-else>

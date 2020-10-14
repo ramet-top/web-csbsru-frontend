@@ -72,7 +72,6 @@ export default {
     '@nuxtjs/apollo',
     ['@nuxtjs/pwa', { icon: true }],
     '@nuxtjs/axios',
-    '@nuxtjs/proxy',
     '@nuxtjs/auth',
     'nuxt-socket-io',
   ],
@@ -91,15 +90,6 @@ export default {
     // proxy: true,
     baseURL: process.env.BASE_URL || 'http://localhost:1337',
   },
-
-  // proxy: {
-  //   'http://localhost:1338/socket': {
-  //     target: 'http://localhost:1338',
-  //     pathRewrite: {
-  //       '^/api': '/',
-  //     },
-  //   },
-  // },
 
   auth: {
     redirect: {

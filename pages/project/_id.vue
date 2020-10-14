@@ -532,7 +532,9 @@ export default {
       fetchPolicy: 'network-only',
       variables() {
         const params = this.$route.params
-        return { id: params.id }
+        return {
+          id: params.id,
+        }
       },
       result({ data, loading, networkStatus }) {
         this.loading = loading
