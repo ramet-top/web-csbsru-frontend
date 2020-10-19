@@ -26,15 +26,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4eee709-952b-4f8d-bfaf-34cd40e08453" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/navigations/AppHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/navigations/AppHeader.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/projects/AppProjectComments.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/projects/AppProjectComments.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/projects/confirm/AppShowState.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/projects/confirm/AppShowState.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/auth/project/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/auth/project/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/project/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/project/_id.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +80,7 @@
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettier.import.notification.dismissed" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
     <property name="vuejs.nuxt.types-notification-shown" value="true" />
@@ -126,8 +119,16 @@
       <workItem from="1602562756495" duration="18888000" />
       <workItem from="1602663869189" duration="598000" />
       <workItem from="1602664757748" duration="472000" />
-      <workItem from="1602665289735" duration="15129000" />
+      <workItem from="1602665289735" duration="18389000" />
     </task>
+    <task id="LOCAL-00001" summary="[UPDATE] ui comment all, update and delete success">
+      <created>1602695876392</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602695876392</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +173,10 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="[UPDATE] ui comment all, update and delete success" />
+    <option name="LAST_COMMIT_MESSAGE" value="[UPDATE] ui comment all, update and delete success" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="576" y="350" key="#ESLint" timestamp="1602691881093">
       <screen x="0" y="23" width="1440" height="877" />
@@ -197,22 +202,22 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="0" y="23" key="FileDocumentManager.FileCacheConflict/0.23.1440.877@0.23.1440.877" timestamp="1600057818342" />
-    <state width="1398" height="212" key="GridCell.Tab.0.bottom" timestamp="1602695009039">
+    <state width="1398" height="212" key="GridCell.Tab.0.bottom" timestamp="1603074530260">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="212" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1602695009039" />
-    <state width="1398" height="212" key="GridCell.Tab.0.center" timestamp="1602695009038">
+    <state width="1398" height="212" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1603074530260" />
+    <state width="1398" height="212" key="GridCell.Tab.0.center" timestamp="1603074530259">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="212" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1602695009038" />
-    <state width="1398" height="212" key="GridCell.Tab.0.left" timestamp="1602695009037">
+    <state width="1398" height="212" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1603074530259" />
+    <state width="1398" height="212" key="GridCell.Tab.0.left" timestamp="1603074530258">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="212" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1602695009037" />
-    <state width="1398" height="212" key="GridCell.Tab.0.right" timestamp="1602695009039">
+    <state width="1398" height="212" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1603074530258" />
+    <state width="1398" height="212" key="GridCell.Tab.0.right" timestamp="1603074530259">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="212" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1602695009039" />
+    <state width="1398" height="212" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1603074530259" />
     <state width="1419" height="279" key="GridCell.Tab.1.bottom" timestamp="1602561503101">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -261,10 +266,14 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1419" height="279" key="GridCell.Tab.3.right/0.23.1440.877@0.23.1440.877" timestamp="1602561503103" />
-    <state x="220" y="100" key="SettingsEditor" timestamp="1602692535614">
+    <state x="220" y="100" key="SettingsEditor" timestamp="1602763711639">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="220" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1602692535614" />
+    <state x="220" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1602763711639" />
+    <state x="320" y="197" key="Vcs.Push.Dialog.v2" timestamp="1602695886912">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="320" y="197" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1602695886912" />
     <state x="417" y="206" width="606" height="522" key="find.popup" timestamp="1602435568660">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -285,13 +294,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/components/projects/AppProjectComments.vue</url>
-          <line>103</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/components/projects/AppProjectComments.vue</url>
-          <line>155</line>
+          <line>158</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="8" />
         </line-breakpoint>

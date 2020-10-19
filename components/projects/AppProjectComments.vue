@@ -50,8 +50,8 @@
               class="col-11 card"
               :class="
                 item.user.id === user.id
-                  ? 'custom-other-comment'
-                  : 'custom-owner-comment'
+                  ? 'custom-owner-comment'
+                  : 'custom-other-comment'
               "
             >
               <div class="font-weight-bold">
@@ -61,7 +61,7 @@
                   {{ $moment(item.updatedAt).startOf('hour').fromNow() }}
                 </span>
               </div>
-              <p class="mr-5">
+              <p class="mr-5 font-weight-thin">
                 {{ item.detail }}
                 <!--                Lorem ipsum dolor sit amet, consectetur adipisicing elit.-->
                 <!--                Asperiores, facilis nam non officiis quod quos sit. Ad assumenda-->
@@ -72,10 +72,6 @@
               <div v-if="item.user.id === user.id">
                 <!-- {{item.user.id == user.id}} -->
                 <v-row class="mr-1 float-right">
-                  <v-btn text @click="delComment(item.id)">
-                    <v-icon size="15">fas fa-trash</v-icon>
-                  </v-btn>
-
                   <v-dialog v-model="dialog" persistent max-width="600px">
                     <template v-slot:activator="{ on }">
                       <v-btn text v-on="on">
@@ -120,6 +116,10 @@
                       </v-card-actions>
                     </v-card>
                   </v-dialog>
+
+                  <v-btn text @click="delComment(item.id)">
+                    <v-icon size="15">fas fa-trash</v-icon>
+                  </v-btn>
                 </v-row>
               </div>
             </div>
@@ -222,17 +222,6 @@ export default {
             footer: '<a href>Why do I have this issue?</a>',
           })
         } else {
-          // this.$axios
-          //   .$post('/comments', {
-          //     user: this.user.id,
-          //     project: this.project.id,
-          //     detail: this.commentData.detail,
-          //   })
-          //   .then((r) => (this.snackbar = true))
-          //
-          // await this.$apollo.queries.project.refresh()
-          // await this.$store.dispatch('/projects/')
-
           await this.onSendComment()
           this.commentData.detail = ''
         }
@@ -254,15 +243,12 @@ export default {
             detail,
           })
           if (res) {
-            // await this.$apollo.queries.project.refresh()
             this.dialog = false
           }
         }
       } catch (error) {
         console.log(error)
       }
-
-      // console.log(detail);
     },
     delComment(id) {
       Swal.fire({
@@ -278,7 +264,6 @@ export default {
           try {
             const res = await this.$axios.$delete('/comments/' + id)
             if (res) {
-              // this.$apollo.queries.project.refresh()
               this.fetchHistoryMsg()
               this.commentData.detail = ''
             }
@@ -300,12 +285,14 @@ export default {
           console.log(error)
         })
     },
-    onSendComment() {
+    async onSendComment() {
       console.log('onSendComment')
-      this.socket.emit('message', {
+      await this.socket.emit(this.project.id, {
         project: this.project.id,
         detail: this.commentData.detail,
       })
+
+      this.commentData.detail = ''
     },
 
     initSocket() {
@@ -327,7 +314,7 @@ export default {
     },
 
     listenRoomChat() {
-      this.socket.on('message', (messageCallback) => {
+      this.socket.on(this.project.id, (messageCallback) => {
         // console.log('messageCallback::', messageCallback)
 
         let result = {
@@ -359,7 +346,7 @@ export default {
 }
 
 .custom-other-comment {
-  background-color: #ffebee;
+  /*background-color: #ffebee;*/
   border-radius: 12px;
   border-bottom: 1px solid gray;
   /*padding-right: 5px;*/
