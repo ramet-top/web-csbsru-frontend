@@ -1,10 +1,6 @@
 <template>
   <div>
-    <v-parallax src="https://unsplash.it/1920/1920/?image=1067" height="80">
-      <v-card-title class="text-center justify-center py-6">
-        <h1 class="font-weight-bold display-1 black--text">ข้อมูลบุคลากร</h1>
-      </v-card-title>
-    </v-parallax>
+    <AppTitleParallax :title="titleParallax" />
 
     <v-card class="mx-auto" width="800">
       <v-progress-circular
@@ -47,8 +43,9 @@
 
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="green darken-1" text @click="goback">
-          <v-icon left small>fas fa-chevron-left</v-icon>Back
+        <v-btn color="green darken-1" text @click="$router.push('/personnel')">
+          <v-icon left small>fas fa-chevron-left</v-icon>
+          Back
         </v-btn>
       </v-card-actions>
     </v-card>
@@ -56,7 +53,13 @@
 </template>
 
 <script>
+import AppTitleParallax from '~/components/parallax/AppTitleParallax'
+
 export default {
+  components: {
+    AppTitleParallax,
+  },
+
   computed: {
     advisor() {
       return this.$store.getters['advisors/advisor']
@@ -69,6 +72,9 @@ export default {
         return this.$store.dispatch('advisors/setLoading', val)
       },
     },
+    titleParallax() {
+      return 'ข้อมูลบุคลากร'
+    },
   },
 
   mounted() {
@@ -80,10 +86,6 @@ export default {
       this.loading = true
       this.$store.dispatch('advisors/requestAdvisors', this.$route.params.id)
       this.loading = false
-    },
-
-    goback() {
-      this.$router.push('/')
     },
   },
 }

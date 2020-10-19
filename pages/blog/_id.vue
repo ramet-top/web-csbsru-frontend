@@ -65,7 +65,7 @@
                   single-line
                 ></v-select>
 
-                <div>state chang:: {{ postData.category.state }}</div>
+                <!--                <div>state chang:: {{ postData.category.state }}</div>-->
               </v-col>
 
               <v-col class="d-flex justify-center" cols="12" sm="6">
@@ -117,6 +117,8 @@
                     :rules="rulesFile"
                     @change="showImageBeforeUpload()"
                   ></v-file-input>
+
+                  <!--                 test  submit-->
                   <input v-show="true" type="submit" value="Submit" />
                 </form>
               </v-col>
@@ -197,10 +199,6 @@ export default {
     fileUploadId: '',
     imageDeleteId: '',
     result: '',
-    items: [
-      { state: 'POST', text: 'โพส' },
-      { state: 'WORK', text: 'ประกาศสมัครงาน' },
-    ],
     postData: {
       id: '',
       title: '',
@@ -228,6 +226,12 @@ export default {
           'File size should be less than 200 MB!',
       ]
     },
+    items() {
+      return [
+        { state: 'POST', text: 'โพส' },
+        { state: 'WORK', text: 'ประกาศสมัครงาน' },
+      ]
+    },
   },
 
   mounted() {
@@ -253,7 +257,6 @@ export default {
             .then(function (response) {
               console.log('deleted', response.id)
             })
-
             .catch(function (error) {
               throw error
             })
@@ -273,8 +276,8 @@ export default {
         form.append('files', this.file)
 
         const res = await this.$axios.$post('/upload', form, config)
-        console.log(res[0].id)
-        this.fileUploadId = await res[0].id
+        // console.log('onSubmitFile work', res)
+        this.fileUploadId = (await res[0].id) || 0
       } catch (error) {
         console.log(error)
       }
@@ -299,14 +302,14 @@ export default {
           await this.linkImageUploadToUser()
         }
         this.$axios
-          .put(`/posts/${this.postData.id}`, {
+          .$put(`/posts/${this.postData.id}`, {
             user: this.user.id,
             title: this.postData.title,
             detail: this.postData.detail,
             publish: this.postData.publish,
-            // imageUrl: {
-            //   id: this.fileUploadId || this.postData.imageUrl.id
-            // },
+            imageUrl: {
+              id: this.fileUploadId || this.postData.imageUrl.id,
+            },
             category: this.postData.category.state,
           })
           .then((data) => {
@@ -352,19 +355,26 @@ export default {
       }).then(async (result) => {
         if (result.value) {
           this.overlay = true
+
+          // deleted image
           const delPhoto = await this.$axios.$delete(
             `/upload/files/${this.postData.imageUrl.id}`
           )
 
+          // deleted post
           if (delPhoto) {
             await this.$axios.$delete(`/posts/${this.postData.id}`)
 
             this.overlay = false
-            Swal.fire('Deleted!', 'Your file has been deleted.', 'success')
-            // this.goBack()
-            this.$router.go('/blog')
+            await Swal.fire(
+              'Deleted!',
+              'Your file has been deleted.',
+              'success'
+            )
+
+            await this.$router.push('/blog')
           } else {
-            Swal.fire({
+            await Swal.fire({
               icon: 'error',
               title: 'Oops...',
               text: 'ไม่สามารถลบข้อมูลได้ ',
