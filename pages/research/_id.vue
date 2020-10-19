@@ -8,10 +8,6 @@
           <Logo />
 
           <v-divider></v-divider>
-          <!--          <v-card-title class="align-end fill-height"-->
-          <!--            >หัวข้องานวิจัย-->
-          <!--          </v-card-title>-->
-
           <v-card-text>
             <span class="text--primary">
               <strong>หัวข้องานวิจัย</strong>
@@ -21,6 +17,15 @@
           </v-card-text>
 
           <v-card-text>
+            <span class="text--primary">
+              <strong>เจ้าของงานวิจัย</strong>
+            </span>
+            <br />
+            <p class="text-justify ml-5">
+              {{ professorResearch.name || '' }}
+            </p>
+            <v-divider></v-divider>
+
             <span class="text--primary">
               <strong>รายละเอียด</strong>
             </span>

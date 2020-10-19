@@ -5,11 +5,11 @@
         <v-card-title>
           ค้นหางานวิจัย
           <v-spacer></v-spacer>
-          <p class="mr-2">Search(ชื่องานวิจัย)</p>
+          <!--          <p class="mr-2">Search(ชื่องานวิจัย)</p>-->
           <v-text-field
             v-model="search"
             append-icon="fas fa-search"
-            label="Search"
+            label="Search (งานวิจัย)"
           ></v-text-field>
         </v-card-title>
 
