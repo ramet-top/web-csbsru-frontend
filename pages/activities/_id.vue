@@ -1,12 +1,6 @@
 <template>
   <div>
-    <v-parallax src=" https://unsplash.it/1920/1920/?image=1067" height="100">
-      <v-card-title class="text-center justify-center py-6">
-        <h1 class="font-weight-bold display-1 black--text">
-          รายละเอียดกิจกรรม
-        </h1>
-      </v-card-title>
-    </v-parallax>
+    <AppTitleParallax :title="titleParallax" />
     <v-progress-circular
       v-if="loading"
       :size="50"
@@ -22,12 +16,8 @@
       <v-container>{{ activity.detail }}</v-container>
 
       <v-row>
-        <v-col v-for="album in activity.album" :key="album.id" cols="12" md="4">
-          <v-img
-            :src="album.url"
-            lazy-src="https://picsum.photos/id/11/100/60"
-            aspect-ratio="1"
-          ></v-img>
+        <v-col v-for="item in activity.images" :key="item.id" cols="12" md="4">
+          <v-img :src="item.url" :lazy-src="lazyImage" aspect-ratio="1"></v-img>
         </v-col>
       </v-row>
 
@@ -35,7 +25,7 @@
 
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="green darken-1" text @click="goback">
+        <v-btn color="green darken-1" text @click="$router.push('/news')">
           <v-icon left small>fas fa-chevron-left</v-icon>Back</v-btn
         >
       </v-card-actions>
@@ -44,7 +34,11 @@
 </template>
 
 <script>
+import AppTitleParallax from '~/components/parallax/AppTitleParallax'
 export default {
+  components: {
+    AppTitleParallax,
+  },
   data() {
     return {
       loading: false,
@@ -55,9 +49,15 @@ export default {
     activity() {
       return this.$store.getters['news/activities/activity']
     },
+    lazyImage() {
+      return this.$store.getters.lazyImage
+    },
+    titleParallax() {
+      return 'รายละเอียดกิจกรรม'
+    },
   },
 
-  created() {
+  mounted() {
     this.requestActivity()
   },
 
@@ -69,10 +69,6 @@ export default {
         this.$route.params.id
       )
       this.loading = false
-    },
-
-    goback() {
-      this.$router.push('/')
     },
   },
 }

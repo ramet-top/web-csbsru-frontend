@@ -107,7 +107,7 @@ export default {
   },
 
   mounted() {
-    // this.requestActivities()
+    this.requestActivities()
   },
 
   methods: {
