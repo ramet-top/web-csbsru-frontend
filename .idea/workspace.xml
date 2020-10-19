@@ -25,9 +25,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4eee709-952b-4f8d-bfaf-34cd40e08453" name="Default Changelist" comment="[UPDATE] success research">
+    <list default="true" id="d4eee709-952b-4f8d-bfaf-34cd40e08453" name="Default Changelist" comment="[UPDATE] success research update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/research/AppResearch.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/research/AppResearch.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/vison/AppVision.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/vison/AppVision.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/history.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/history.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/research/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/research/_id.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,7 +121,7 @@
       <workItem from="1602562756495" duration="18888000" />
       <workItem from="1602663869189" duration="598000" />
       <workItem from="1602664757748" duration="472000" />
-      <workItem from="1602665289735" duration="33479000" />
+      <workItem from="1602665289735" duration="35380000" />
     </task>
     <task id="LOCAL-00001" summary="[UPDATE] ui comment all, update and delete success">
       <created>1602695876392</created>
@@ -150,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603096769705</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="[UPDATE] success research update">
+      <created>1603096995145</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1603096995145</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,7 +208,8 @@
     <MESSAGE value="[UPDATE] success chat" />
     <MESSAGE value="[UPDATE] success history information room" />
     <MESSAGE value="[UPDATE] success research" />
-    <option name="LAST_COMMIT_MESSAGE" value="[UPDATE] success research" />
+    <MESSAGE value="[UPDATE] success research update" />
+    <option name="LAST_COMMIT_MESSAGE" value="[UPDATE] success research update" />
   </component>
   <component name="WindowStateProjectService">
     <state x="576" y="350" key="#ESLint" timestamp="1602691881093">
@@ -299,10 +308,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="220" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1603077561903" />
-    <state x="320" y="197" key="Vcs.Push.Dialog.v2" timestamp="1603096773346">
+    <state x="320" y="197" key="Vcs.Push.Dialog.v2" timestamp="1603097000231">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="320" y="197" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1603096773346" />
+    <state x="320" y="197" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1603097000231" />
     <state x="417" y="206" width="606" height="522" key="find.popup" timestamp="1602435568660">
       <screen x="0" y="23" width="1440" height="877" />
     </state>

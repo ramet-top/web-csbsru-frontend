@@ -46,7 +46,7 @@
               color="green"
               target="blank"
               :disabled="
-                professorResearch.file ? professorResearch.file : 'true'
+                professorResearch.file ? professorResearch.file.url : true
               "
               :href="
                 professorResearch.fileUrl ? professorResearch.fileUrl.url : '#'
