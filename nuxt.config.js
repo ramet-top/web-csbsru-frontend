@@ -6,7 +6,7 @@ export default {
   // mode: "spa",
 
   // default
-  // mode: 'universal',
+  mode: 'universal',
 
   render: {
     resourceHints: false,

@@ -130,7 +130,7 @@
     <!--    end-->
 
     <!--   main-->
-    <v-app-bar app>
+    <v-app-bar app dark>
       <v-app-bar-nav-icon
         class="hidden-md-and-up"
         @click.stop="drawer = !drawer"
