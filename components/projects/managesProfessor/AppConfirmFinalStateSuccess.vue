@@ -1,5 +1,5 @@
 <template>
-  <v-card flat>
+  <v-card v-if="projects" flat>
     <v-container>
       <v-card>
         <v-card-title>
@@ -153,7 +153,7 @@ export default {
       variables() {
         return {
           where: {
-            confirm: true,
+            // confirm: true,
             status: 'SUCCESS',
           },
         }

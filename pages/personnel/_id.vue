@@ -1,6 +1,8 @@
 <template>
-  <v-container>
-    <v-card class="mx-auto" max-width="600">
+  <div>
+    <AppTitleParallax :title="titleParallax" />
+
+    <v-card class="mx-auto" width="800">
       <v-progress-circular
         v-if="loading"
         :size="50"
@@ -9,7 +11,8 @@
       ></v-progress-circular>
       <v-img
         class="white--text align-end"
-        height="50%"
+        height="400px"
+        contain
         :src="advisor.imageUrl ? advisor.imageUrl.url : ''"
         :lazy-src="advisor.imageUrl ? advisor.imageUrl.url : ''"
       >
@@ -40,16 +43,23 @@
 
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="green darken-1" text @click="goback">
-          <v-icon left small>fas fa-chevron-left</v-icon>Back
+        <v-btn color="green darken-1" text @click="$router.push('/personnel')">
+          <v-icon left small>fas fa-chevron-left</v-icon>
+          Back
         </v-btn>
       </v-card-actions>
     </v-card>
-  </v-container>
+  </div>
 </template>
 
 <script>
+import AppTitleParallax from '~/components/parallax/AppTitleParallax'
+
 export default {
+  components: {
+    AppTitleParallax,
+  },
+
   computed: {
     advisor() {
       return this.$store.getters['advisors/advisor']
@@ -62,6 +72,9 @@ export default {
         return this.$store.dispatch('advisors/setLoading', val)
       },
     },
+    titleParallax() {
+      return 'ข้อมูลบุคลากร'
+    },
   },
 
   mounted() {
@@ -73,10 +86,6 @@ export default {
       this.loading = true
       this.$store.dispatch('advisors/requestAdvisors', this.$route.params.id)
       this.loading = false
-    },
-
-    goback() {
-      this.$router.push('/')
     },
   },
 }

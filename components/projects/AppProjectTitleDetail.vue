@@ -1,16 +1,15 @@
 <template>
   <div>
-    <v-card-title class="align-end fill-height">
-      หัวข้อโครงงาน
-    </v-card-title>
+    <v-card-title class="align-end fill-height">หัวข้อโครงงาน</v-card-title>
 
     <v-card-text>
       <v-container>
         <v-text-field
+          dense
           :value="projectData.title"
           label="ชื่อ"
           outlined
-          disabled
+          :disabled="typeofDisabled.btnTitleDisabled"
         ></v-text-field>
       </v-container>
 
@@ -19,7 +18,8 @@
       </span>
       <v-container>
         <v-textarea
-          disabled
+          dense
+          :disabled="typeofDisabled.textArea"
           outlined
           name="input-7-4"
           label="รายละเอียด"
@@ -34,7 +34,23 @@
 <script>
 export default {
   // eslint-disable-next-line
-  props: ["projectData"],
+  // props: ["projectData", "typeofDisabled" ],
+  props: {
+    projectData: {
+      type: Object,
+      default: null,
+    },
+    typeofDisabled: {
+      type: Object,
+      default: () => ({
+        btnTitleDisabled: false,
+        textArea: false,
+      }),
+    },
+  },
+  data() {
+    return {}
+  },
 }
 </script>
 

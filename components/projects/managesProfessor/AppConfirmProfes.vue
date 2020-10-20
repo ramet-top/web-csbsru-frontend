@@ -27,7 +27,7 @@
                 :items="projects"
                 :search="search"
               >
-                <div v-if="loading" class="text-center mb-5 conatiner">
+                <div v-if="loading" class="text-center mb-5 container">
                   <v-progress-circular
                     :size="50"
                     color="primary"
@@ -36,9 +36,10 @@
                 </div>
 
                 <template v-slot:item.user="{ item }">
-                  <v-avatar size="25">
+                  <v-avatar size="30">
                     <v-img
-                      class="mb-2 mt-0"
+                      class="mb-1"
+                      contain
                       :src="
                         item.user.imageUrl
                           ? item.user.imageUrl.url
@@ -61,7 +62,7 @@
 
                 <template v-slot:item.status="{ item }">
                   <v-chip :color="getColor(item.status)" dark>{{
-                    item.status == 'DEFAULT' ? 'รออนุมัติ' : item.status
+                    item.status === 'DEFAULT' ? 'รออนุมัติ' : item.status
                   }}</v-chip>
                 </template>
 
@@ -133,7 +134,7 @@ export default {
         { text: 'รหัส นศ.', value: 'user' },
         { text: 'ชื่อ-นามสกุล', value: 'fullName' },
         { text: 'วันที่ส่งคำขอ', value: 'createdAt' },
-        { text: 'สถานะการศึกษา', value: 'status' },
+        { text: 'สถานะการสอบ', value: 'status' },
         {
           text: 'เพิ่มเติม',
           value: 'action',

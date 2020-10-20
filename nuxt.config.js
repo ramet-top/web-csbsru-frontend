@@ -4,7 +4,9 @@ require('dotenv').config()
 
 export default {
   // mode: "spa",
-  mode: 'universal',
+
+  // default
+  // mode: 'universal',
 
   render: {
     resourceHints: false,
@@ -71,11 +73,22 @@ export default {
     ['@nuxtjs/pwa', { icon: true }],
     '@nuxtjs/axios',
     '@nuxtjs/auth',
+    'nuxt-socket-io',
   ],
+
+  io: {
+    // module options
+    sockets: [
+      {
+        name: 'main',
+        url: process.env.BASE_UR || 'http://localhost:1338',
+      },
+    ],
+  },
 
   axios: {
     // proxy: true,
-    baseURL: process.env.BASE_URL || 'http://localhost:1337',
+    baseURL: process.env.BASE_URL || 'http://localhost:1338',
   },
 
   auth: {

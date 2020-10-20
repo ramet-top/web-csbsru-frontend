@@ -36,11 +36,12 @@
           </div>
 
           <template v-slot:item.user="{ item }">
-            <v-avatar v-if="item.user.imageUrl" size="25">
-              <v-img :src="item.user.imageUrl.url"></v-img>
-            </v-avatar>
-            <v-avatar v-else color="indigo" size="25">
-              <v-icon dark>fas fa-user-circle</v-icon>
+            <v-avatar v-if="item.user" size="25">
+              <v-img
+                :src="
+                  item.user.imageUrl ? item.user.imageUrl.url : defaultImage
+                "
+              ></v-img>
             </v-avatar>
             {{ item.user.username }}
           </template>
@@ -49,23 +50,19 @@
           <template v-slot:item.fullName="{ item }">
             {{ item.user.prefix }}{{ item.user.firstName }}
             {{ item.user.lastName }}
-          </template>
 
-          <!-- <template v-slot:item.createdAt="{ item }">
-            {{
-            $moment(item.createdAt).format("LL")
-            }}
-          </template>-->
+            <!--            {{ item.user }}-->
+          </template>
 
           <template v-slot:item.status="{ item }">
-            <v-chip :color="getColor(item.status)" dark>{{
-              item.status
-            }}</v-chip>
+            <v-chip :color="getColor(item.status)" dark
+              >{{ item.status }}
+            </v-chip>
           </template>
 
-          <template v-slot:item.createdAt="{ item }">{{
-            $moment(item.createdAt).format('LL')
-          }}</template>
+          <template v-slot:item.createdAt="{ item }"
+            >{{ $moment(item.createdAt).format('LL') }}
+          </template>
 
           <template v-slot:item.dateTime="{ item }">
             {{ $moment(item.finalDate).format('LL') }} :
@@ -73,9 +70,9 @@
           </template>
 
           <template v-slot:item.status="{ item }">
-            <v-chip :color="getColor(item.status)" dark>{{
-              item.status
-            }}</v-chip>
+            <v-chip :color="getColor(item.status)" dark
+              >{{ item.status }}
+            </v-chip>
           </template>
 
           <template v-slot:item.action="{ item }">
@@ -88,7 +85,8 @@
                 tag="a"
               >
                 <v-btn text color="gray">
-                  <v-icon small class="mr-2">fas fa-eye</v-icon>เพิ่มเติม
+                  <v-icon small class="mr-2">fas fa-eye</v-icon>
+                  เพิ่มเติม
                 </v-btn>
               </nuxt-link>
             </v-card-actions>
@@ -138,6 +136,10 @@ export default {
     user() {
       return this.$store.getters.loggedInUser
     },
+
+    defaultImage() {
+      return this.$store.getters.defaultImage
+    },
   },
 
   methods: {
@@ -163,7 +165,6 @@ export default {
         return {
           where: {
             pro_ad: this.user.id,
-            confirm: true,
             status: 'OPERATION',
           },
         }

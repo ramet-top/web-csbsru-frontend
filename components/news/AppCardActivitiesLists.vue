@@ -17,22 +17,14 @@
         >
           <v-list-item>
             <v-list-item-avatar color="grey">
-              <v-img
-                :src="
-                  item.user.imageUrl ? item.user.imageUrl.url : defaultImage
-                "
-                :lazy-src="lazyImage"
-              />
+              <v-img :src="defaultImage" :lazy-src="lazyImage" />
             </v-list-item-avatar>
 
             <v-list-item-content>
-              <v-list-item-subtitle v-if="item.user"
-                >โพสโดย : {{ item.user.firstName }}
-                {{ item.user.lastName }}</v-list-item-subtitle
-              >
-              <v-list-item-subtitle v-if="item.user">
+              <v-list-item-subtitle>โพสโดย : Admin </v-list-item-subtitle>
+              <v-list-item-subtitle>
                 <span class="text--grey"
-                  >(อัปเดตล่าสุด) วันที่ :
+                  >(อัปเดต) วันที่ :
                   {{ $moment(item.updatedAt).format('Do MMMM YYYY') }}</span
                 ></v-list-item-subtitle
               >
@@ -40,13 +32,13 @@
           </v-list-item>
 
           <v-img
-            :src="item.imageUrl ? item.imageUrl.url : lazyImage"
+            :src="item.imageFirst ? item.imageFirst.url : lazyImage"
             :lazy-src="lazyImage"
             height="300px"
             width="344px"
           ></v-img>
-          <v-card-subtitle>
-            {{ item.title }}
+          <v-card-subtitle class="black--text">
+            {{ item.title.slice(0, 80) + '...' }}
           </v-card-subtitle>
         </v-card>
       </nuxt-link>
@@ -59,7 +51,7 @@ export default {
   props: {
     item: {
       type: Object,
-      default: null,
+      default: () => {},
     },
   },
 

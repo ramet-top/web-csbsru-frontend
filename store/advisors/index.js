@@ -40,7 +40,7 @@ export const actions = {
             commit('SET_ADVISOR', result)
           })
       } else {
-        this.$axios.$get(`/advisors?_sort=createdAt:desc`).then((result) => {
+        this.$axios.$get(`/advisors?_sort=createdAt:asc`).then((result) => {
           commit('SET_ADVISORS', result)
         })
       }

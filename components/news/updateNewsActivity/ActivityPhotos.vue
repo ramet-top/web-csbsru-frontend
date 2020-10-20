@@ -56,7 +56,7 @@
               <v-container fluid>
                 <v-data-iterator
                   :items="activities"
-                  :items-per-page.sync="$props.itemsPerPage"
+                  :items-per-page.sync="itemsPerPage"
                   :footer-props="{ itemsPerPageOptions }"
                 >
                   <template v-slot:default="props">
@@ -98,12 +98,16 @@ export default {
 
   computed: {
     activities() {
+      console.log(
+        'activities',
+        this.$store.getters['news/activities/activities']
+      )
       return this.$store.getters['news/activities/activities']
     },
   },
 
   mounted() {
-    // this.requestActivities()
+    this.requestActivities()
   },
 
   methods: {

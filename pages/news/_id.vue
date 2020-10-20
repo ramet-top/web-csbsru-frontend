@@ -1,10 +1,6 @@
 <template>
   <section>
-    <v-parallax src="https://unsplash.it/1920/1920/?image=1067" height="80">
-      <v-card-title class="text-center justify-center py-6">
-        <h1 class="font-weight-bold display-1 black--text">ข่าวประกาศ</h1>
-      </v-card-title>
-    </v-parallax>
+    <AppTitleParallax :title="titleParallax" />
 
     <v-progress-circular
       v-if="loading"
@@ -14,11 +10,11 @@
     />
 
     <v-container class="mx-auto">
-      <v-card class="mx-auto" max-width="800px">
+      <v-card class="mx-auto" width="800px">
         <v-img
-          height="500px"
+          height="450px"
           contain
-          :src="post.imageUrl ? post.imageUrl.url : defaultImage"
+          :src="post.imageUrl ? post.imageUrl.url : lazyImage"
           :lazy-src="lazyImage"
         ></v-img>
 
@@ -54,7 +50,7 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="green darken-1" text @click="goback">
+          <v-btn color="green darken-1" text @click="$router.push('/news')">
             <v-icon left small>fas fa-chevron-left</v-icon>Back
           </v-btn>
         </v-card-actions>
@@ -64,8 +60,12 @@
 </template>
 
 <script>
+import AppTitleParallax from '~/components/parallax/AppTitleParallax'
+
 export default {
-  components: {},
+  components: {
+    AppTitleParallax,
+  },
   data() {
     return {
       loading: false,
@@ -82,6 +82,9 @@ export default {
     lazyImage() {
       return this.$store.getters.lazyImage
     },
+    titleParallax() {
+      return 'ข่าวประกาศ'
+    },
   },
 
   mounted() {
@@ -93,9 +96,6 @@ export default {
       this.loading = true
       this.$store.dispatch('news/requestPosts', this.$route.params.id)
       this.loading = false
-    },
-    goback() {
-      this.$router.go(-1)
     },
   },
 }

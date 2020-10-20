@@ -1,8 +1,8 @@
 <template>
   <v-container fluid>
     <v-data-iterator
-      :items="posts"
-      :items-per-page.sync="$props.itemsPerPage"
+      :items="workPosts"
+      :items-per-page.sync="itemsPerPage"
       :footer-props="{ itemsPerPageOptions }"
     >
       <template v-slot:default="props">
@@ -18,26 +18,23 @@
           >
             <v-hover v-slot:default="{ hover }">
               <v-card
-                max-width="344"
+                max-width="300"
                 class="mx-auto"
+                height="470"
                 :elevation="hover ? 12 : 2"
               >
                 <v-list-item>
-                  <v-list-item-avatar v-if="item.user.imageUrl" color="grey">
+                  <v-list-item-avatar color="grey">
                     <img
-                      :src="item.user.imageUrl.url"
-                      lazy-src="https://cdn.vuetifyjs.com/images/john.jpg"
+                      :src="
+                        item.user.imageUrl
+                          ? item.user.imageUrl.url
+                          : defaultImage
+                      "
+                      :lazy-src="lazyImage"
                       alt="John"
                     />
                   </v-list-item-avatar>
-                  <v-list-item-avatar v-else color="grey">
-                    <img
-                      src="https://cdn.vuetifyjs.com/images/john.jpg"
-                      lazy-src="https://cdn.vuetifyjs.com/images/john.jpg"
-                      alt="John"
-                    />
-                  </v-list-item-avatar>
-
                   <v-list-item-content>
                     <v-list-item-subtitle v-if="item.user"
                       >โพสโดย : {{ item.user.firstName }}
@@ -45,7 +42,7 @@
                     >
                     <v-list-item-subtitle v-if="item.user">
                       <span class="text--grey"
-                        >(อัปเดตล่าสุด) วันที่ :
+                        >(อัปเดต) วันที่ :
                         {{
                           $moment(item.updatedAt).format('Do MMMM YYYY')
                         }}</span
@@ -61,13 +58,14 @@
                   tag="a"
                 >
                   <v-img
-                    v-if="item.imageUrl"
-                    :src="item.imageUrl.url"
-                    :lazy-src="item.imageUrl.url"
-                    height="300"
+                    :src="item.imageUrl ? item.imageUrl.url : lazyImage"
+                    :lazy-src="lazyImage"
+                    height="260"
                   ></v-img>
 
-                  <v-card-text>{{ item.title }}</v-card-text>
+                  <v-card-text class="black--text">
+                    {{ item.title.slice(0, 80) + '...' }}
+                  </v-card-text>
                 </nuxt-link>
 
                 <v-card-actions>
@@ -107,6 +105,19 @@ export default {
     itemsPerPageOptions: [3, 6, 9, 12],
     posts: [],
   }),
+
+  computed: {
+    workPosts() {
+      return this.$store.getters['news/works']
+    },
+    defaultImage() {
+      return this.$store.getters.defaultImage
+    },
+    lazyImage() {
+      return this.$store.getters.lazyImage
+    },
+  },
+
   mounted() {
     this.requestWorksPosts()
   },

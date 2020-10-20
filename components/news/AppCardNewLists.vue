@@ -9,7 +9,12 @@
         class="text-decoration-none"
         tag="a"
       >
-        <v-card max-width="280" class="mx-auto" :elevation="hover ? 12 : 2">
+        <v-card
+          max-width="300"
+          class="mx-auto"
+          height="470"
+          :elevation="hover ? 12 : 2"
+        >
           <v-list-item>
             <v-list-item-avatar color="grey">
               <v-img
@@ -27,7 +32,7 @@
               >
               <v-list-item-subtitle v-if="item.user">
                 <span class="text--grey"
-                  >(อัปเดตล่าสุด) วันที่ :
+                  >(อัปเดต) วันที่ :
                   {{ $moment(item.updatedAt).format('Do MMMM YYYY') }}</span
                 ></v-list-item-subtitle
               >
@@ -35,14 +40,31 @@
           </v-list-item>
 
           <v-img
-            :src="item.imageUrl ? item.imageUrl.url : defaultImage"
+            :src="item.imageUrl ? item.imageUrl.url : lazyImage"
             :lazy-src="lazyImage"
+            height="260"
             contain
           ></v-img>
 
-          <v-card-subtitle>
-            {{ item.title }}
-          </v-card-subtitle>
+          <v-card-text class="black--text">
+            {{ item.title.slice(0, 80) + '...' }}
+          </v-card-text>
+
+          <v-row>
+            <v-col>
+              <v-btn
+                :to="{
+                  name: 'news-id',
+                  params: { id: item.id || '' },
+                }"
+                text
+                color="orange"
+                >เพิ่มเติม
+                <v-icon right small>fab fa-readme</v-icon>
+              </v-btn>
+            </v-col>
+            <v-spacer></v-spacer>
+          </v-row>
         </v-card>
       </nuxt-link>
     </v-hover>
@@ -54,7 +76,7 @@ export default {
   props: {
     item: {
       type: Object,
-      default: null,
+      default: () => {},
     },
   },
   data() {

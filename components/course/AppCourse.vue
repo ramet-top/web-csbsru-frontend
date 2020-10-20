@@ -3,24 +3,11 @@
     <v-card>
       <v-responsive>
         <div>
-          <v-parallax :src="ImageUrl" height="100">
-            <v-card-title class="text-center justify-center py-6">
-              <h1 class="font-weight-bold display-1 black--text">
-                หลักสูตร
-              </h1>
-            </v-card-title>
-            <h5 class="text-center font-weight-bold black--text">
-              สาขาวิชาคอมพิวเตอร์ศึกษา มหาวิทยาลัยราชภัฎบ้านสมเด็จเจ้าพระยา
-            </h5>
-          </v-parallax>
-          <!--          <v-card-title class="text-center justify-center py-6">-->
-          <!--            <h1 class="font-weight-bold display-1">หลักสูตร</h1>-->
-          <!--          </v-card-title>-->
-          <!--          <h5 class="text-center">-->
-          <!--            สาขาวิชาคอมพิวเตอร์ศึกษา มหาวิทยาลัยราชภัฎบ้านสมเด็จเจ้าพระยา-->
-          <!--          </h5>-->
+          <AppTitleParallax
+            :title="titleParallax"
+            :sub-title="subTitleParallax"
+          />
           <br />
-          <v-divider />
           <v-container>
             <v-layout align-center justify-center wrap>
               <v-flex xs12 md5>
@@ -46,8 +33,8 @@
                     <div class="headline">
                       รายละเอียดหลักสูตร
                       <v-icon color="orange" right
-                        >fas fa-graduation-cap</v-icon
-                      >
+                        >fas fa-graduation-cap
+                      </v-icon>
                     </div>
                   </v-card-title>
                   <v-card-text>
@@ -66,45 +53,44 @@
                         <p>ชื่อหลักสูตร :</p>
                         <v-card-text
                           >วิทยาศาสตรบัณฑิต สาขาวิชา วิทยาการคอมพิวเตอร์(
-                          Bachelor of Science Program in Computer Science
-                          )</v-card-text
-                        >
+                          Bachelor of Science Program in Computer Science )
+                        </v-card-text>
                       </v-list-item-content>
                     </v-list-item>
 
                     <v-list-item>
                       <v-list-item-action>
                         <v-icon class="green--text text--lighten-2"
-                          >fas fa-signature</v-icon
-                        >
+                          >fas fa-signature
+                        </v-icon>
                       </v-list-item-action>
                       <v-list-item-content>
                         <p>ภาษาไทย (ชื่อเต็ม) :</p>
                         <v-card-text
-                          >วิทยาศาสตรบัณฑิต (วิทยาการคอมพิวเตอร์)</v-card-text
-                        >
+                          >วิทยาศาสตรบัณฑิต (วิทยาการคอมพิวเตอร์)
+                        </v-card-text>
                       </v-list-item-content>
                     </v-list-item>
 
                     <v-list-item>
                       <v-list-item-action>
                         <v-icon class="black--text text--lighten-2"
-                          >fas fa-signature</v-icon
-                        >
+                          >fas fa-signature
+                        </v-icon>
                       </v-list-item-action>
                       <v-list-item-content>
                         <p>ภาษาอังกฤษ (ชื่อเต็ม) :</p>
                         <v-card-text
-                          >Bachelor of Science (Computer Science)</v-card-text
-                        >
+                          >Bachelor of Science (Computer Science)
+                        </v-card-text>
                       </v-list-item-content>
                     </v-list-item>
 
                     <v-list-item>
                       <v-list-item-action>
                         <v-icon class="green--text text--lighten-2"
-                          >fas fa-pencil-alt</v-icon
-                        >
+                          >fas fa-pencil-alt
+                        </v-icon>
                       </v-list-item-action>
                       <v-list-item-content>
                         <p>ภาษาไทย (ชื่อย่อ) :</p>
@@ -115,8 +101,8 @@
                     <v-list-item>
                       <v-list-item-action>
                         <v-icon class="black--text text--lighten-2"
-                          >fas fa-pencil-alt</v-icon
-                        >
+                          >fas fa-pencil-alt
+                        </v-icon>
                       </v-list-item-action>
                       <v-list-item-content>
                         ภาษาอังกฤษ (ชื่อย่อ) :
@@ -135,10 +121,32 @@
 </template>
 
 <script>
+import AppTitleParallax from '~/components/parallax/AppTitleParallax'
+
 export default {
+  components: {
+    AppTitleParallax,
+  },
+
   data() {
     return {
-      items: [
+      length: 3,
+      window: 0,
+    }
+  },
+
+  computed: {
+    ImageUrl() {
+      return require('~/assets/images/pr.jpeg')
+    },
+    titleParallax() {
+      return 'หลักสูตร'
+    },
+    subTitleParallax() {
+      return 'สาขาวิชาคอมพิวเตอร์ศึกษา มหาวิทยาลัยราชภัฎบ้านสมเด็จเจ้าพระยา'
+    },
+    items() {
+      return [
         {
           title: 'ปริญญาตรี',
           detail:
@@ -157,16 +165,7 @@ export default {
             'เป็นปริญญาวิชาการหรือวิชาชีพซึ่งในประเทศส่วนใหญ่ให้ผู้ถือมีคุณสมบัติสอนในระดับมหาวิทยาลัยในสาขาเฉพาะของปริญญานั้น หรือทำงานในวิชาชีพเฉพาะ',
           level: 'ปริญญาดุษฎีบัณฑิต',
         },
-      ],
-
-      length: 3,
-      window: 0,
-    }
-  },
-
-  computed: {
-    ImageUrl() {
-      return require('~/assets/images/pr.jpeg')
+      ]
     },
   },
 }

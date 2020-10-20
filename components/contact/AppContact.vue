@@ -1,11 +1,8 @@
 <template>
   <div>
     <v-card>
+      <AppTitleParallax :title="titleParallax" />
       <v-container>
-        <v-card-title class="text-center justify-center py-6">
-          <h1 class="font-weight-bold display-1">ข้อมูลการติดต่อ</h1>
-        </v-card-title>
-
         <v-divider class="my-5"></v-divider>
 
         <v-layout align-center justify-center wrap>
@@ -18,7 +15,7 @@
                   width="600"
                   height="450"
                   frameborder="0"
-                  style="border: 0;"
+                  style="border: 0"
                   allowfullscreen
                 ></iframe>
               </v-row>
@@ -35,46 +32,46 @@
                     <div class="headline">
                       รายละเอียด
                       <v-icon color="orange" right
-                        >fas fa-map-marker-alt</v-icon
-                      >
+                        >fas fa-map-marker-alt
+                      </v-icon>
                     </div>
                   </v-card-title>
                   <v-card-text
                     >วิทยาการคอมพิวเตอร์ | Computer Science ::
-                    คณะวิทยาศาสตร์และเทคโนโลยี | Faclty of Science and
-                    Technology</v-card-text
-                  >
+                    คณะวิทยาศาสตร์และเทคโนโลยี | Faculty of Science and
+                    Technology
+                  </v-card-text>
                   <v-list class="transparent">
                     <v-list-item>
                       <v-list-item-action>
                         <v-icon class="green--text text--lighten-2"
-                          >fas fa-phone</v-icon
-                        >
+                          >fas fa-phone
+                        </v-icon>
                       </v-list-item-action>
                       <v-list-item-content>
                         <v-list-item-title
-                          >02-473-7000 ต่อ 3120</v-list-item-title
-                        >
+                          >02-473-7000 ต่อ 3120
+                        </v-list-item-title>
                       </v-list-item-content>
                     </v-list-item>
                     <v-list-item>
                       <v-list-item-action>
                         <v-icon class="green--text text--lighten-2"
-                          >fas fa-map-marked</v-icon
-                        >
+                          >fas fa-map-marked
+                        </v-icon>
                       </v-list-item-action>
                       <v-list-item-content>
                         <v-list-item-title
                           >ห้อง 412 อาคาร 4 ชั้น 1
-                          มหาวิทยาลัยราชภัฏบ้านสมเด็จเจ้าพระยา</v-list-item-title
-                        >
+                          มหาวิทยาลัยราชภัฏบ้านสมเด็จเจ้าพระยา
+                        </v-list-item-title>
                       </v-list-item-content>
                     </v-list-item>
                     <v-list-item>
                       <v-list-item-action>
                         <v-icon class="green--text text--lighten-2"
-                          >fas fa-envelope</v-icon
-                        >
+                          >fas fa-envelope
+                        </v-icon>
                       </v-list-item-action>
                       <v-list-item-content>
                         <v-list-item-title>john@example.com</v-list-item-title>
@@ -96,7 +93,18 @@
 </template>
 
 <script>
-export default {}
+import AppTitleParallax from '~/components/parallax/AppTitleParallax'
+
+export default {
+  components: {
+    AppTitleParallax,
+  },
+  computed: {
+    titleParallax() {
+      return 'ข้อมูลการติดต่อ'
+    },
+  },
+}
 </script>
 
 <style lang="scss" scoped></style>

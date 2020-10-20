@@ -10,15 +10,20 @@
 
     <v-card>
       <v-toolbar dark>
-        <v-toolbar-title
-          >ระบบข่าวประกาศ :
-          <v-btn @click="goBack"
-            ><v-icon left>fas fa-arrow-left</v-icon> ก่อนหน้า</v-btn
-          ></v-toolbar-title
-        ><br />
+        <v-toolbar-title>
+          ระบบข่าวประกาศ :
+          <v-btn @click="$router.push('/blog')">
+            <v-icon left>fas fa-arrow-left</v-icon>
+            ก่อนหน้า
+          </v-btn>
+        </v-toolbar-title>
+        <br />
       </v-toolbar>
       <v-tabs centered icons-and-text>
-        <v-tab>แก้ไข<v-icon>far fa-edit</v-icon></v-tab>
+        <v-tab>
+          แก้ไข
+          <v-icon>far fa-edit</v-icon>
+        </v-tab>
 
         <v-tab-item>
           <v-container>
@@ -43,9 +48,7 @@
             ></v-textarea>
 
             <v-row>
-              <v-col class="d-flex" cols="12" sm="6">
-                หมวดหมู่
-              </v-col>
+              <v-col cols="12" sm="6"> หมวดหมู่ </v-col>
             </v-row>
 
             <v-row>
@@ -60,7 +63,7 @@
                   single-line
                 ></v-select>
 
-                <div>state chang:: {{ postData.category.state }}</div>
+                <!--                <div>state chang:: {{ postData.category.state }}</div>-->
               </v-col>
 
               <v-col class="d-flex justify-center" cols="12" sm="6">
@@ -110,8 +113,10 @@
                     clear-icon
                     prepend-icon="fas fa-camera"
                     :rules="rulesFile"
-                    @change="showImageBeforUpload"
+                    @change="showImageBeforeUpload()"
                   ></v-file-input>
+
+                  <!--                 test  submit-->
                   <input v-show="true" type="submit" value="Submit" />
                 </form>
               </v-col>
@@ -141,8 +146,8 @@
                     @click="onDeleteData"
                   >
                     <v-icon left>fas fa-trash-alt</v-icon>
-                    Delete</v-btn
-                  >
+                    Delete
+                  </v-btn>
                 </v-col>
                 <v-col>
                   <v-btn
@@ -153,8 +158,8 @@
                     @click="onSubmitData"
                   >
                     <v-icon left>fas fa-edit</v-icon>
-                    Update</v-btn
-                  >
+                    Update
+                  </v-btn>
                 </v-col>
               </v-row>
             </div>
@@ -173,6 +178,7 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2'
 import Logo from '~/components/AppLogoCsbsru'
 
 export default {
@@ -184,6 +190,13 @@ export default {
   data: () => ({
     overlay: false,
     loading: false,
+    uploadPercentage: 0,
+    url: null,
+    file: [],
+    image: '',
+    fileUploadId: '',
+    imageDeleteId: '',
+    result: '',
     postData: {
       id: '',
       title: '',
@@ -194,36 +207,32 @@ export default {
       },
       category: 'POST',
     },
-
-    file: [],
-    image: '',
-    fileUploadId: '',
-    imageDeleteId: '',
-
-    rules: [(v) => v.length <= 2000 || 'Max 2000 characters'],
-    result: '',
-    rulesFile: [
-      (value) =>
-        !value ||
-        value.size < 200000000 ||
-        'File size should be less than 200 MB!',
-    ],
-
-    items: [
-      { state: 'POST', text: 'โพส' },
-      { state: 'WORK', text: 'ประกาศสมัครงาน' },
-    ],
-    uploadPercentage: 0,
-    url: null,
   }),
 
   computed: {
     user() {
       return this.$store.getters.loggedInUser
     },
+    rules() {
+      return [(v) => v.length <= 2000 || 'Max 2000 characters']
+    },
+    rulesFile() {
+      return [
+        (value) =>
+          !value ||
+          value.size < 200000000 ||
+          'File size should be less than 200 MB!',
+      ]
+    },
+    items() {
+      return [
+        { state: 'POST', text: 'โพส' },
+        { state: 'WORK', text: 'ประกาศสมัครงาน' },
+      ]
+    },
   },
 
-  created() {
+  mounted() {
     this.fetchPost()
   },
 
@@ -235,11 +244,9 @@ export default {
         this.loading = false
       })
     },
-
-    showImageBeforUpload() {
+    showImageBeforeUpload() {
       this.url = URL.createObjectURL(this.file)
     },
-
     async onSubmitFile() {
       try {
         if (this.postData.imageUrl) {
@@ -248,7 +255,6 @@ export default {
             .then(function (response) {
               console.log('deleted', response.id)
             })
-
             .catch(function (error) {
               throw error
             })
@@ -268,13 +274,12 @@ export default {
         form.append('files', this.file)
 
         const res = await this.$axios.$post('/upload', form, config)
-        console.log(res[0].id)
-        this.fileUploadId = await res[0].id
+        // console.log('onSubmitFile work', res)
+        this.fileUploadId = (await res[0].id) || 0
       } catch (error) {
         console.log(error)
       }
     },
-
     linkImageUploadToUser() {
       this.$axios
         .$put(`/posts/${this.postData.id}`, {
@@ -287,7 +292,6 @@ export default {
           this.$auth.fetchUser()
         })
     },
-
     async onSubmitData() {
       this.overlay = true
       try {
@@ -296,96 +300,88 @@ export default {
           await this.linkImageUploadToUser()
         }
         this.$axios
-          .put(`/posts/${this.postData.id}`, {
+          .$put(`/posts/${this.postData.id}`, {
             user: this.user.id,
             title: this.postData.title,
             detail: this.postData.detail,
             publish: this.postData.publish,
-            // imageUrl: {
-            //   id: this.fileUploadId || this.postData.imageUrl.id
-            // },
+            imageUrl: {
+              id: this.fileUploadId || this.postData.imageUrl.id,
+            },
             category: this.postData.category.state,
           })
           .then((data) => {
             let timerInterval
-            this.$Swal
-              .fire({
-                title: 'Update Success',
-                html: 'I will close in <b></b> milliseconds.',
-                timer: 2000,
-                timerProgressBar: true,
-                onBeforeOpen: () => {
-                  this.$Swal.showLoading()
-                  timerInterval = setInterval(() => {
-                    this.$Swal
-                      .getContent()
-                      .querySelector(
-                        'b'
-                      ).textContent = this.$Swal.getTimerLeft()
-                  }, 100)
-                },
-                onClose: () => {
-                  clearInterval(timerInterval)
-                },
-              })
-              .then((result) => {
-                if (result.dismiss === this.$Swal.DismissReason.timer) {
-                console.log('I was closed by the timer') // eslint-disable-line
-                }
-              })
+            Swal.fire({
+              title: 'Update Success',
+              html: 'I will close in <b></b> milliseconds.',
+              timer: 2000,
+              timerProgressBar: true,
+              onBeforeOpen: () => {
+                Swal.showLoading()
+                timerInterval = setInterval(() => {
+                  Swal.getContent().querySelector(
+                    'b'
+                  ).textContent = Swal.getTimerLeft()
+                }, 100)
+              },
+              onClose: () => {
+                clearInterval(timerInterval)
+              },
+            }).then((result) => {
+              if (result.dismiss === Swal.DismissReason.timer) {
+                // console.log('I was closed by the timer') // eslint-disable-line
+                this.$router.push('/blog')
+              }
+            })
           })
 
         this.overlay = false
-        this.$router.go('.')
       } catch (error) {
         console.log(error)
       }
     },
-
     onDeleteData() {
-      return this.$Swal
-        .fire({
-          title: 'คุณแน่ใจหรือไม่ที่จะลบโพส?',
-          text: "You won't be able to revert this!",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Yes, delete it!',
-        })
-        .then(async (result) => {
-          if (result.value) {
-            this.overlay = true
-            const delPhoto = await this.$axios.$delete(
-              `/upload/files/${this.postData.imageUrl.id}`
+      return Swal.fire({
+        title: 'คุณแน่ใจหรือไม่ที่จะลบโพส?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!',
+      }).then(async (result) => {
+        if (result.value) {
+          this.overlay = true
+
+          // deleted image
+          const delPhoto = await this.$axios.$delete(
+            `/upload/files/${this.postData.imageUrl.id}`
+          )
+
+          // deleted post
+          if (delPhoto) {
+            await this.$axios.$delete(`/posts/${this.postData.id}`)
+
+            this.overlay = false
+            await Swal.fire(
+              'Deleted!',
+              'Your file has been deleted.',
+              'success'
             )
 
-            if (delPhoto) {
-              await this.$axios.$delete(`/posts/${this.postData.id}`)
-
-              this.overlay = false
-              this.$Swal.fire(
-                'Deleted!',
-                'Your file has been deleted.',
-                'success'
-              )
-              this.goBack()
-            } else {
-              this.$Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'ไม่สามารถลบข้อมูลได้ ',
-                footer: 'กรุณาลองใหม่ภายหลัง!',
-              })
-            }
+            await this.$router.push('/blog')
+          } else {
+            await Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'ไม่สามารถลบข้อมูลได้ ',
+              footer: 'กรุณาลองใหม่ภายหลัง!',
+            })
           }
-        })
+        }
+      })
     },
-
-    goBack() {
-      return this.$router.go(-1)
-    },
-
     btnRemoveImage() {
       this.url = null
       this.file = []

@@ -1,11 +1,7 @@
 <template>
   <div>
     <v-card>
-      <v-parallax :src="ImageUrl" height="100">
-        <v-card-title class="text-center justify-center py-6">
-          <h1 class="font-weight-bold display-1 black--text">ดาวน์โหลดไฟล์</h1>
-        </v-card-title>
-      </v-parallax>
+      <AppTitleParallax :title="titleParallax" />
 
       <clientOnly>
         <v-tabs v-model="tab" centered icons-and-text>
@@ -127,7 +123,8 @@
                             v-for="(item, i) in fileItemsSECURE"
                             :key="i"
                           >
-                            <v-icon class="my-2">{{ item.icon }}</v-icon>
+                            <!--                            <v-icon class="my-2">{{ item.icon }}</v-icon>-->
+                            <v-icon class="my-2">fas fa-file-download</v-icon>
                             <v-expansion-panel-header
                               >ไฟล์ {{ item.name }}</v-expansion-panel-header
                             >
@@ -171,7 +168,11 @@
 </template>
 
 <script>
+import AppTitleParallax from '~/components/parallax/AppTitleParallax'
 export default {
+  components: {
+    AppTitleParallax,
+  },
   data() {
     return {
       tab: null,
@@ -200,6 +201,9 @@ export default {
     },
     ImageUrl() {
       return require('~/assets/images/pr.jpeg')
+    },
+    titleParallax() {
+      return 'ดาวน์โหลดไฟล์'
     },
   },
 

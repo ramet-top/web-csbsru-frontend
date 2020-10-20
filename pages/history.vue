@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Logo />
+    <!--    <Logo />-->
     <Vision />
     <RoomInformation />
   </div>
@@ -8,13 +8,13 @@
 
 <script>
 import RoomInformation from '~/components/history/AppRoomInformation'
-import Logo from '~/components/AppLogoCsbsru'
+// import Logo from '~/components/AppLogoCsbsru'
 import Vision from '~/components/vison/AppVision'
 
 export default {
   components: {
     RoomInformation,
-    Logo,
+    // Logo,
     Vision,
   },
   head() {
