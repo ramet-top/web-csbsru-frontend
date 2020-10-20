@@ -74,7 +74,7 @@
           </v-form>
         </clientOnly>
 
-        <div v-if="error" style="color: red;">
+        <div v-if="error" style="color: red">
           Username หรือ Password ไม่ถูกต้อง กรุณาลงชื่อเข้าใช้ใหม่
         </div>
       </div>

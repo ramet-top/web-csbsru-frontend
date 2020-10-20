@@ -15,7 +15,7 @@
                   width="600"
                   height="450"
                   frameborder="0"
-                  style="border: 0;"
+                  style="border: 0"
                   allowfullscreen
                 ></iframe>
               </v-row>
@@ -38,7 +38,7 @@
                   </v-card-title>
                   <v-card-text
                     >วิทยาการคอมพิวเตอร์ | Computer Science ::
-                    คณะวิทยาศาสตร์และเทคโนโลยี | Faclty of Science and
+                    คณะวิทยาศาสตร์และเทคโนโลยี | Faculty of Science and
                     Technology
                   </v-card-text>
                   <v-list class="transparent">

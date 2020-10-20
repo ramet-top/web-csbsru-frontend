@@ -21,7 +21,7 @@
                   "
                 >
                   <v-parallax
-                    style="opacity: 0.7;"
+                    style="opacity: 0.7"
                     src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
                   >
                     <v-row align="center" justify="center">
@@ -31,9 +31,7 @@
                             v-if="projectData.status === 'NONE'"
                             class="mb-4"
                           >
-                            <h3 class="red">
-                              คำขอของคุณ ไม่ผ่าน! การอนุมัติ
-                            </h3>
+                            <h3 class="red">คำขอของคุณ ไม่ผ่าน! การอนุมัติ</h3>
                           </div>
                           <h1 class="display-1 font-weight-thin mb-4">
                             สถานะการส่งคำขอของคุณ!

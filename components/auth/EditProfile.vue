@@ -4,7 +4,8 @@
       <v-container>
         <br />
         <h3 v-if="user.role ? user.role.name === 'AuthStudent' : ''">
-          <v-icon left>fas fa-user</v-icon>โปรไฟล์ : นักศึกษา
+          <v-icon left>fas fa-user</v-icon>
+          โปรไฟล์ : นักศึกษา
           <v-tooltip right>
             <template v-slot:activator="{ on }">
               <v-btn
@@ -23,7 +24,8 @@
         </h3>
 
         <h3 v-if="user.role ? user.role.name === 'AuthProfessor' : ''">
-          <v-icon left>far fa-user</v-icon>โปรไฟล์ : อาจารย์
+          <v-icon left>far fa-user</v-icon>
+          โปรไฟล์ : อาจารย์
           <v-tooltip right>
             <template v-slot:activator="{ on }">
               <v-btn
@@ -151,7 +153,10 @@
           </v-col>
         </v-row> -->
 
-        <h3><v-icon left>fas fa-map-marked</v-icon>ที่อยู่</h3>
+        <h3>
+          <v-icon left>fas fa-map-marked</v-icon>
+          ที่อยู่
+        </h3>
 
         <v-row>
           <v-col cols="12" md="6">
@@ -247,9 +252,8 @@ export default {
       dialog: false,
       isEditProfile: false,
       userEdit: {
-        id: '',
+        // id: '',
         email: '',
-        useruserEdit: '',
         prefix: '',
         firstName: '',
         lastName: '',
@@ -259,7 +263,7 @@ export default {
         facebook: '',
         parents: '',
         addr: '',
-        status_Study: '',
+        // status_Study: '',
       },
       date: new Date().toISOString().substr(0, 10),
       menu: false,
@@ -298,22 +302,19 @@ export default {
         })
     },
 
-    async updateProfile() {
-      try {
-        await this.$axios
-          .$put(`/users/${this.user.id}`, this.userEdit)
-          .then((res) => {
-            this.$auth.fetchUser()
-          })
-          .catch((error) => {
-            console.log(error)
-          })
+    updateProfile() {
+      this.$axios
+        .$put(`/users/${this.user.id}`, this.userEdit)
+        .then((res) => {
+          // console.log('updateProfile::', res)
+          this.$auth.fetchUser()
+        })
+        .catch((error) => {
+          console.log(error)
+        })
 
-        this.dialog = true
-        this.isEditProfile = null
-      } catch (e) {
-        console.error(e)
-      }
+      this.dialog = true
+      this.isEditProfile = null
     },
 
     save(date) {

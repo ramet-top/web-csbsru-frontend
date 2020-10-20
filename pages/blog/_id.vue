@@ -48,9 +48,7 @@
             ></v-textarea>
 
             <v-row>
-              <v-col class="d-flex" cols="12" sm="6">
-                หมวดหมู่
-              </v-col>
+              <v-col cols="12" sm="6"> หมวดหมู่ </v-col>
             </v-row>
 
             <v-row>

@@ -1,8 +1,6 @@
 <template>
   <div>
-    <v-card-title class="align-end fill-height">
-      หัวข้อโครงงาน
-    </v-card-title>
+    <v-card-title class="align-end fill-height">หัวข้อโครงงาน</v-card-title>
 
     <v-card-text>
       <v-container>

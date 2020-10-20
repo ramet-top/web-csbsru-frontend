@@ -14,9 +14,7 @@
             <!-- The most loved news app -->
             Computer Science (CS-BSRU)
           </h1>
-          <h3>
-            มหาวิทยาลัยราชภัฏบ้านสมเด็จเจ้าพระยา.
-          </h3>
+          <h3>มหาวิทยาลัยราชภัฏบ้านสมเด็จเจ้าพระยา.</h3>
           <blockquote class="blockquote">
             คณะวิทยาศาสตร์และเทคโนโลยี | Faclty of Science and Technology
             <br />

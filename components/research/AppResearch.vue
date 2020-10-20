@@ -36,13 +36,13 @@
             </v-sheet>
           </div>
           <template v-slot:item.title="{ item }">
-            <p class="d-inline-block text-truncate" style="max-width: 150px;">
+            <p class="d-inline-block text-truncate" style="max-width: 150px">
               {{ item.title }}
             </p>
           </template>
 
           <template v-slot:item.name="{ item }">
-            <p class="d-inline-block text-truncate" style="max-width: 150px;">
+            <p class="d-inline-block text-truncate" style="max-width: 150px">
               {{ item.name }}
             </p>
           </template>
