@@ -25,8 +25,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4eee709-952b-4f8d-bfaf-34cd40e08453" name="Default Changelist" comment="[UPDATE] update activity posts">
+    <list default="true" id="d4eee709-952b-4f8d-bfaf-34cd40e08453" name="Default Changelist" comment="[UPDATE] add node packet.json">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,7 +87,7 @@
     <property name="vue.rearranger.settings.migration" value="true" />
     <property name="vuejs.nuxt.types-notification-shown" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -97,6 +98,17 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="install" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="install" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.dev" />
+      <item itemvalue="npm.install" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -120,7 +132,7 @@
       <workItem from="1602562756495" duration="18888000" />
       <workItem from="1602663869189" duration="598000" />
       <workItem from="1602664757748" duration="472000" />
-      <workItem from="1602665289735" duration="45565000" />
+      <workItem from="1602665289735" duration="45921000" />
     </task>
     <task id="LOCAL-00001" summary="[UPDATE] ui comment all, update and delete success">
       <created>1602695876392</created>
@@ -185,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603165663794</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="[UPDATE] add node packet.json">
+      <created>1603165812999</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1603165812999</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,7 +260,8 @@
     <MESSAGE value="[UPDATE] update news" />
     <MESSAGE value="[UPDATE] update activity fetch" />
     <MESSAGE value="[UPDATE] update activity posts" />
-    <option name="LAST_COMMIT_MESSAGE" value="[UPDATE] update activity posts" />
+    <MESSAGE value="[UPDATE] add node packet.json" />
+    <option name="LAST_COMMIT_MESSAGE" value="[UPDATE] add node packet.json" />
   </component>
   <component name="WindowStateProjectService">
     <state x="576" y="350" key="#ESLint" timestamp="1602691881093">
@@ -252,10 +272,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="439" y="323" key="#Prettier/0.23.1440.877@0.23.1440.877" timestamp="1602672599215" />
-    <state x="183" y="122" width="1073" height="726" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603165782810">
+    <state x="183" y="122" width="1073" height="750" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1603166062723">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="183" y="122" width="1073" height="726" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.877@0.23.1440.877" timestamp="1603165782810" />
+    <state x="183" y="122" width="1073" height="750" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.877@0.23.1440.877" timestamp="1603166062723" />
     <state x="458" y="215" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1600057840205">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -272,22 +292,22 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="0" y="23" key="FileDocumentManager.FileCacheConflict/0.23.1440.877@0.23.1440.877" timestamp="1600057818342" />
-    <state width="1398" height="212" key="GridCell.Tab.0.bottom" timestamp="1603165724946">
+    <state width="1398" height="212" key="GridCell.Tab.0.bottom" timestamp="1603166052988">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="212" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1603165724946" />
-    <state width="1398" height="212" key="GridCell.Tab.0.center" timestamp="1603165724945">
+    <state width="1398" height="212" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1603166052988" />
+    <state width="1398" height="212" key="GridCell.Tab.0.center" timestamp="1603166052987">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="212" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1603165724945" />
-    <state width="1398" height="212" key="GridCell.Tab.0.left" timestamp="1603165724945">
+    <state width="1398" height="212" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1603166052987" />
+    <state width="1398" height="212" key="GridCell.Tab.0.left" timestamp="1603166052987">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="212" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1603165724945" />
-    <state width="1398" height="212" key="GridCell.Tab.0.right" timestamp="1603165724945">
+    <state width="1398" height="212" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1603166052987" />
+    <state width="1398" height="212" key="GridCell.Tab.0.right" timestamp="1603166052988">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="212" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1603165724945" />
+    <state width="1398" height="212" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1603166052988" />
     <state width="1419" height="279" key="GridCell.Tab.1.bottom" timestamp="1602561503101">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -340,10 +360,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="220" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1603077561903" />
-    <state x="320" y="197" key="Vcs.Push.Dialog.v2" timestamp="1603165668146">
+    <state x="320" y="197" key="Vcs.Push.Dialog.v2" timestamp="1603165816661">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="320" y="197" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1603165668146" />
+    <state x="320" y="197" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1603165816661" />
     <state x="417" y="206" width="606" height="522" key="find.popup" timestamp="1602435568660">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
