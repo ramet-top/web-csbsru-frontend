@@ -25,7 +25,6 @@
     "fs": "0.0.1-security",
     "graphql-tag": "^2.10.3",
     "hchs-vue-charts": "^1.2.8",
-    "http": "^0.0.1-security",
     "js-cookie": "^2.2.1",
     "nuxt": "^2.14.6",
     "nuxt-socket-io": "^1.1.11",
@@ -43,7 +42,6 @@
     "prettier": "^2.0.5"
   },
   "engines": {
-    "node": "12.18.1",
-    "npm": ">=6.0.0"
+    "node": "12.18.1"
   }
 }
