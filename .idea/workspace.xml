@@ -25,9 +25,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4eee709-952b-4f8d-bfaf-34cd40e08453" name="Default Changelist" comment="[UPDATE] package.json use npm fix version 12">
+    <list default="true" id="d4eee709-952b-4f8d-bfaf-34cd40e08453" name="Default Changelist" comment="[UPDATE] package.json remove http">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +86,7 @@
     <property name="vue.rearranger.settings.migration" value="true" />
     <property name="vuejs.nuxt.types-notification-shown" value="true" />
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="npm.install">
     <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -142,7 +142,7 @@
       <workItem from="1602562756495" duration="18888000" />
       <workItem from="1602663869189" duration="598000" />
       <workItem from="1602664757748" duration="472000" />
-      <workItem from="1602665289735" duration="48169000" />
+      <workItem from="1602665289735" duration="48312000" />
     </task>
     <task id="LOCAL-00001" summary="[UPDATE] ui comment all, update and delete success">
       <created>1602695876392</created>
@@ -228,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603170722285</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="[UPDATE] package.json remove http">
+      <created>1603172259433</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1603172259433</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,7 +294,8 @@
     <MESSAGE value="[UPDATE] add node packet.json" />
     <MESSAGE value="[UPDATE] package.json use npm" />
     <MESSAGE value="[UPDATE] package.json use npm fix version 12" />
-    <option name="LAST_COMMIT_MESSAGE" value="[UPDATE] package.json use npm fix version 12" />
+    <MESSAGE value="[UPDATE] package.json remove http" />
+    <option name="LAST_COMMIT_MESSAGE" value="[UPDATE] package.json remove http" />
   </component>
   <component name="WindowStateProjectService">
     <state x="576" y="350" key="#ESLint" timestamp="1602691881093">
@@ -386,10 +394,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="220" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1603077561903" />
-    <state x="320" y="197" key="Vcs.Push.Dialog.v2" timestamp="1603170735623">
+    <state x="320" y="197" key="Vcs.Push.Dialog.v2" timestamp="1603172262694">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="320" y="197" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1603170735623" />
+    <state x="320" y="197" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1603172262694" />
     <state x="417" y="206" width="606" height="522" key="find.popup" timestamp="1602435568660">
       <screen x="0" y="23" width="1440" height="877" />
     </state>

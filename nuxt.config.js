@@ -6,7 +6,7 @@ export default {
   // mode: "spa",
 
   // default
-  mode: 'universal',
+  // mode: 'universal',
 
   render: {
     resourceHints: false,
@@ -81,14 +81,14 @@ export default {
     sockets: [
       {
         name: 'main',
-        url: 'http://localhost:1338',
+        url: process.env.BASE_UR || 'http://localhost:1338',
       },
     ],
   },
 
   axios: {
     // proxy: true,
-    baseURL: process.env.BASE_URL || 'http://localhost:1337',
+    baseURL: process.env.BASE_URL || 'http://localhost:1338',
   },
 
   auth: {
