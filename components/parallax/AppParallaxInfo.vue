@@ -16,7 +16,7 @@
           </h1>
           <h3>มหาวิทยาลัยราชภัฏบ้านสมเด็จเจ้าพระยา.</h3>
           <blockquote class="blockquote">
-            คณะวิทยาศาสตร์และเทคโนโลยี | Faclty of Science and Technology
+            คณะวิทยาศาสตร์และเทคโนโลยี | Faculty of Science and Technology
             <br />
             วิทยาการคอมพิวเตอร์ | Computer Science
           </blockquote>
