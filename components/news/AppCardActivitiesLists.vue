@@ -37,8 +37,8 @@
             height="300px"
             width="344px"
           ></v-img>
-          <v-card-subtitle>
-            {{ item.title }}
+          <v-card-subtitle class="black--text">
+            {{ item.title.slice(0, 80) + '...' }}
           </v-card-subtitle>
         </v-card>
       </nuxt-link>
