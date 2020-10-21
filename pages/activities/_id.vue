@@ -17,7 +17,19 @@
 
       <v-row>
         <v-col v-for="item in activity.images" :key="item.id" cols="12" md="4">
-          <v-img :src="item.url" :lazy-src="lazyImage" aspect-ratio="1"></v-img>
+          <v-hover v-slot:default="{ hover }">
+            <v-card
+              :elevation="hover ? 12 : 2"
+              :class="{ 'on-hover': hover }"
+              @click="toggleImageClick(item)"
+            >
+              <v-img
+                :src="item.url"
+                :lazy-src="lazyImage"
+                aspect-ratio="1"
+              ></v-img>
+            </v-card>
+          </v-hover>
         </v-col>
       </v-row>
 
@@ -26,15 +38,23 @@
       <v-card-actions>
         <v-spacer></v-spacer>
         <v-btn color="green darken-1" text @click="$router.push('/news')">
-          <v-icon left small>fas fa-chevron-left</v-icon>Back</v-btn
-        >
+          <v-icon left small>fas fa-chevron-left</v-icon>
+          Back
+        </v-btn>
       </v-card-actions>
     </div>
+
+    <v-dialog v-model="dialog" width="960px">
+      <v-card>
+        <v-img :src="itemSelected ? itemSelected.url : ''"></v-img>
+      </v-card>
+    </v-dialog>
   </div>
 </template>
 
 <script>
 import AppTitleParallax from '~/components/parallax/AppTitleParallax'
+
 export default {
   components: {
     AppTitleParallax,
@@ -42,6 +62,8 @@ export default {
   data() {
     return {
       loading: false,
+      dialog: false,
+      itemSelected: null,
     }
   },
 
@@ -69,6 +91,10 @@ export default {
         this.$route.params.id
       )
       this.loading = false
+    },
+    toggleImageClick(value) {
+      this.itemSelected = value
+      this.dialog = true
     },
   },
 }
