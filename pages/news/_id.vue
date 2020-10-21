@@ -10,52 +10,75 @@
     />
 
     <v-container class="mx-auto">
-      <v-card class="mx-auto" width="800px">
-        <v-img
-          height="450px"
-          contain
-          :src="post.imageUrl ? post.imageUrl.url : lazyImage"
-          :lazy-src="lazyImage"
-        ></v-img>
+      <v-hover v-slot:default="{ hover }">
+        <v-card
+          :elevation="hover ? 12 : 2"
+          :class="{ 'on-hover': hover }"
+          class="mx-auto"
+          width="800px"
+        >
+          <v-img
+            height="450px"
+            contain
+            :src="post.imageUrl ? post.imageUrl.url : ''"
+            style="cursor: pointer"
+            @click="toggleImageClick(post)"
+          >
+            <template v-slot:placeholder>
+              <v-row class="fill-height ma-0" align="center" justify="center">
+                <v-progress-circular
+                  indeterminate
+                  color="grey lighten-5"
+                ></v-progress-circular>
+              </v-row>
+            </template>
+          </v-img>
 
-        <v-card-text>
-          <v-divider></v-divider>
-          <span v-if="post.user" class="text--primary">
-            <strong>ผู้แต่ง :</strong>
-            {{ post.user.firstName }}
-          </span>
-          <br />
-          <span class="text--primary">
-            <strong>(โพสเมื่อ) วันที่ :</strong>
-            {{ $moment(post.createdAt).format('Do MMMM YYYY, h:mm:ss a') }}
-          </span>
-          <br />
-          <span class="text--primary">
-            <strong>(อัปเดตล่าสุด) วันที่ :</strong>
-            {{ $moment(post.updatedAt).format('Do MMMM YYYY, h:mm:ss a') }}
-          </span>
-          <br />
-          <v-divider></v-divider>
-          <span class="text--primary">
-            <strong>หัวข้อ :</strong>
-            {{ post.title }}
-          </span>
-          <br />
-          <span class="text--primary">
-            <strong>เนื้อหา :</strong>
-          </span>
-          <v-container>
-            <p>{{ post.detail }}</p>
-          </v-container>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="green darken-1" text @click="$router.push('/news')">
-            <v-icon left small>fas fa-chevron-left</v-icon>Back
-          </v-btn>
-        </v-card-actions>
-      </v-card>
+          <v-card-text>
+            <v-divider></v-divider>
+            <span v-if="post.user" class="text--primary">
+              <strong>ผู้แต่ง :</strong>
+              {{ post.user.firstName }}
+            </span>
+            <br />
+            <span class="text--primary">
+              <strong>(โพสเมื่อ) วันที่ :</strong>
+              {{ $moment(post.createdAt).format('Do MMMM YYYY, h:mm:ss a') }}
+            </span>
+            <br />
+            <span class="text--primary">
+              <strong>(อัปเดตล่าสุด) วันที่ :</strong>
+              {{ $moment(post.updatedAt).format('Do MMMM YYYY, h:mm:ss a') }}
+            </span>
+            <br />
+            <v-divider></v-divider>
+            <span class="text--primary">
+              <strong>หัวข้อ :</strong>
+              {{ post.title }}
+            </span>
+            <br />
+            <span class="text--primary">
+              <strong>เนื้อหา :</strong>
+            </span>
+            <v-container>
+              <p>{{ post.detail }}</p>
+            </v-container>
+          </v-card-text>
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn color="green darken-1" text @click="$router.push('/news')">
+              <v-icon left small>fas fa-chevron-left</v-icon>Back
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-hover>
     </v-container>
+
+    <v-dialog v-model="dialog" width="960px">
+      <v-card>
+        <v-img :src="itemSelected ? itemSelected.imageUrl.url : ''"> </v-img>
+      </v-card>
+    </v-dialog>
   </section>
 </template>
 
@@ -69,6 +92,8 @@ export default {
   data() {
     return {
       loading: false,
+      dialog: false,
+      itemSelected: null,
     }
   },
 
@@ -96,6 +121,10 @@ export default {
       this.loading = true
       this.$store.dispatch('news/requestPosts', this.$route.params.id)
       this.loading = false
+    },
+    toggleImageClick(value) {
+      this.itemSelected = value
+      this.dialog = true
     },
   },
 }

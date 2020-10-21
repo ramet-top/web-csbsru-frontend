@@ -41,10 +41,19 @@
 
           <v-img
             :src="item.imageUrl ? item.imageUrl.url : lazyImage"
-            :lazy-src="lazyImage"
+            :lazy-src="item.imageUrl ? item.imageUrl.url : lazyImage"
             height="260"
             contain
-          ></v-img>
+          >
+            <template v-slot:placeholder>
+              <v-row class="fill-height ma-0" align="center" justify="center">
+                <v-progress-circular
+                  indeterminate
+                  color="grey lighten-5"
+                ></v-progress-circular>
+              </v-row>
+            </template>
+          </v-img>
 
           <v-card-text class="black--text">
             {{ item.title.slice(0, 80) + '...' }}

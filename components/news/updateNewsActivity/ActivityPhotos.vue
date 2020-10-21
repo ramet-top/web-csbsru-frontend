@@ -50,7 +50,10 @@
 
         <v-container v-else>
           <v-tabs centered color="black">
-            <v-tab><v-icon left>fas fa-photo-video</v-icon>กิจกรรม</v-tab>
+            <v-tab>
+              <v-icon left>fas fa-photo-video</v-icon>
+              กิจกรรม
+            </v-tab>
 
             <v-tab-item>
               <v-container fluid>
@@ -78,6 +81,7 @@
 
 <script>
 import AppCardActivitiesLists from '~/components/news/AppCardActivitiesLists'
+
 export default {
   components: {
     AppCardActivitiesLists,
@@ -98,10 +102,6 @@ export default {
 
   computed: {
     activities() {
-      console.log(
-        'activities',
-        this.$store.getters['news/activities/activities']
-      )
       return this.$store.getters['news/activities/activities']
     },
   },

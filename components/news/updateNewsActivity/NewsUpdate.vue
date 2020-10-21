@@ -123,11 +123,17 @@ export default {
   },
 
   methods: {
-    requestPosts() {
-      this.$store.dispatch('news/requestPosts')
+    async requestPosts() {
+      this.loading = true
+      await this.$store.dispatch('news/requestPosts')
+      this.loading = false
     },
   },
 
-  inject: ['theme'],
+  inject: {
+    theme: {
+      default: { isDark: false },
+    },
+  },
 }
 </script>
