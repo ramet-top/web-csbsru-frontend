@@ -353,11 +353,11 @@ export default {
           title: 'ระบบข่าวประกาศ',
           to: '/blog',
         },
-        {
-          icon: 'fas fa-chart-line',
-          title: 'Dashboard และ รายงาน',
-          to: '/report',
-        },
+        // {
+        //   icon: 'fas fa-chart-line',
+        //   title: 'Dashboard และ รายงาน',
+        //   to: '/report',
+        // },
       ]
     },
     itemsSecureStudent() {

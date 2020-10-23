@@ -26,12 +26,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4eee709-952b-4f8d-bfaf-34cd40e08453" name="Default Changelist" comment="[UPDATE] update zoom animation _id news and activities">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/activities/LatestPostAll.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/activities/LatestPostAll.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/navigations/AppHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/navigations/AppHeader.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/news/AppCardNewLists.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/news/AppCardNewLists.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/projects/AppProjectComments.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/projects/AppProjectComments.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/auth/profile.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/auth/profile.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +145,7 @@
       <workItem from="1602562756495" duration="18888000" />
       <workItem from="1602663869189" duration="598000" />
       <workItem from="1602664757748" duration="472000" />
-      <workItem from="1602665289735" duration="70404000" />
+      <workItem from="1602665289735" duration="72252000" />
     </task>
     <task id="LOCAL-00001" summary="[UPDATE] ui comment all, update and delete success">
       <created>1602695876392</created>
@@ -288,7 +287,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603261542281</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="[UPDATE] fix new error none user">
+      <created>1603452816370</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1603452816370</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,7 +361,8 @@
     <MESSAGE value="[UPDATE] fix word Faculty of Science and Technology" />
     <MESSAGE value="[UPDATE] activity hover and zoom card image" />
     <MESSAGE value="[UPDATE] update zoom animation _id news and activities" />
-    <option name="LAST_COMMIT_MESSAGE" value="[UPDATE] update zoom animation _id news and activities" />
+    <MESSAGE value="[UPDATE] fix new error none user" />
+    <option name="LAST_COMMIT_MESSAGE" value="[UPDATE] fix new error none user" />
   </component>
   <component name="WindowStateProjectService">
     <state x="576" y="350" key="#ESLint" timestamp="1602691881093">
@@ -458,14 +465,14 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="220" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1603077561903" />
-    <state x="320" y="197" key="Vcs.Push.Dialog.v2" timestamp="1603261547346">
+    <state x="320" y="197" key="Vcs.Push.Dialog.v2" timestamp="1603452817909">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="320" y="197" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1603261547346" />
-    <state x="417" y="206" width="606" height="522" key="find.popup" timestamp="1603451756117">
+    <state x="320" y="197" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1603452817909" />
+    <state x="417" y="206" width="606" height="522" key="find.popup" timestamp="1603460505003">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="417" y="206" width="606" height="522" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1603451756117" />
+    <state x="417" y="206" width="606" height="522" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1603460505003" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

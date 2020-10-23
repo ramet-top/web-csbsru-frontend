@@ -13,7 +13,7 @@
 
     <EditUserImage />
 
-    <div class="container">
+    <div class="mx-auto">
       <v-card class="mx-12 px-5 my-5">
         <EditProfile />
         <v-divider></v-divider>

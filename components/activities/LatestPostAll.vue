@@ -73,7 +73,7 @@
                   <v-list-item-avatar color="grey">
                     <img
                       :src="
-                        item.user.imageUrl
+                        item.user && item.user.imageUrl
                           ? item.user.imageUrl.url
                           : defaultImage
                       "
