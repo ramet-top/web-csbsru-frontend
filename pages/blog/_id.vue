@@ -117,7 +117,7 @@
                   ></v-file-input>
 
                   <!--                 test  submit-->
-                  <input v-show="true" type="submit" value="Submit" />
+                  <!--                  <input v-show="true" type="submit" value="Submit" />-->
                 </form>
               </v-col>
             </v-row>
