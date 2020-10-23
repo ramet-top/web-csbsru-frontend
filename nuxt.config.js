@@ -1,5 +1,4 @@
 import colors from 'vuetify/es5/util/colors'
-
 require('dotenv').config()
 
 export default {
@@ -81,14 +80,14 @@ export default {
     sockets: [
       {
         name: 'main',
-        url: process.env.BASE_UR || 'http://localhost:1338',
+        url: process.env.BASE_URL,
       },
     ],
   },
 
   axios: {
     // proxy: true,
-    baseURL: process.env.BASE_URL || 'http://localhost:1338',
+    baseURL: process.env.BASE_URL,
   },
 
   auth: {

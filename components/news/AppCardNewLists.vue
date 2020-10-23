@@ -18,22 +18,24 @@
           <v-list-item>
             <v-list-item-avatar color="grey">
               <v-img
-                :src="
-                  item.user.imageUrl ? item.user.imageUrl.url : defaultImage
-                "
+                :src="item.user ? item.user.imageUrl.url : defaultImage"
                 :lazy-src="defaultImage"
               />
             </v-list-item-avatar>
 
             <v-list-item-content>
-              <v-list-item-subtitle v-if="item.user"
-                >โพสโดย : {{ item.user.firstName }}
-                {{ item.user.lastName }}</v-list-item-subtitle
-              >
-              <v-list-item-subtitle v-if="item.user">
+              <v-list-item-subtitle
+                >โพสโดย : {{ item.use ? item.user.firstName : 'Admin' }}
+                {{ item.use ? item.user.lastName : '' }}
+              </v-list-item-subtitle>
+              <v-list-item-subtitle>
                 <span class="text--grey"
                   >(อัปเดต) วันที่ :
-                  {{ $moment(item.updatedAt).format('Do MMMM YYYY') }}</span
+                  {{
+                    item.use
+                      ? $moment(item.updatedAt).format('Do MMMM YYYY')
+                      : 'ว/ด/ป ไม่ระบุ'
+                  }}</span
                 ></v-list-item-subtitle
               >
             </v-list-item-content>

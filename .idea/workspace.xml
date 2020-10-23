@@ -25,13 +25,13 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d4eee709-952b-4f8d-bfaf-34cd40e08453" name="Default Changelist" comment="[UPDATE] activity hover and zoom card image">
+    <list default="true" id="d4eee709-952b-4f8d-bfaf-34cd40e08453" name="Default Changelist" comment="[UPDATE] update zoom animation _id news and activities">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/news/AppCardNewLists.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/news/AppCardNewLists.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/news/updateNewsActivity/ActivityPhotos.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/news/updateNewsActivity/ActivityPhotos.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/news/updateNewsActivity/NewsUpdate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/news/updateNewsActivity/NewsUpdate.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/activities/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/activities/_id.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/news/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/news/_id.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/projects/AppProjectComments.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/projects/AppProjectComments.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +146,7 @@
       <workItem from="1602562756495" duration="18888000" />
       <workItem from="1602663869189" duration="598000" />
       <workItem from="1602664757748" duration="472000" />
-      <workItem from="1602665289735" duration="58587000" />
+      <workItem from="1602665289735" duration="70404000" />
     </task>
     <task id="LOCAL-00001" summary="[UPDATE] ui comment all, update and delete success">
       <created>1602695876392</created>
@@ -281,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603248464234</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="[UPDATE] update zoom animation _id news and activities">
+      <created>1603261542280</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1603261542281</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,7 +354,8 @@
     <MESSAGE value="[UPDATE] fix prettier error" />
     <MESSAGE value="[UPDATE] fix word Faculty of Science and Technology" />
     <MESSAGE value="[UPDATE] activity hover and zoom card image" />
-    <option name="LAST_COMMIT_MESSAGE" value="[UPDATE] activity hover and zoom card image" />
+    <MESSAGE value="[UPDATE] update zoom animation _id news and activities" />
+    <option name="LAST_COMMIT_MESSAGE" value="[UPDATE] update zoom animation _id news and activities" />
   </component>
   <component name="WindowStateProjectService">
     <state x="576" y="350" key="#ESLint" timestamp="1602691881093">
@@ -366,10 +374,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="458" y="215" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.877@0.23.1440.877" timestamp="1603170678835" />
-    <state x="100" y="123" width="1240" height="677" key="DiffContextDialog" timestamp="1603091839782">
+    <state x="100" y="123" width="1240" height="677" key="DiffContextDialog" timestamp="1603336827503">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="100" y="123" width="1240" height="677" key="DiffContextDialog/0.23.1440.877@0.23.1440.877" timestamp="1603091839782" />
+    <state x="100" y="123" width="1240" height="677" key="DiffContextDialog/0.23.1440.877@0.23.1440.877" timestamp="1603336827503" />
     <state x="508" y="229" key="FileChooserDialogImpl" timestamp="1602244766506">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -378,22 +386,22 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="0" y="23" key="FileDocumentManager.FileCacheConflict/0.23.1440.877@0.23.1440.877" timestamp="1600057818342" />
-    <state width="1398" height="212" key="GridCell.Tab.0.bottom" timestamp="1603248942254">
+    <state width="1398" height="212" key="GridCell.Tab.0.bottom" timestamp="1603451983515">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="212" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1603248942254" />
-    <state width="1398" height="212" key="GridCell.Tab.0.center" timestamp="1603248942253">
+    <state width="1398" height="212" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1603451983515" />
+    <state width="1398" height="212" key="GridCell.Tab.0.center" timestamp="1603451983514">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="212" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1603248942253" />
-    <state width="1398" height="212" key="GridCell.Tab.0.left" timestamp="1603248942253">
+    <state width="1398" height="212" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1603451983514" />
+    <state width="1398" height="212" key="GridCell.Tab.0.left" timestamp="1603451983514">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="212" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1603248942253" />
-    <state width="1398" height="212" key="GridCell.Tab.0.right" timestamp="1603248942254">
+    <state width="1398" height="212" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1603451983514" />
+    <state width="1398" height="212" key="GridCell.Tab.0.right" timestamp="1603451983515">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="212" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1603248942254" />
+    <state width="1398" height="212" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1603451983515" />
     <state width="1419" height="279" key="GridCell.Tab.1.bottom" timestamp="1602561503101">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -442,18 +450,22 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state width="1419" height="279" key="GridCell.Tab.3.right/0.23.1440.877@0.23.1440.877" timestamp="1602561503103" />
+    <state x="436" y="87" key="RollbackChangesDialog" timestamp="1603452101369">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state x="436" y="87" key="RollbackChangesDialog/0.23.1440.877@0.23.1440.877" timestamp="1603452101369" />
     <state x="220" y="100" key="SettingsEditor" timestamp="1603077561903">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="220" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1603077561903" />
-    <state x="320" y="197" key="Vcs.Push.Dialog.v2" timestamp="1603248472708">
+    <state x="320" y="197" key="Vcs.Push.Dialog.v2" timestamp="1603261547346">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="320" y="197" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1603248472708" />
-    <state x="417" y="206" width="606" height="522" key="find.popup" timestamp="1602435568660">
+    <state x="320" y="197" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1603261547346" />
+    <state x="417" y="206" width="606" height="522" key="find.popup" timestamp="1603451756117">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="417" y="206" width="606" height="522" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1602435568660" />
+    <state x="417" y="206" width="606" height="522" key="find.popup/0.23.1440.877@0.23.1440.877" timestamp="1603451756117" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

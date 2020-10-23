@@ -201,6 +201,7 @@ export default {
   },
 
   async mounted() {
+    console.log('this.project.id', this.project.id)
     // init chat
     await this.initSocket()
 
@@ -276,7 +277,7 @@ export default {
     },
     fetchHistoryMsg() {
       this.$axios
-        .$get(`/comments?room=${this.project.id}&project=${this.project.id} `)
+        .$get(`/comments?room=${this.project.id}`)
         .then((result) => {
           this.comments = result
           // console.log('fetchHistoryMsg result::', result)
