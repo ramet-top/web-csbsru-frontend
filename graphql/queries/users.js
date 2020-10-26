@@ -66,3 +66,21 @@ export const QUERY_SINGLE_USER = gql`
     }
   }
 `
+
+export const QUERY_USERS_PROFESSOR_ALL = gql`
+  query USERS($where: JSON) {
+    users(where: $where) {
+      id
+      username
+      prefix
+      firstName
+      lastName
+      role {
+        name
+      }
+      imageUrl {
+        url
+      }
+    }
+  }
+`

@@ -2,7 +2,8 @@
   <v-card>
     <v-container>
       <v-card-title>
-        <v-icon left>fas fa-tasks</v-icon>ระบบจัดการบัณฑิตนิพนธ์
+        <v-icon left>fas fa-tasks</v-icon>
+        ระบบจัดการบัณฑิตนิพนธ์
       </v-card-title>
       <v-divider></v-divider>
 
@@ -56,12 +57,13 @@
                 </v-row>
 
                 <v-divider></v-divider>
+                <!--                <pre>{{ users }}</pre>-->
 
                 <v-row justify="center" align="start">
                   <v-card-text>
                     <div class="title">
-                      <v-icon left small>fas fa-user-plus</v-icon
-                      >อาจารย์ที่ปรึกษาโครงงาน
+                      <v-icon left small>fas fa-user-plus</v-icon>
+                      อาจารย์ที่ปรึกษาโครงงาน
                     </div>
                   </v-card-text>
                 </v-row>
@@ -122,8 +124,8 @@
                     :width="15"
                     :value="uploadPercentage"
                     color="primary"
-                    >{{ uploadPercentage }}</v-progress-circular
-                  >
+                    >{{ uploadPercentage }}
+                  </v-progress-circular>
                 </div>
               </v-form>
             </v-container>
@@ -136,11 +138,14 @@
 
 <script>
 import Swal from 'sweetalert2'
+import { QUERY_USERS_PROFESSOR_ALL } from '@/graphql/queries/users'
 
 export default {
   data() {
     return {
       roleName: 'AuthProfessor',
+      userRoleAuthProfessor: [],
+      users: [],
       projectCreate: {
         title: '',
         detail: '',
@@ -176,19 +181,31 @@ export default {
         (v) => v.length <= 200 || 'Max 200 characters',
       ]
     },
+  },
 
+  apollo: {
     users: {
-      get() {
-        return this.$store.getters['projects/students/users']
+      query: QUERY_USERS_PROFESSOR_ALL,
+      prefetch: true,
+      variables() {
+        return {
+          role: {
+            name: this.roleName,
+          },
+        }
       },
-      set(val) {
-        return this.$store.dispatch('projects/students/setUsers', val)
+      result({ data, loading, networkStatus }) {
+        this.loading = loading
+      },
+      error(data) {
+        this.error = data
+        console.log(data)
       },
     },
   },
 
   mounted() {
-    this.requestUsersRoleAny()
+    // this.reqUserRoleAuthProfessor()
   },
 
   methods: {
@@ -265,14 +282,18 @@ export default {
         })
       }
     },
-    async requestUsersRoleAny() {
-      const res = await this.$store.dispatch(
-        'projects/students/requestUsersRoleAny',
-        this.roleName
-      )
-      if (res) {
-        this.users = res
-      }
+    reqUserRoleAuthProfessor() {
+      // this.$store
+      //   .dispatch('projects/students/userRoleAuthProfessor', this.roleName)
+      //   .then(() => {})
+
+      this.$axios.$get(`/users?role.name=${this.roleName}`).then((result) => {
+        console.log()
+        this.userRoleAuthProfessor = result
+      })
+      // if (res) {
+      //   this.users.dispatch('projects/students/setUsers', res)
+      // }
     },
   },
 }

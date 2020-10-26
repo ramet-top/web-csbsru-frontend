@@ -26,7 +26,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4eee709-952b-4f8d-bfaf-34cd40e08453" name="Default Changelist" comment="[UPDATE] update zoom animation _id news and activities">
-      <change beforePath="$PROJECT_DIR$/pages/blog/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/blog/_id.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/form/AppSentReqProject.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/form/AppSentReqProject.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graphql/queries/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/graphql/queries/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,7 +143,9 @@
       <workItem from="1602562756495" duration="18888000" />
       <workItem from="1602663869189" duration="598000" />
       <workItem from="1602664757748" duration="472000" />
-      <workItem from="1602665289735" duration="72499000" />
+      <workItem from="1602665289735" duration="73206000" />
+      <workItem from="1603680225289" duration="29000" />
+      <workItem from="1603717782866" duration="3919000" />
     </task>
     <task id="LOCAL-00001" summary="[UPDATE] ui comment all, update and delete success">
       <created>1602695876392</created>
@@ -297,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603460721102</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="[UPDATE] blog/_id hide submit button">
+      <created>1603461003656</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1603461003657</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,7 +377,8 @@
     <MESSAGE value="[UPDATE] update zoom animation _id news and activities" />
     <MESSAGE value="[UPDATE] fix new error none user" />
     <MESSAGE value="[UPDATE] remove report route, fix error LatestPostAll.vue , AppCardNewLists.vue" />
-    <option name="LAST_COMMIT_MESSAGE" value="[UPDATE] remove report route, fix error LatestPostAll.vue , AppCardNewLists.vue" />
+    <MESSAGE value="[UPDATE] blog/_id hide submit button" />
+    <option name="LAST_COMMIT_MESSAGE" value="[UPDATE] blog/_id hide submit button" />
   </component>
   <component name="WindowStateProjectService">
     <state x="576" y="350" key="#ESLint" timestamp="1602691881093">
@@ -397,22 +409,22 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="0" y="23" key="FileDocumentManager.FileCacheConflict/0.23.1440.877@0.23.1440.877" timestamp="1600057818342" />
-    <state width="1398" height="212" key="GridCell.Tab.0.bottom" timestamp="1603451983515">
+    <state width="1398" height="212" key="GridCell.Tab.0.bottom" timestamp="1603718600938">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="212" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1603451983515" />
-    <state width="1398" height="212" key="GridCell.Tab.0.center" timestamp="1603451983514">
+    <state width="1398" height="212" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1603718600938" />
+    <state width="1398" height="212" key="GridCell.Tab.0.center" timestamp="1603718600937">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="212" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1603451983514" />
-    <state width="1398" height="212" key="GridCell.Tab.0.left" timestamp="1603451983514">
+    <state width="1398" height="212" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1603718600937" />
+    <state width="1398" height="212" key="GridCell.Tab.0.left" timestamp="1603718600936">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="212" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1603451983514" />
-    <state width="1398" height="212" key="GridCell.Tab.0.right" timestamp="1603451983515">
+    <state width="1398" height="212" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1603718600936" />
+    <state width="1398" height="212" key="GridCell.Tab.0.right" timestamp="1603718600938">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="212" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1603451983515" />
+    <state width="1398" height="212" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1603718600938" />
     <state width="1419" height="279" key="GridCell.Tab.1.bottom" timestamp="1602561503101">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -469,10 +481,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="220" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1603077561903" />
-    <state x="320" y="197" key="Vcs.Push.Dialog.v2" timestamp="1603460724104">
+    <state x="320" y="197" key="Vcs.Push.Dialog.v2" timestamp="1603461010847">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="320" y="197" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1603460724104" />
+    <state x="320" y="197" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1603461010847" />
     <state x="417" y="206" width="606" height="522" key="find.popup" timestamp="1603460505003">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -494,7 +506,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/components/projects/AppProjectComments.vue</url>
           <line>158</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
