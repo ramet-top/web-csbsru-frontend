@@ -27,16 +27,8 @@
   <component name="ChangeListManager">
     <list default="true" id="d4eee709-952b-4f8d-bfaf-34cd40e08453" name="Default Changelist" comment="[UPDATE] update zoom animation _id news and activities">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/activities/LatestPostAll.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/activities/LatestPostAll.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/contact/AppContact.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/contact/AppContact.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/course/AppCourse.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/course/AppCourse.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/navigations/AppHeader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/navigations/AppHeader.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/news/AppCardActivitiesLists.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/news/AppCardActivitiesLists.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/news/updateNewsActivity/All.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/news/updateNewsActivity/All.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/news/updateNewsActivity/NewsUpdate.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/news/updateNewsActivity/NewsUpdate.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/components/projects/AppDateTimeConfirmProject.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/projects/AppDateTimeConfirmProject.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/vison/AppVision.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/vison/AppVision.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/projects/confirm/AppShowState.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/projects/confirm/AppShowState.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/project/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/project/_id.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,7 +148,7 @@
       <workItem from="1603680225289" duration="29000" />
       <workItem from="1603717782866" duration="9421000" />
       <workItem from="1603855445561" duration="1139000" />
-      <workItem from="1604235138138" duration="1104000" />
+      <workItem from="1604235138138" duration="2273000" />
     </task>
     <task id="LOCAL-00001" summary="[UPDATE] ui comment all, update and delete success">
       <created>1602695876392</created>
@@ -326,7 +318,14 @@
       <option name="project" value="LOCAL" />
       <updated>1603725758725</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="[UPDATE] course remove 2 item, personnel and download dont show home page, add target tab">
+      <created>1604236616104</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1604236616104</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -397,7 +396,8 @@
     <MESSAGE value="[UPDATE] remove report route, fix error LatestPostAll.vue , AppCardNewLists.vue" />
     <MESSAGE value="[UPDATE] blog/_id hide submit button" />
     <MESSAGE value="[UPDATE] fix bug get usersRoleAuthProfessor" />
-    <option name="LAST_COMMIT_MESSAGE" value="[UPDATE] fix bug get usersRoleAuthProfessor" />
+    <MESSAGE value="[UPDATE] course remove 2 item, personnel and download dont show home page, add target tab" />
+    <option name="LAST_COMMIT_MESSAGE" value="[UPDATE] course remove 2 item, personnel and download dont show home page, add target tab" />
   </component>
   <component name="WindowStateProjectService">
     <state x="576" y="350" key="#ESLint" timestamp="1602691881093">
@@ -500,10 +500,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="220" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1603077561903" />
-    <state x="320" y="197" key="Vcs.Push.Dialog.v2" timestamp="1603725763930">
+    <state x="320" y="197" key="Vcs.Push.Dialog.v2" timestamp="1604236621624">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="320" y="197" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1603725763930" />
+    <state x="320" y="197" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1604236621624" />
     <state x="417" y="206" width="606" height="522" key="find.popup" timestamp="1603766209458">
       <screen x="0" y="23" width="1440" height="877" />
     </state>

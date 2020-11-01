@@ -38,7 +38,7 @@
                     :type="dateTimeConfirmShowOnly"
                   />
 
-                  <v-row>
+                  <v-row v-if="project.pro_ad === user.id">
                     <v-col cols="12" sm="6">
                       <v-btn
                         block
@@ -140,7 +140,7 @@
                     <!-- ofUser: {{this.scoreState.ofUser.length}} -->
                     <clientOnly>
                       <v-card-actions>
-                        เกณท์คะแนนการผ่านสอบ 4 ท่านขึ้นไป :
+                        เกณท์คะแนนการผ่านสอบ(กรรมการสอบจะประชุมแล้วอนุมัติ) :
                         <v-chip
                           v-if="project.scores.length"
                           class="ma-2"
@@ -151,7 +151,8 @@
                             <v-icon>fas fa-user-circle</v-icon>
                           </v-avatar>
                           <div v-show="false">{{ checkScorePass }}</div>
-                          ผ่าน +{{ scoreState.pass }}
+                          ผ่าน
+                          <!--                          +{{ scoreState.pass }}-->
                         </v-chip>
 
                         <v-chip
@@ -271,7 +272,9 @@
                   <!-- ofUser: {{this.scoreState.ofUser.length}} -->
                   <clientOnly>
                     <v-card-actions>
-                      <h3>เกณท์คะแนนการผ่านสอบ 4 ท่านขึ้นไป :</h3>
+                      <h3>
+                        เกณท์คะแนนการผ่านสอบ(กรรมการสอบจะประชุมแล้วอนุมัติ) :
+                      </h3>
 
                       <v-chip
                         v-if="project.scores.length"
@@ -283,7 +286,8 @@
                           <v-icon>fas fa-user-circle</v-icon>
                         </v-avatar>
                         <div v-show="false">{{ checkScorePass }}</div>
-                        ผ่าน +{{ scoreState.pass }}
+                        ผ่าน
+                        <!--                        + {{ scoreState.pass }}-->
                       </v-chip>
 
                       <v-chip
