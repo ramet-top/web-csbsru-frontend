@@ -7,9 +7,9 @@
     <NewsUpdateAndActivity :items-per-page="newsPerPage" />
     <Course />
     <RoomInformation />
-    <Personnel :items-per-page="personalPerPage" />
+    <!--    <Personnel :items-per-page="personalPerPage" />-->
     <Contact />
-    <DownloadFile />
+    <!--    <DownloadFile />-->
   </div>
 </template>
 
@@ -18,10 +18,10 @@ import ParallaxInfo from '~/components/parallax/AppParallaxInfo'
 import NewsUpdateAndActivity from '~/components/news/updateNewsActivity/All'
 import Course from '~/components/course/AppCourse'
 import RoomInformation from '~/components/history/AppRoomInformation'
-import Personnel from '~/components/personnel/AppPersonnel'
+// import Personnel from '~/components/personnel/AppPersonnel'
 // import Vision from '~/components/vison/AppVision'
 import ParallaxWelcome from '~/components/parallax/AppParallaxWelcome'
-import DownloadFile from '~/components/download/AppDownloadFile'
+// import DownloadFile from '~/components/download/AppDownloadFile'
 import Contact from '~/components/contact/AppContact'
 
 export default {
@@ -30,10 +30,10 @@ export default {
     NewsUpdateAndActivity,
     Course,
     RoomInformation,
-    Personnel,
+    // Personnel,
     // Vision,
     ParallaxWelcome,
-    DownloadFile,
+    // DownloadFile,
     Contact,
   },
 

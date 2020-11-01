@@ -156,6 +156,10 @@
           <v-icon left>far fa-newspaper</v-icon>
           ข่าวประชาสัมพันธ์
         </v-btn>
+        <v-btn text to="/download" router exact>
+          <v-icon left>fas fa-file-download</v-icon>
+          ดาวน์โหลด
+        </v-btn>
 
         <v-menu
           open-on-hover
@@ -329,11 +333,11 @@ export default {
           title: 'ติดต่อ',
           to: '/contact',
         },
-        {
-          icon: 'fas fa-file-download',
-          title: 'ดาวน์โหลด',
-          to: '/download',
-        },
+        // {
+        //   icon: 'fas fa-file-download',
+        //   title: 'ดาวน์โหลด',
+        //   to: '/download',
+        // },
       ]
     },
     itemsSecureProfessor() {

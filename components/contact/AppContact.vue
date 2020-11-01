@@ -36,10 +36,12 @@
                       </v-icon>
                     </div>
                   </v-card-title>
-                  <v-card-text
-                    >วิทยาการคอมพิวเตอร์ | Computer Science ::
-                    คณะวิทยาศาสตร์และเทคโนโลยี | Faculty of Science and
-                    Technology
+                  <v-card-text>
+                    <p>
+                      วิทยาการคอมพิวเตอร์ | Computer Science ::
+                      คณะวิทยาศาสตร์และเทคโนโลยี | Faculty of Science and
+                      Technology
+                    </p>
                   </v-card-text>
                   <v-list class="transparent">
                     <v-list-item>
@@ -49,9 +51,7 @@
                         </v-icon>
                       </v-list-item-action>
                       <v-list-item-content>
-                        <v-list-item-title
-                          >02-473-7000 ต่อ 3120
-                        </v-list-item-title>
+                        <p>02-473-7000 ต่อ 3120</p>
                       </v-list-item-content>
                     </v-list-item>
                     <v-list-item>
@@ -61,10 +61,10 @@
                         </v-icon>
                       </v-list-item-action>
                       <v-list-item-content>
-                        <v-list-item-title
-                          >ห้อง 412 อาคาร 4 ชั้น 1
+                        <p>
+                          ห้อง 412 อาคาร 4 ชั้น 1
                           มหาวิทยาลัยราชภัฏบ้านสมเด็จเจ้าพระยา
-                        </v-list-item-title>
+                        </p>
                       </v-list-item-content>
                     </v-list-item>
                     <v-list-item>
@@ -74,7 +74,7 @@
                         </v-icon>
                       </v-list-item-action>
                       <v-list-item-content>
-                        <v-list-item-title>john@example.com</v-list-item-title>
+                        <p>john@example.com</p>
                       </v-list-item-content>
                     </v-list-item>
                   </v-list>

@@ -181,7 +181,7 @@ export default {
   methods: {
     async fetchPosts() {
       this.posts = await this.$axios.$get(
-        `/posts?&category=POST&_sort=createdAt:desc`
+        `/posts?user=${this.user.id}&category=POST&_sort=createdAt:desc`
       )
     },
   },

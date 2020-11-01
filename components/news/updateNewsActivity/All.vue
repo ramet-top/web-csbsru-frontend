@@ -4,6 +4,10 @@
       <h1 class="font-weight-bold display-1">ข่าวประชาสัมพันธ์</h1>
     </v-card-title>
 
+    <!--    <pre>-->
+    <!--    tab::  {{ tab }}-->
+    <!--    </pre>-->
+
     <clientOnly>
       <v-tabs v-model="tab" centered fixed-tabs>
         <v-tabs-slider></v-tabs-slider>
@@ -11,9 +15,13 @@
         <v-tab>ภาพกิจกรรม<v-icon right>fas fa-images</v-icon></v-tab>
 
         <v-tabs-items v-model="tab">
-          <NewsUpdate :items-per-page="itemsPerPage" />
+          <template>
+            <NewsUpdate :status-tab="tab" :items-per-page="itemsPerPage" />
+          </template>
 
-          <ActivityPhotos :items-per-page="itemsPerPage" />
+          <template>
+            <ActivityPhotos :items-per-page="itemsPerPage" />
+          </template>
         </v-tabs-items>
       </v-tabs>
     </clientOnly>

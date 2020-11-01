@@ -30,27 +30,54 @@
         </p>
       </v-col>
       <v-col cols="12" sm="6">
-        <v-radio-group v-if="!type" v-model="project.finalTime">
-          <template v-slot:label>
-            <div>
-              <strong>กรุณาเลือกเวลาสอบหัวข้อโครงงาน</strong>
-            </div>
+        <template v-if="!type">
+          <template v-if="statusProject === 'OPERATION'">
+            <v-radio-group v-model="project.finalTime" disabled>
+              <template v-slot:label>
+                <div>
+                  <strong>กรุณาเลือกเวลาสอบหัวข้อโครงงาน</strong>
+                </div>
+              </template>
+              <v-radio value="MORNING">
+                <template v-slot:label>
+                  <div>
+                    <strong class="dark--text">ช่วงเช้า 10.00 น</strong>
+                  </div>
+                </template>
+              </v-radio>
+              <v-radio value="AFTERNOON">
+                <template v-slot:label>
+                  <div>
+                    <strong class="dark--text">ช่วงบ่าย 13.30 น</strong>
+                  </div>
+                </template>
+              </v-radio>
+            </v-radio-group>
           </template>
-          <v-radio value="MORNING">
-            <template v-slot:label>
-              <div>
-                <strong class="dark--text">ช่วงเช้า 10.00 น</strong>
-              </div>
-            </template>
-          </v-radio>
-          <v-radio value="AFTERNOON">
-            <template v-slot:label>
-              <div>
-                <strong class="dark--text">ช่วงบ่าย 13.30 น</strong>
-              </div>
-            </template>
-          </v-radio>
-        </v-radio-group>
+          <template v-else>
+            <v-radio-group v-model="project.finalTime">
+              <template v-slot:label>
+                <div>
+                  <strong>กรุณาเลือกเวลาสอบหัวข้อโครงงาน</strong>
+                </div>
+              </template>
+              <v-radio value="MORNING">
+                <template v-slot:label>
+                  <div>
+                    <strong class="dark--text">ช่วงเช้า 10.00 น</strong>
+                  </div>
+                </template>
+              </v-radio>
+              <v-radio value="AFTERNOON">
+                <template v-slot:label>
+                  <div>
+                    <strong class="dark--text">ช่วงบ่าย 13.30 น</strong>
+                  </div>
+                </template>
+              </v-radio>
+            </v-radio-group>
+          </template>
+        </template>
       </v-col>
     </v-row>
   </div>
@@ -61,6 +88,10 @@ export default {
     title: {
       type: String,
       default: 'Title name',
+    },
+    statusProject: {
+      type: String,
+      default: 'DEFAULT',
     },
     project: {
       type: Object,

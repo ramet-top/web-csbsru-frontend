@@ -103,6 +103,10 @@ export default {
       type: Number,
       default: 12,
     },
+    statusTab: {
+      type: Number,
+      default: 0,
+    },
   },
 
   data() {

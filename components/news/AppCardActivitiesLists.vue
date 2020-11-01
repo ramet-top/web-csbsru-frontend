@@ -34,8 +34,8 @@
           <v-img
             :src="item.imageFirst ? item.imageFirst.url : lazyImage"
             :lazy-src="lazyImage"
-            height="300px"
-            width="344px"
+            height="220"
+            contain
           ></v-img>
           <v-card-subtitle class="black--text">
             {{ item.title.slice(0, 80) + '...' }}

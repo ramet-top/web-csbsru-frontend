@@ -52,6 +52,20 @@
                         ไม่อนุมัติการเป็นที่ปรึกษาโครงงานนนี้
                       </v-btn>
                     </v-col>
+                    <v-col cols="12" sm="6">
+                      <v-btn
+                        rounded
+                        block
+                        color="primary"
+                        outlined
+                        dark
+                        v-on="on"
+                        @click="onOpenPopupEditProject()"
+                      >
+                        <v-icon left>fas fa-calendar-check</v-icon>
+                        แก้ไข / อนุมัติการเป็นที่ปรึกษาโครงงานนี้
+                      </v-btn>
+                    </v-col>
 
                     <v-col cols="12" sm="6">
                       <v-dialog
@@ -59,27 +73,14 @@
                         persistent
                         max-width="1024px"
                       >
-                        <template v-slot:activator="{ on }">
-                          <v-btn
-                            rounded
-                            block
-                            color="primary"
-                            outlined
-                            dark
-                            v-on="on"
-                          >
-                            <v-icon left>fas fa-calendar-check</v-icon>
-                            แก้ไข / อนุมัติการเป็นที่ปรึกษาโครงงานนี้
-                          </v-btn>
-                        </template>
-                        <v-card>
+                        <v-card v-if="dialogProfessorUpdate">
                           <v-card-text>
                             <AppProjectTitleDetail
                               :project-data="projectData"
                             />
 
                             <AppDateTimeConfirmProject
-                              :title="`วันที่ส่งคำขอขึ้นสอบหัวข้อ`"
+                              title="วันที่ส่งคำขอขึ้นสอบหัวข้อ"
                               :project="project"
                             />
                           </v-card-text>
@@ -89,7 +90,7 @@
                             <v-btn
                               color="red darken-1"
                               text
-                              @click="dialogProfessorUpdate = false"
+                              @click="onClosePopup()"
                             >
                               <v-icon left>fas fa-times</v-icon>
                               ปิด
@@ -115,8 +116,9 @@
               <template v-else-if="project.status === 'OPERATION'">
                 <v-container>
                   <AppDateTimeConfirmProject
-                    title="`กำหนดวันขึ้นสอบหัวข้อ`"
+                    title="กำหนดวันขึ้นสอบหัวข้อ"
                     :project="project"
+                    :status-project="project.status"
                   />
                   <v-divider></v-divider>
 
@@ -801,6 +803,13 @@ export default {
       }
 
       // this.dialogConfirmProject = true
+    },
+
+    onClosePopup() {
+      this.dialogProfessorUpdate = false
+    },
+    onOpenPopupEditProject() {
+      this.dialogProfessorUpdate = true
     },
   },
 
