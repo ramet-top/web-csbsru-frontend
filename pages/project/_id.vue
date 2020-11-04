@@ -124,15 +124,15 @@
 
                   <!-- for comment permission -->
                   <!-- {{ user.id === project.pro_ad }} -->
-                  <div
-                    v-if="user.id === project.pro_ad && mainTab === 0"
-                    class="red--text text-center mt-7"
-                  >
-                    *อาจารย์ที่ปรึกษาโปรเจคไม่สามารถ comment หรือ
-                    อนุมัติการสอบของ นศ.ได้
-                  </div>
+                  <!--                  <div-->
+                  <!--                    v-if="user.id === project.pro_ad && mainTab === 0"-->
+                  <!--                    class="red&#45;&#45;text text-center mt-7"-->
+                  <!--                  >-->
+                  <!--                    *อาจารย์ที่ปรึกษาโปรเจคไม่สามารถ comment หรือ-->
+                  <!--                    อนุมัติการสอบของ นศ.ได้-->
+                  <!--                  </div>-->
 
-                  <div v-else>
+                  <div>
                     <!--                    comments project-->
                     <AppProjectComments :project="project"></AppProjectComments>
 
