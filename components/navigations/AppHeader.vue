@@ -423,7 +423,7 @@ export default {
   methods: {
     async routeLogin() {
       try {
-        await this.$router.push('/auth/login')
+        await this.$router.replace('/auth/login')
         this.drawer = false
       } catch (e) {
         console.log(e)
@@ -433,6 +433,7 @@ export default {
     async logout() {
       await this.$apolloHelpers.onLogout()
       await this.$auth.logout()
+      await this.$store.dispatch('projects/setIsPermission', false)
 
       this.drawer = false
     },

@@ -55,7 +55,7 @@ export default {
 
   data() {
     return {
-      yearNow: parseInt(this.$moment().format('Y')),
+      // yearNow: parseInt(this.$moment().format('Y')),
       yearCal: null,
       projectData: null,
       projectUser: [],
@@ -63,6 +63,9 @@ export default {
   },
 
   computed: {
+    yearNow() {
+      return parseInt(this.$moment().format('Y'))
+    },
     user() {
       return this.$store.getters.loggedInUser
     },
