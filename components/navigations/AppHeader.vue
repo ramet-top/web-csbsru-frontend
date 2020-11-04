@@ -98,7 +98,7 @@
 
           <v-list dense nav shaped>
             <v-list-item
-              v-for="(item, i) in items"
+              v-for="(item, i) in itemsLeft"
               :key="i"
               :to="item.to"
               router
@@ -338,6 +338,40 @@ export default {
         //   title: 'ดาวน์โหลด',
         //   to: '/download',
         // },
+      ]
+    },
+    itemsLeft() {
+      return [
+        {
+          icon: 'fas fa-landmark',
+          title: 'ประวัติความเป็นมา',
+          to: '/history',
+        },
+        {
+          icon: 'fas fa-user-friends',
+          title: 'บุคลากร',
+          to: '/personnel',
+        },
+        {
+          icon: 'fas fa-book-open',
+          title: 'หลักสูตร',
+          to: '/course',
+        },
+        {
+          icon: 'fab fa-researchgate',
+          title: 'งานวิจัย',
+          to: '/research',
+        },
+        {
+          icon: 'far fa-address-card',
+          title: 'ติดต่อ',
+          to: '/contact',
+        },
+        {
+          icon: 'fas fa-file-download',
+          title: 'ดาวน์โหลด',
+          to: '/download',
+        },
       ]
     },
     itemsSecureProfessor() {
