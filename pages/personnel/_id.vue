@@ -2,7 +2,7 @@
   <div>
     <AppTitleParallax :title="titleParallax" />
 
-    <v-card class="mx-auto" width="800">
+    <v-card class="mx-auto my-2" width="800">
       <v-progress-circular
         v-if="loading"
         :size="50"

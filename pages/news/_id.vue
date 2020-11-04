@@ -38,7 +38,8 @@
             <v-divider></v-divider>
             <span v-if="post.user" class="text--primary">
               <strong>ผู้แต่ง :</strong>
-              {{ post.user.firstName }}
+              {{ post.user.prefix }} {{ post.user.firstName }}
+              {{ post.user.lastName }}
             </span>
             <br />
             <span class="text--primary">
