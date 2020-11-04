@@ -26,11 +26,7 @@
                 <v-list-item>
                   <v-list-item-avatar color="grey">
                     <img
-                      :src="
-                        item.user.imageUrl
-                          ? item.user.imageUrl.url
-                          : defaultImage
-                      "
+                      :src="item.user ? item.user.imageUrl.url : defaultImage"
                       :lazy-src="lazyImage"
                       alt="John"
                     />
