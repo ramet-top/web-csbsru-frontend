@@ -4,11 +4,12 @@
     <v-toolbar>
       <v-icon left>fas fa-tasks</v-icon>
       ระบบจัดการบัณฑิตนิพนธ์(สำหรับอาจารย์)
+      <p>{{ mainTab }}</p>
     </v-toolbar>
     <v-divider></v-divider>
 
     <clientOnly>
-      <v-tabs centered icons-and-text fixed-tabs>
+      <v-tabs v-model="mainTab" centered icons-and-text fixed-tabs>
         <v-tab>
           ที่ปรึกษาโครงงาน
           <v-icon>fas fa-marker</v-icon>
@@ -44,6 +45,23 @@ export default {
     AppConfirmProfes,
     AppConfirmFinal,
     // Logo,
+  },
+
+  data() {
+    return {
+      // mainTab: null,
+    }
+  },
+
+  computed: {
+    mainTab: {
+      get() {
+        return this.$store.getters['projects/mainTab']
+      },
+      set(value) {
+        return this.$store.dispatch('projects/setMainTab', value)
+      },
+    },
   },
   head() {
     return {

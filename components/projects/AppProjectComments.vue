@@ -8,7 +8,7 @@
             <v-textarea
               v-model="commentData.detail"
               name="input-7-1"
-              label="เพิ่ม Comment กรรมการสอบหัวข้อ"
+              label="เพิ่ม Comment"
               :rules="rulesOption"
               hint="Hint text 200 characters"
               counter
@@ -277,10 +277,10 @@ export default {
     },
     fetchHistoryMsg() {
       this.$axios
-        .$get(`/comments?room=${this.project.id}`)
+        .$get(`/comments?room_in=${this.project.id}`)
         .then((result) => {
           this.comments = result
-          // console.log('fetchHistoryMsg result::', result)
+          console.log('fetchHistoryMsg result::', result)
         })
         .catch((error) => {
           console.log(error)

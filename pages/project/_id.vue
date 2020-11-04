@@ -125,7 +125,7 @@
                   <!-- for comment permission -->
                   <!-- {{ user.id === project.pro_ad }} -->
                   <div
-                    v-if="user.id === project.pro_ad"
+                    v-if="user.id === project.pro_ad && mainTab === 0"
                     class="red--text text-center mt-7"
                   >
                     *อาจารย์ที่ปรึกษาโปรเจคไม่สามารถ comment หรือ
@@ -597,6 +597,12 @@ export default {
         this.$store.dispatch('projects/setIsActive', val)
       },
     },
+
+    mainTab: {
+      get() {
+        return this.$store.getters['projects/mainTab']
+      },
+    },
   },
 
   methods: {
@@ -637,7 +643,7 @@ export default {
             if (this.scores.length) {
               // console.log("มีอยู่แล้ว");
             } else {
-              this.$axios.$post(
+              await this.$axios.$post(
                 '/scores',
                 {
                   status: false,

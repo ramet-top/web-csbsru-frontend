@@ -4,6 +4,7 @@ export const state = () => ({
   isActive: false,
   snackbar: false,
   isPermission: false,
+  mainTab: 0,
 })
 
 export const getters = {
@@ -12,6 +13,7 @@ export const getters = {
   isActive: (state) => state.isActive,
   snackbar: (state) => state.snackbar,
   isPermission: (state) => state.isPermission,
+  mainTab: (state) => state.mainTab,
 }
 
 export const mutations = {
@@ -29,6 +31,10 @@ export const mutations = {
   },
   SET_IS_PERMISSION(state, data) {
     state.isPermission = data
+  },
+
+  SET_MAIN_TAB(state, data) {
+    state.mainTab = data
   },
 }
 
@@ -48,6 +54,10 @@ export const actions = {
 
   setIsPermission({ commit }, payload) {
     commit('SET_IS_PERMISSION', payload)
+  },
+
+  setMainTab({ commit }, payload) {
+    commit('SET_MAIN_TAB', payload)
   },
 
   requestSinggleProject({ commit }, payload) {

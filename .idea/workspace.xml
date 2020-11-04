@@ -27,8 +27,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d4eee709-952b-4f8d-bfaf-34cd40e08453" name="Default Changelist" comment="[UPDATE] update zoom animation _id news and activities">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/components/form/AppSentReqProject.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/form/AppSentReqProject.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/projects/AppProjectComments.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/projects/AppProjectComments.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/auth/project/professor.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/auth/project/professor.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/project/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/project/_id.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/store/projects/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/store/projects/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +150,7 @@
       <workItem from="1603717782866" duration="9421000" />
       <workItem from="1603855445561" duration="1139000" />
       <workItem from="1604235138138" duration="9046000" />
-      <workItem from="1604484100103" duration="2027000" />
+      <workItem from="1604484100103" duration="3361000" />
     </task>
     <task id="LOCAL-00001" summary="[UPDATE] ui comment all, update and delete success">
       <created>1602695876392</created>
@@ -332,7 +334,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604239506437</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="[UPDATE] professor confirm not reload page, fix sent req student show dropdown professor">
+      <created>1604486693449</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1604486693449</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,7 +388,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="[UPDATE] success chat" />
     <MESSAGE value="[UPDATE] success history information room" />
     <MESSAGE value="[UPDATE] success research" />
     <MESSAGE value="[UPDATE] success research update" />
@@ -404,7 +412,8 @@
     <MESSAGE value="[UPDATE] fix bug get usersRoleAuthProfessor" />
     <MESSAGE value="[UPDATE] course remove 2 item, personnel and download dont show home page, add target tab" />
     <MESSAGE value="[UPDATE] show time project remove adn etc." />
-    <option name="LAST_COMMIT_MESSAGE" value="[UPDATE] show time project remove adn etc." />
+    <MESSAGE value="[UPDATE] professor confirm not reload page, fix sent req student show dropdown professor" />
+    <option name="LAST_COMMIT_MESSAGE" value="[UPDATE] professor confirm not reload page, fix sent req student show dropdown professor" />
   </component>
   <component name="WindowStateProjectService">
     <state x="576" y="350" key="#ESLint" timestamp="1602691881093">
@@ -507,10 +516,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="220" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1603077561903" />
-    <state x="320" y="197" key="Vcs.Push.Dialog.v2" timestamp="1604239509594">
+    <state x="320" y="197" key="Vcs.Push.Dialog.v2" timestamp="1604486697033">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="320" y="197" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1604239509594" />
+    <state x="320" y="197" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1604486697033" />
     <state x="417" y="206" width="606" height="522" key="find.popup" timestamp="1603766209458">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
