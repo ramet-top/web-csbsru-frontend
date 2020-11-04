@@ -783,21 +783,21 @@ export default {
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
             confirmButtonText: 'Yes, ฉันแน่ใจ!',
-          }).then((result) => {
-            this.$axios.$put('/projects/' + this.projectData.id, {
-              title: this.projectData.title,
-              detail: this.projectData.detail,
-              finalDate: this.projectData.finalDate,
-              finalTime: this.radios,
-
-              status: 'OPERATION',
-            })
-
+          }).then(async (result) => {
             if (result.value) {
+              await this.$axios.$put('/projects/' + this.projectData.id, {
+                title: this.projectData.title,
+                detail: this.projectData.detail,
+                finalDate: this.projectData.finalDate,
+                finalTime: this.radios,
+
+                status: 'OPERATION',
+              })
+
               this.dialogProfessorUpdate = false
-              Swal.fire('Success!', 'ยืนยันข้อมูลสำเร็จ.', 'success')
+              await Swal.fire('Success!', 'ยืนยันข้อมูลสำเร็จ.', 'success')
               // this.$router.replace('/project/' + this.projectData.id)
-              this.$router.push('/auth/project/professor')
+              await this.$router.push('/auth/project/professor')
             }
           })
         }

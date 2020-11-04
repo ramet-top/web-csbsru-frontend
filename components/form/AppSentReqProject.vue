@@ -67,7 +67,6 @@
                     </div>
                   </v-card-text>
                 </v-row>
-
                 <v-select
                   v-model="projectCreate.pro_ad"
                   label="อาจารย์สำหรับให้คำปรึกษา(โครงงาน) *"
@@ -189,8 +188,10 @@ export default {
       prefetch: true,
       variables() {
         return {
-          role: {
-            name: this.roleName,
+          where: {
+            role: {
+              name: this.roleName,
+            },
           },
         }
       },
