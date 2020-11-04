@@ -27,8 +27,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d4eee709-952b-4f8d-bfaf-34cd40e08453" name="Default Changelist" comment="[UPDATE] update zoom animation _id news and activities">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/news/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/news/_id.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/personnel/_id.vue" beforeDir="false" afterPath="$PROJECT_DIR$/pages/personnel/_id.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/news/AppCardNewLists.vue" beforeDir="false" afterPath="$PROJECT_DIR$/components/news/AppCardNewLists.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,7 +147,7 @@
       <workItem from="1603717782866" duration="9421000" />
       <workItem from="1603855445561" duration="1139000" />
       <workItem from="1604235138138" duration="9046000" />
-      <workItem from="1604484100103" duration="6297000" />
+      <workItem from="1604484100103" duration="7164000" />
     </task>
     <task id="LOCAL-00001" summary="[UPDATE] ui comment all, update and delete success">
       <created>1602695876392</created>
@@ -374,7 +373,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604496319823</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="[UPDATE] all done">
+      <created>1604496693932</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1604496693932</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -421,7 +427,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="[UPDATE] update activity fetch" />
     <MESSAGE value="[UPDATE] update activity posts" />
     <MESSAGE value="[UPDATE] add node packet.json" />
     <MESSAGE value="[UPDATE] package.json use npm" />
@@ -446,7 +451,8 @@
     <MESSAGE value="[UPDATE] fix leftSide items menu downloads" />
     <MESSAGE value="[UPDATE] fix isPermission store logout" />
     <MESSAGE value="[UPDATE] fix unlock comment for professor of student" />
-    <option name="LAST_COMMIT_MESSAGE" value="[UPDATE] fix unlock comment for professor of student" />
+    <MESSAGE value="[UPDATE] all done" />
+    <option name="LAST_COMMIT_MESSAGE" value="[UPDATE] all done" />
   </component>
   <component name="WindowStateProjectService">
     <state x="576" y="350" key="#ESLint" timestamp="1602691881093">
@@ -477,22 +483,22 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="0" y="23" key="FileDocumentManager.FileCacheConflict/0.23.1440.877@0.23.1440.877" timestamp="1600057818342" />
-    <state width="1398" height="212" key="GridCell.Tab.0.bottom" timestamp="1604484281811">
+    <state width="1398" height="212" key="GridCell.Tab.0.bottom" timestamp="1604513205855">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="212" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1604484281811" />
-    <state width="1398" height="212" key="GridCell.Tab.0.center" timestamp="1604484281811">
+    <state width="1398" height="212" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1604513205855" />
+    <state width="1398" height="212" key="GridCell.Tab.0.center" timestamp="1604513205854">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="212" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1604484281811" />
-    <state width="1398" height="212" key="GridCell.Tab.0.left" timestamp="1604484281810">
+    <state width="1398" height="212" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1604513205854" />
+    <state width="1398" height="212" key="GridCell.Tab.0.left" timestamp="1604513205854">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="212" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1604484281810" />
-    <state width="1398" height="212" key="GridCell.Tab.0.right" timestamp="1604484281811">
+    <state width="1398" height="212" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1604513205854" />
+    <state width="1398" height="212" key="GridCell.Tab.0.right" timestamp="1604513205855">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1398" height="212" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1604484281811" />
+    <state width="1398" height="212" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1604513205855" />
     <state width="1419" height="279" key="GridCell.Tab.1.bottom" timestamp="1602561503101">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
@@ -549,10 +555,10 @@
       <screen x="0" y="23" width="1440" height="877" />
     </state>
     <state x="220" y="100" key="SettingsEditor/0.23.1440.877@0.23.1440.877" timestamp="1603077561903" />
-    <state x="320" y="197" key="Vcs.Push.Dialog.v2" timestamp="1604496322136">
+    <state x="320" y="197" key="Vcs.Push.Dialog.v2" timestamp="1604496697217">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state x="320" y="197" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1604496322136" />
+    <state x="320" y="197" key="Vcs.Push.Dialog.v2/0.23.1440.877@0.23.1440.877" timestamp="1604496697217" />
     <state x="516" y="378" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1604489570118">
       <screen x="0" y="23" width="1440" height="877" />
     </state>

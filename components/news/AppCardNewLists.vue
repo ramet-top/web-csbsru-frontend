@@ -29,7 +29,7 @@
 
             <v-list-item-content>
               <v-list-item-subtitle
-                >โพสโดย : {{ item.use ? item.user.firstName : 'Admin' }}
+                >โพสโดย : {{ item.user ? item.user.firstName : 'Admin' }}
                 {{ item.use ? item.user.lastName : '' }}
               </v-list-item-subtitle>
               <v-list-item-subtitle>
