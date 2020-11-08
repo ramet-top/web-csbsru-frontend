@@ -12,9 +12,9 @@
           </v-card-text>
           <h1 class="custom-font font-weight-bold">
             <!-- The most loved news app -->
-            Computer Science (CS-BSRU)
+            Computer Science
           </h1>
-          <h3>มหาวิทยาลัยราชภัฏบ้านสมเด็จเจ้าพระยา.</h3>
+          <h3>มหาวิทยาลัยราชภัฏบ้านสมเด็จเจ้าพระยา</h3>
           <blockquote class="blockquote">
             คณะวิทยาศาสตร์และเทคโนโลยี | Faculty of Science and Technology
             <br />

@@ -9,9 +9,9 @@
       />
 
       <blockquote class="blockquote">
-        &#8220; Computer Science - CSBSRU.&#8221;
+        Computer Science - CSBSRU
         <br />
-        &#8220;มหาวิทยาลัยราชภัฏบ้านสมเด็จเจ้าพระยา.&#8221;
+        มหาวิทยาลัยราชภัฏบ้านสมเด็จเจ้าพระยา
         <!-- <footer>
           <small>
             <em>&mdash;TopFusion-Dev</em>

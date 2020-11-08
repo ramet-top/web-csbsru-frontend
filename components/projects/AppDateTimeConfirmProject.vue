@@ -64,14 +64,14 @@
               <v-radio value="MORNING">
                 <template v-slot:label>
                   <div>
-                    <strong class="dark--text">ช่วงเช้า 10.00 น</strong>
+                    <strong class="dark--text">ช่วงเช้า</strong>
                   </div>
                 </template>
               </v-radio>
               <v-radio value="AFTERNOON">
                 <template v-slot:label>
                   <div>
-                    <strong class="dark--text">ช่วงบ่าย 13.30 น</strong>
+                    <strong class="dark--text">ช่วงบ่าย</strong>
                   </div>
                 </template>
               </v-radio>

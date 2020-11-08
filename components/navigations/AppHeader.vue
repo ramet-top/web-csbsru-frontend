@@ -137,7 +137,7 @@
       ></v-app-bar-nav-icon>
 
       <v-toolbar-title class="justify-start hidden-sm-and-down" @click="toHome">
-        <v-icon left size="40">fab fa-accusoft</v-icon>
+        <v-icon left size="40">fas fa-desktop</v-icon>
         Computer Science - มบส.
       </v-toolbar-title>
 

@@ -58,7 +58,7 @@
                 {{ item.user.prefix }} {{ item.user.firstName }}
                 {{ item.user.lastName }} :
                 <span class="font-weight-thin">
-                  {{ $moment(item.updatedAt).startOf('hour').fromNow() }}
+                  {{ $moment(item.updatedAt).fromNow() }}
                 </span>
               </div>
               <p class="mr-5 font-weight-thin">
